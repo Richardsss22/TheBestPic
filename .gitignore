@@ -1,0 +1,25 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Local/generated reports and patient data should stay off GitHub.
+*.mat
+*.zip
+*_report.pdf
+*_prediction.json
+patient_data/
+uploads/
+tmp/
+temp/
+
+# Local Firebase and service credentials.
+.firebase/
+firebase-debug.log
+serviceAccountKey.json
+*-firebase-adminsdk-*.json

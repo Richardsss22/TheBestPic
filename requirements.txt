@@ -1,0 +1,13 @@
+streamlit
+numpy
+pandas
+scipy
+scikit-learn
+joblib
+h5py
+plotly
+PyWavelets
+ts2vg
+fpdf2
+openpyxl
+matplotlib

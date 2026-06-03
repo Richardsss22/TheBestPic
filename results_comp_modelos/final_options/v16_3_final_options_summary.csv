@@ -1,0 +1,5 @@
+option,model_slug,clinical_scope,k,auc_loocv,is_primary_preop,clinical_encoding
+GNB fixed,gnb_fixed,preop,18,0.702020202020202,True,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,18,0.7233877233877234,False,professor_missing0_levels1n
+BernoulliNB tuned,bernoulli_tuned,preop,18,0.726107226107226,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,18,0.6841491841491841,False,legacy_value_plus_missing_indicator

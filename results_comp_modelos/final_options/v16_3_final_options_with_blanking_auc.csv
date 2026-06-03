@@ -1,0 +1,49 @@
+option,model_slug,clinical_scope,k,auc_loocv,is_primary_preop,clinical_encoding
+GNB fixed,gnb_fixed,preop,3,0.4976689976689977,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,5,0.5081585081585082,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,8,0.5293317793317793,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,10,0.5945998445998446,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,12,0.6623931623931624,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,15,0.6967754467754467,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,18,0.702020202020202,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,20,0.6756021756021756,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,25,0.6415112665112666,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,30,0.6157731157731158,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,40,0.6000388500388499,True,professor_missing0_levels1n
+GNB fixed,gnb_fixed,preop,50,0.6184926184926185,True,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,3,0.6037296037296038,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,5,0.5728438228438228,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,8,0.5775058275058275,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,10,0.6283993783993784,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,12,0.6907536907536908,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,15,0.7181429681429681,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,18,0.7233877233877234,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,20,0.6954156954156954,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,25,0.6572455322455322,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,30,0.6282051282051282,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,40,0.6037296037296037,False,professor_missing0_levels1n
+GNB fixed + blanking,gnb_fixed,with_blanking,50,0.6258741258741258,False,professor_missing0_levels1n
+BernoulliNB tuned,bernoulli_tuned,preop,3,0.42715617715617715,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,5,0.41783216783216787,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,8,0.48620823620823617,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,10,0.533022533022533,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,12,0.6412198912198912,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,15,0.7039627039627039,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,18,0.726107226107226,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,20,0.6913364413364413,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,25,0.6171328671328671,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,30,0.6035353535353535,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,40,0.581002331002331,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned,bernoulli_tuned,preop,50,0.6025641025641025,True,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,3,0.6015928515928516,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,5,0.5951825951825952,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,8,0.6002331002331003,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,10,0.5951825951825951,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,12,0.6789044289044289,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,15,0.6808469308469308,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,18,0.6841491841491841,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,20,0.6724941724941724,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,25,0.6237373737373737,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,30,0.6283993783993784,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,40,0.6146076146076146,False,legacy_value_plus_missing_indicator
+BernoulliNB tuned + blanking,bernoulli_tuned,with_blanking,50,0.6225718725718726,False,legacy_value_plus_missing_indicator
