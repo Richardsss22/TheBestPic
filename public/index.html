@@ -898,7 +898,7 @@
                 </div>
                 <div>
                     <div class="text-[10px] font-display uppercase tracking-widest text-gray-500 mb-1">Zona Realista (AUC)</div>
-                    <div class="text-4xl font-display font-bold text-accent">0.764</div>
+                    <div class="text-4xl font-display font-bold text-accent">0.768</div>
                 </div>
             </div>
         </section>
@@ -939,12 +939,12 @@
                         <div class="flex-1">
                             <h3 class="font-display text-xl font-bold text-white mb-4">A Conclusão Científica</h3>
                             <p class="text-gray-400 font-light leading-relaxed text-lg">
-                                O modelo final combina ExtraTrees e BernoulliNB por Power Mean. <strong class="text-white font-normal">A versão defensável atinge AUC 0.764 e Brier 0.1887</strong>, com validação LOOCV/nested threshold sem usar dados do paciente de teste.
+                                O modelo final combina ExtraTrees e BernoulliNB por Power Mean. <strong class="text-white font-normal">A versão final da pasta ML v16 6 atinge AUC 0.7677 e Brier 0.1888</strong>, com validação LOOCV, sem blanking period e com threshold operacional reportado à parte.
                             </p>
                         </div>
                         <div class="w-full md:w-auto p-6 bg-black/50 rounded-xl border border-white/5 text-center shrink-0">
                             <div class="text-[10px] font-display uppercase tracking-widest text-gray-500 mb-2">AUC Consolidado</div>
-                            <div class="text-5xl font-display font-bold text-gradient">0.764</div>
+                            <div class="text-5xl font-display font-bold text-gradient">0.768</div>
                         </div>
                     </div>
 
@@ -972,12 +972,12 @@
                             <i data-lucide="trees" class="w-8 h-8 text-accent"></i>
                         </div>
                         <div class="metric-grid">
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold">0.738</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold">0.734</div></div>
                             <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Brier</div><div class="font-display text-2xl font-bold">0.201</div></div>
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">73.1%</div></div>
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">65.7%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">61.5%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">75.8%</div></div>
                         </div>
-                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Threshold operacional 0.44. Mais sensível, apanha mais recorrências, mas aceita mais falsos positivos.</p>
+                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Threshold operacional 0.469 por critério max-all composite. Neste ponto: 75 TN, 24 FP, 20 FN e 32 TP.</p>
                     </article>
 
                     <article class="glass-card p-8 rounded-2xl">
@@ -1006,12 +1006,12 @@
                             <i data-lucide="git-merge" class="w-8 h-8 text-accent"></i>
                         </div>
                         <div class="metric-grid">
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold text-accent">0.764</div></div>
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Brier</div><div class="font-display text-2xl font-bold text-accent">0.1887</div></div>
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">67.3%</div></div>
-                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">75.8%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold text-accent">0.768</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Brier</div><div class="font-display text-2xl font-bold text-accent">0.1888</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">65.4%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">76.8%</div></div>
                         </div>
-                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Power Mean k=2.5, threshold fold-specific Forma A. Mediana operacional usada na app: 0.396.</p>
+                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Power Mean k=3, threshold operacional 0.417 por max-all composite. Neste ponto: 76 TN, 23 FP, 18 FN e 34 TP.</p>
                     </article>
                 </div>
 
@@ -1030,7 +1030,7 @@
                             <span class="power-exponent"><span>1</span><span>k</span></span>
                         </div>
                         <p class="mt-5 text-gray-400 text-sm leading-relaxed">
-                            A família Power Mean aproxima-se da média geométrica para valores baixos de k e do maximum para valores altos. O k=2.5 foi usado como solução principal conservadora; o sweep mostra que k=3 atinge AUC 0.7653, ganho marginal.
+                            A família Power Mean aproxima-se da média geométrica para valores baixos de k e do maximum para valores altos. Na pasta ML v16 6, o modelo final usa k=3, atingindo AUC 0.7677 sem blanking period.
                         </p>
                     </div>
                     <div class="lg:col-span-3 glass-card rounded-2xl overflow-hidden self-start">
@@ -1048,9 +1048,9 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-sm text-gray-300">
-                                    <tr class="border-b border-white/5"><td class="font-medium text-white">ExtraTrees (thr 0.44)</td><td>0.7377</td><td>0.5080</td><td>0.2008</td><td>73.1%</td><td>65.7%</td><td>61.3%</td></tr>
+                                    <tr class="border-b border-white/5"><td class="font-medium text-white">ExtraTrees (thr 0.469)</td><td>0.7341</td><td>0.5098</td><td>0.2012</td><td>61.5%</td><td>75.8%</td><td>59.3%</td></tr>
                                     <tr class="border-b border-white/5"><td class="font-medium text-white">BernoulliNB (thr 0.295)</td><td>0.7261</td><td>0.6018</td><td>0.2102</td><td>65.4%</td><td>73.7%</td><td>60.7%</td></tr>
-                                    <tr class="bg-accent/10"><td class="font-bold text-white">PM Ensemble k=2.5</td><td class="font-bold text-accent">0.7640</td><td>0.5840</td><td class="font-bold text-accent">0.1887</td><td>67.3%</td><td>75.8%</td><td>63.1%</td></tr>
+                                    <tr class="bg-accent/10"><td class="font-bold text-white">PM Ensemble k=3 (thr 0.417)</td><td class="font-bold text-accent">0.7677</td><td>0.5868</td><td class="font-bold text-accent">0.1888</td><td>65.4%</td><td>76.8%</td><td>62.4%</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -1080,11 +1080,11 @@
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
                         <img class="evidence-image zoomable-image" src="assets/03_power_mean_k_sweep.png" alt="Power Mean k sweep">
-                        <figcaption class="text-sm text-gray-400">Sweep do k: k=2.5 é a opção principal; k=3 dá AUC 0.7653 no sweep global.</figcaption>
+                        <figcaption class="text-sm text-gray-400">Sweep do k: k=3 é o ponto final em ML v16 6, com AUC LOOCV 0.7677.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
                         <img class="evidence-image zoomable-image" src="assets/04_confusion_matrix_metrics_forma_a.png" alt="Matriz de confusão final">
-                        <figcaption class="text-sm text-gray-400">Matriz final Forma A: 75 TN, 24 FP, 17 FN e 35 TP.</figcaption>
+                        <figcaption class="text-sm text-gray-400">Matriz final PM k=3 no threshold 0.417: 76 TN, 23 FP, 18 FN e 34 TP.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
                         <img class="evidence-image zoomable-image" src="assets/07_missingness_encoding_comparison.png" alt="Comparação de missingness">
@@ -1103,7 +1103,7 @@
                     </div>
                     <div class="glass-card p-7 rounded-2xl">
                         <h3 class="font-display text-lg font-bold text-white mb-3">Sem leakage no threshold</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">As métricas Forma A usam thresholds definidos no inner fold, antes de avaliar o paciente deixado de fora.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">AUC e Brier são calculados nas probabilidades LOOCV. O threshold é apenas o ponto operacional escolhido para transformar score em classe.</p>
                     </div>
                     <div class="glass-card p-7 rounded-2xl">
                         <h3 class="font-display text-lg font-bold text-white mb-3">Research PoC</h3>
@@ -1149,27 +1149,27 @@
                                 </tr>
 
                                 <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">ExtraTrees</div><div class="text-xs text-gray-500 mt-1">thr 0.44</div></td>
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">ExtraTrees</div><div class="text-xs text-gray-500 mt-1">thr 0.469</div></td>
                                     <td class="px-8 py-8 align-top"><span class="text-white font-medium">Árvores extra-randomizadas</span><br><span class="text-xs text-gray-500">Sem blanking</span></td>
-                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Modelo base mais sensível. AUC 0.7377, sensibilidade 73.1%, especificidade 65.7%, F1 61.3%.</td>
-                                    <td class="px-8 py-8 align-top font-display text-lg text-white font-medium">0.738</td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Modelo base com threshold max-all. AUC 0.7341, sensibilidade 61.5%, especificidade 75.8%, F1 59.3%.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-white font-medium">0.734</td>
                                     <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-display tracking-widest uppercase">Base model</div></td>
                                 </tr>
 
                                 <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">Power Mean</div><div class="text-xs text-accent mt-1">k=2.5 Forma A</div></td>
-                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">ET + BernoulliNB</span><br><span class="text-xs text-gray-500">Inner-fold thresholds</span></td>
-                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Modelo principal defendível: AUC 0.7640, Brier 0.1887, sensibilidade 67.3%, especificidade 75.8%, F1 63.1%.</td>
-                                    <td class="px-8 py-8 align-top font-display text-lg text-accent font-medium">0.764</td>
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">Power Mean</div><div class="text-xs text-accent mt-1">k=3, thr 0.417</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">ET + BernoulliNB</span><br><span class="text-xs text-gray-500">Sem blanking</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Modelo principal da pasta ML v16 6: AUC 0.7677, Brier 0.1888, sensibilidade 65.4%, especificidade 76.8%, F1 62.4%.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-accent font-medium">0.768</td>
                                     <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-display tracking-widest uppercase"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>Final</div></td>
                                 </tr>
 
                                 <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                                     <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">k sweep</div><div class="text-xs text-gray-500 mt-1">sensibilidade</div></td>
-                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">PM k=3</span><br><span class="text-xs text-gray-500">Youden threshold 0.417</span></td>
-                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Análise de varrimento: k=3 sobe ligeiramente para AUC 0.7653, AP 0.5856 e Brier 0.1891. Diferença pequena, reportada com transparência.</td>
-                                    <td class="px-8 py-8 align-top font-display text-lg text-accent font-medium">0.765</td>
-                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[10px] font-display tracking-widest uppercase">Exploratório</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">Threshold sweep</span><br><span class="text-xs text-gray-500">Max-all composite</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">O threshold 0.417 não altera AUC; define o ponto operacional: 34 TP, 18 FN, 76 TN e 23 FP, com accuracy 72.8%.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-accent font-medium">0.417</td>
+                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[10px] font-display tracking-widest uppercase">Operacional</div></td>
                                 </tr>
 
                                 <tr class="hover:bg-white/[0.02] transition-colors">
@@ -1270,11 +1270,11 @@
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="archive-stat-card">
                                         <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Imagens</div>
-                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-image-total">99</div>
+                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-image-total">107</div>
                                     </div>
                                     <div class="archive-stat-card">
                                         <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Ficheiros</div>
-                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-file-total">248</div>
+                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-file-total">251</div>
                                     </div>
                                 </div>
                                 <div class="archive-control-row">
@@ -1310,7 +1310,7 @@
                             <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors"></i>
                         </div>
                         <h3 class="font-display text-xl font-bold text-white mb-3">Power Mean Ensemble</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">ExtraTrees + BernoulliNB, k=2.5, threshold operacional 0.396.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">ExtraTrees + BernoulliNB, Power Mean k=3, threshold operacional 0.417.</p>
                     </a>
 
                     <a href="#validacao" class="glass-card p-7 rounded-2xl group">

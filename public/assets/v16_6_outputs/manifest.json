@@ -4,17 +4,13 @@
     "results",
     "results_comp_modelos"
   ],
-  "generated_at": "2026-06-04T11:57:57",
-  "image_count": 99,
-  "file_count": 248,
+  "generated_at": "2026-06-04T15:57:47",
+  "image_count": 107,
+  "file_count": 251,
   "categories": {
     "results/anova_features": {
       "total": 15,
       "images": 7
-    },
-    "results/anova_features/code": {
-      "total": 2,
-      "images": 0
     },
     "results/bernoulli_tuned": {
       "total": 12,
@@ -29,7 +25,7 @@
       "images": 2
     },
     "results/extra_mat_audit/code": {
-      "total": 4,
+      "total": 1,
       "images": 0
     },
     "results/extratrees_tuned": {
@@ -81,26 +77,18 @@
       "images": 7
     },
     "results/verif_map_points": {
-      "total": 9,
+      "total": 8,
       "images": 1
     },
-    "results/verif_map_points/code": {
-      "total": 1,
-      "images": 0
-    },
-    "results/verif_map_points/code/__pycache__": {
-      "total": 1,
-      "images": 0
-    },
     "results/verif_pwave": {
-      "total": 15,
+      "total": 14,
       "images": 3
     },
-    "results/verif_pwave/code": {
-      "total": 2,
+    "results_comp_modelos": {
+      "total": 1,
       "images": 0
     },
-    "results_comp_modelos": {
+    "results_comp_modelos/advanced_full": {
       "total": 1,
       "images": 0
     },
@@ -108,17 +96,9 @@
       "total": 3,
       "images": 0
     },
-    "results_comp_modelos/all models/00_all_model_screening/code": {
-      "total": 4,
-      "images": 0
-    },
     "results_comp_modelos/all models/00_all_model_screening/outputs": {
       "total": 11,
       "images": 10
-    },
-    "results_comp_modelos/all models/01_select_plausible5/code": {
-      "total": 1,
-      "images": 0
     },
     "results_comp_modelos/all models/01_select_plausible5/outputs": {
       "total": 8,
@@ -132,9 +112,13 @@
       "total": 6,
       "images": 4
     },
+    "results_comp_modelos/extratrees_addon": {
+      "total": 18,
+      "images": 6
+    },
     "results_comp_modelos/final_options": {
       "total": 30,
-      "images": 10
+      "images": 12
     },
     "results_comp_modelos/variable_params": {
       "total": 21,
@@ -143,7 +127,7 @@
   },
   "images": [
     {
-      "name": "V16 anova full ecg egm fscore posthoc",
+      "name": "Anova Full ECG EGM Fscore Posthoc",
       "filename": "v16_anova_full_ecg_egm_fscore_posthoc.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_full_ecg_egm_fscore_posthoc.png",
@@ -151,7 +135,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_anova_full_ecg_egm_fscore_posthoc.png"
     },
     {
-      "name": "V16 anova k18 full ecg egm selection rate",
+      "name": "Anova K18 Full ECG EGM Selection Rate",
       "filename": "v16_anova_k18_full_ecg_egm_selection_rate.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_k18_full_ecg_egm_selection_rate.png",
@@ -159,7 +143,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_anova_k18_full_ecg_egm_selection_rate.png"
     },
     {
-      "name": "V16 anova k18 pwave ecg selection rate",
+      "name": "Anova K18 Pwave ECG Selection Rate",
       "filename": "v16_anova_k18_pwave_ecg_selection_rate.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_k18_pwave_ecg_selection_rate.png",
@@ -167,7 +151,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_anova_k18_pwave_ecg_selection_rate.png"
     },
     {
-      "name": "V16 anova pwave ecg fscore posthoc",
+      "name": "Anova Pwave ECG Fscore Posthoc",
       "filename": "v16_anova_pwave_ecg_fscore_posthoc.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_pwave_ecg_fscore_posthoc.png",
@@ -175,7 +159,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_anova_pwave_ecg_fscore_posthoc.png"
     },
     {
-      "name": "V16 boxplots top anova features",
+      "name": "Boxplots Top Anova Features",
       "filename": "v16_boxplots_top_anova_features.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_boxplots_top_anova_features.png",
@@ -183,7 +167,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_boxplots_top_anova_features.png"
     },
     {
-      "name": "V16 pairplot top anova features",
+      "name": "Pairplot Top Anova Features",
       "filename": "v16_pairplot_top_anova_features.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_pairplot_top_anova_features.png",
@@ -191,7 +175,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_pairplot_top_anova_features.png"
     },
     {
-      "name": "V16 volcano pwave anova features",
+      "name": "Volcano Pwave Anova Features",
       "filename": "v16_volcano_pwave_anova_features.png",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_volcano_pwave_anova_features.png",
@@ -199,7 +183,7 @@
       "file": "assets/v16_6_outputs/results_anova_features_v16_volcano_pwave_anova_features.png"
     },
     {
-      "name": "Roc bernoulli tuned ecg nolit clinical preop",
+      "name": "ROC Bernoulli Tuned ECG Nolit Clinical Preop",
       "filename": "roc_bernoulli_tuned_ecg_nolit_clinical_preop.png",
       "category": "results/bernoulli_tuned/sensitivity_roc",
       "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_ecg_nolit_clinical_preop.png",
@@ -207,7 +191,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_sensitivity_roc_roc_bernoulli_tuned_ecg_nolit_clinical_preop.png"
     },
     {
-      "name": "Roc bernoulli tuned pwave litsensitivity preop",
+      "name": "ROC Bernoulli Tuned Pwave Litsensitivity Preop",
       "filename": "roc_bernoulli_tuned_pwave_litsensitivity_preop.png",
       "category": "results/bernoulli_tuned/sensitivity_roc",
       "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_pwave_litsensitivity_preop.png",
@@ -215,7 +199,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_sensitivity_roc_roc_bernoulli_tuned_pwave_litsensitivity_preop.png"
     },
     {
-      "name": "Roc bernoulli tuned pwave nolit clinical preop",
+      "name": "ROC Bernoulli Tuned Pwave Nolit Clinical Preop",
       "filename": "roc_bernoulli_tuned_pwave_nolit_clinical_preop.png",
       "category": "results/bernoulli_tuned/sensitivity_roc",
       "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_pwave_nolit_clinical_preop.png",
@@ -223,7 +207,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_sensitivity_roc_roc_bernoulli_tuned_pwave_nolit_clinical_preop.png"
     },
     {
-      "name": "Roc bernoulli tuned pwave nolit clinical withblanking",
+      "name": "ROC Bernoulli Tuned Pwave Nolit Clinical Withblanking",
       "filename": "roc_bernoulli_tuned_pwave_nolit_clinical_withblanking.png",
       "category": "results/bernoulli_tuned/sensitivity_roc",
       "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_pwave_nolit_clinical_withblanking.png",
@@ -231,7 +215,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_sensitivity_roc_roc_bernoulli_tuned_pwave_nolit_clinical_withblanking.png"
     },
     {
-      "name": "V16 bernoulli tuned calibration",
+      "name": "Bernoulli Tuned Calibration",
       "filename": "v16_bernoulli_tuned_calibration.png",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_calibration.png",
@@ -239,7 +223,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_v16_bernoulli_tuned_calibration.png"
     },
     {
-      "name": "V16 bernoulli tuned confusion matrix",
+      "name": "Bernoulli Tuned Confusion Matrix",
       "filename": "v16_bernoulli_tuned_confusion_matrix.png",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_confusion_matrix.png",
@@ -247,7 +231,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_v16_bernoulli_tuned_confusion_matrix.png"
     },
     {
-      "name": "V16 bernoulli tuned confusion matrix metrics",
+      "name": "Bernoulli Tuned Confusion Matrix Metrics",
       "filename": "v16_bernoulli_tuned_confusion_matrix_metrics.png",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_confusion_matrix_metrics.png",
@@ -255,7 +239,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_v16_bernoulli_tuned_confusion_matrix_metrics.png"
     },
     {
-      "name": "V16 bernoulli tuned precision recall",
+      "name": "Bernoulli Tuned Precision Recall",
       "filename": "v16_bernoulli_tuned_precision_recall.png",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_precision_recall.png",
@@ -263,7 +247,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_v16_bernoulli_tuned_precision_recall.png"
     },
     {
-      "name": "V16 bernoulli tuned prediction distribution",
+      "name": "Bernoulli Tuned Prediction Distribution",
       "filename": "v16_bernoulli_tuned_prediction_distribution.png",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_prediction_distribution.png",
@@ -271,7 +255,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_v16_bernoulli_tuned_prediction_distribution.png"
     },
     {
-      "name": "V16 bernoulli tuned roc",
+      "name": "Bernoulli Tuned ROC",
       "filename": "v16_bernoulli_tuned_roc.png",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_roc.png",
@@ -279,7 +263,7 @@
       "file": "assets/v16_6_outputs/results_bernoulli_tuned_v16_bernoulli_tuned_roc.png"
     },
     {
-      "name": "V16 extra mat auc comparison",
+      "name": "Extra MAT AUC Comparison",
       "filename": "v16_extra_mat_auc_comparison.png",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/v16_extra_mat_auc_comparison.png",
@@ -287,7 +271,7 @@
       "file": "assets/v16_6_outputs/results_extra_mat_audit_v16_extra_mat_auc_comparison.png"
     },
     {
-      "name": "V16 extra mat inventory",
+      "name": "Extra MAT Inventory",
       "filename": "v16_extra_mat_inventory.png",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/v16_extra_mat_inventory.png",
@@ -295,7 +279,7 @@
       "file": "assets/v16_6_outputs/results_extra_mat_audit_v16_extra_mat_inventory.png"
     },
     {
-      "name": "Roc extratrees tuned pwave nolit clinical preop",
+      "name": "ROC Extratrees Tuned Pwave Nolit Clinical Preop",
       "filename": "roc_extratrees_tuned_pwave_nolit_clinical_preop.png",
       "category": "results/extratrees_tuned/sensitivity_roc",
       "relative_path": "results/extratrees_tuned/sensitivity_roc/roc_extratrees_tuned_pwave_nolit_clinical_preop.png",
@@ -303,7 +287,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_sensitivity_roc_roc_extratrees_tuned_pwave_nolit_clinical_preop.png"
     },
     {
-      "name": "Roc extratrees tuned pwave nolit clinical withblanking",
+      "name": "ROC Extratrees Tuned Pwave Nolit Clinical Withblanking",
       "filename": "roc_extratrees_tuned_pwave_nolit_clinical_withblanking.png",
       "category": "results/extratrees_tuned/sensitivity_roc",
       "relative_path": "results/extratrees_tuned/sensitivity_roc/roc_extratrees_tuned_pwave_nolit_clinical_withblanking.png",
@@ -311,7 +295,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_sensitivity_roc_roc_extratrees_tuned_pwave_nolit_clinical_withblanking.png"
     },
     {
-      "name": "V16 extratrees tuned calibration",
+      "name": "Extratrees Tuned Calibration",
       "filename": "v16_extratrees_tuned_calibration.png",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_calibration.png",
@@ -319,7 +303,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_v16_extratrees_tuned_calibration.png"
     },
     {
-      "name": "V16 extratrees tuned confusion matrix",
+      "name": "Extratrees Tuned Confusion Matrix",
       "filename": "v16_extratrees_tuned_confusion_matrix.png",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_confusion_matrix.png",
@@ -327,7 +311,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_v16_extratrees_tuned_confusion_matrix.png"
     },
     {
-      "name": "V16 extratrees tuned confusion matrix metrics",
+      "name": "Extratrees Tuned Confusion Matrix Metrics",
       "filename": "v16_extratrees_tuned_confusion_matrix_metrics.png",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_confusion_matrix_metrics.png",
@@ -335,7 +319,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_v16_extratrees_tuned_confusion_matrix_metrics.png"
     },
     {
-      "name": "V16 extratrees tuned precision recall",
+      "name": "Extratrees Tuned Precision Recall",
       "filename": "v16_extratrees_tuned_precision_recall.png",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_precision_recall.png",
@@ -343,7 +327,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_v16_extratrees_tuned_precision_recall.png"
     },
     {
-      "name": "V16 extratrees tuned prediction distribution",
+      "name": "Extratrees Tuned Prediction Distribution",
       "filename": "v16_extratrees_tuned_prediction_distribution.png",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_prediction_distribution.png",
@@ -351,7 +335,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_v16_extratrees_tuned_prediction_distribution.png"
     },
     {
-      "name": "V16 extratrees tuned roc",
+      "name": "Extratrees Tuned ROC",
       "filename": "v16_extratrees_tuned_roc.png",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_roc.png",
@@ -359,7 +343,7 @@
       "file": "assets/v16_6_outputs/results_extratrees_tuned_v16_extratrees_tuned_roc.png"
     },
     {
-      "name": "Roc gnb fixed ecg nolit clinical preop",
+      "name": "ROC GNB Fixed ECG Nolit Clinical Preop",
       "filename": "roc_gnb_fixed_ecg_nolit_clinical_preop.png",
       "category": "results/gnb_fixed/sensitivity_roc",
       "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_ecg_nolit_clinical_preop.png",
@@ -367,7 +351,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_sensitivity_roc_roc_gnb_fixed_ecg_nolit_clinical_preop.png"
     },
     {
-      "name": "Roc gnb fixed pwave litsensitivity preop",
+      "name": "ROC GNB Fixed Pwave Litsensitivity Preop",
       "filename": "roc_gnb_fixed_pwave_litsensitivity_preop.png",
       "category": "results/gnb_fixed/sensitivity_roc",
       "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_pwave_litsensitivity_preop.png",
@@ -375,7 +359,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_sensitivity_roc_roc_gnb_fixed_pwave_litsensitivity_preop.png"
     },
     {
-      "name": "Roc gnb fixed pwave nolit clinical preop",
+      "name": "ROC GNB Fixed Pwave Nolit Clinical Preop",
       "filename": "roc_gnb_fixed_pwave_nolit_clinical_preop.png",
       "category": "results/gnb_fixed/sensitivity_roc",
       "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_pwave_nolit_clinical_preop.png",
@@ -383,7 +367,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_sensitivity_roc_roc_gnb_fixed_pwave_nolit_clinical_preop.png"
     },
     {
-      "name": "Roc gnb fixed pwave nolit clinical withblanking",
+      "name": "ROC GNB Fixed Pwave Nolit Clinical Withblanking",
       "filename": "roc_gnb_fixed_pwave_nolit_clinical_withblanking.png",
       "category": "results/gnb_fixed/sensitivity_roc",
       "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_pwave_nolit_clinical_withblanking.png",
@@ -391,7 +375,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_sensitivity_roc_roc_gnb_fixed_pwave_nolit_clinical_withblanking.png"
     },
     {
-      "name": "V16 gnb fixed calibration",
+      "name": "GNB Fixed Calibration",
       "filename": "v16_gnb_fixed_calibration.png",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_calibration.png",
@@ -399,7 +383,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_v16_gnb_fixed_calibration.png"
     },
     {
-      "name": "V16 gnb fixed confusion matrix",
+      "name": "GNB Fixed Confusion Matrix",
       "filename": "v16_gnb_fixed_confusion_matrix.png",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_confusion_matrix.png",
@@ -407,7 +391,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_v16_gnb_fixed_confusion_matrix.png"
     },
     {
-      "name": "V16 gnb fixed confusion matrix metrics",
+      "name": "GNB Fixed Confusion Matrix Metrics",
       "filename": "v16_gnb_fixed_confusion_matrix_metrics.png",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_confusion_matrix_metrics.png",
@@ -415,7 +399,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_v16_gnb_fixed_confusion_matrix_metrics.png"
     },
     {
-      "name": "V16 gnb fixed precision recall",
+      "name": "GNB Fixed Precision Recall",
       "filename": "v16_gnb_fixed_precision_recall.png",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_precision_recall.png",
@@ -423,7 +407,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_v16_gnb_fixed_precision_recall.png"
     },
     {
-      "name": "V16 gnb fixed prediction distribution",
+      "name": "GNB Fixed Prediction Distribution",
       "filename": "v16_gnb_fixed_prediction_distribution.png",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_prediction_distribution.png",
@@ -431,7 +415,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_v16_gnb_fixed_prediction_distribution.png"
     },
     {
-      "name": "V16 gnb fixed roc",
+      "name": "GNB Fixed ROC",
       "filename": "v16_gnb_fixed_roc.png",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_roc.png",
@@ -439,7 +423,7 @@
       "file": "assets/v16_6_outputs/results_gnb_fixed_v16_gnb_fixed_roc.png"
     },
     {
-      "name": "Missingness bar roc",
+      "name": "Missingness Bar ROC",
       "filename": "missingness_bar_roc.png",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_bar_roc.png",
@@ -447,7 +431,7 @@
       "file": "assets/v16_6_outputs/results_missingness_missingness_bar_roc.png"
     },
     {
-      "name": "Missingness k curves",
+      "name": "Missingness K Curves",
       "filename": "missingness_k_curves.png",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_k_curves.png",
@@ -455,7 +439,7 @@
       "file": "assets/v16_6_outputs/results_missingness_missingness_k_curves.png"
     },
     {
-      "name": "Missingness summary table",
+      "name": "Missingness Summary Table",
       "filename": "missingness_summary_table.png",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_summary_table.png",
@@ -463,7 +447,7 @@
       "file": "assets/v16_6_outputs/results_missingness_missingness_summary_table.png"
     },
     {
-      "name": "V16 pme step5 multiseg",
+      "name": "Pme Step5 Multiseg",
       "filename": "v16_pme_step5_multiseg.png",
       "category": "results/model_decision_evidence/01_single_vs_multisegment",
       "relative_path": "results/model_decision_evidence/01_single_vs_multisegment/v16_pme_step5_multiseg.png",
@@ -471,7 +455,7 @@
       "file": "assets/v16_6_outputs/results_model_decision_evidence_01_single_vs_multisegment_v16_pme_step5_multiseg.png"
     },
     {
-      "name": "V16 pme step3 leads",
+      "name": "Pme Step3 Leads",
       "filename": "v16_pme_step3_leads.png",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/v16_pme_step3_leads.png",
@@ -479,7 +463,7 @@
       "file": "assets/v16_6_outputs/results_model_decision_evidence_03_signal_scope_and_clinical_context_v16_pme_step3_leads.png"
     },
     {
-      "name": "V16 pme step5 modalities",
+      "name": "Pme Step5 Modalities",
       "filename": "v16_pme_step5_modalities.png",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/v16_pme_step5_modalities.png",
@@ -487,7 +471,7 @@
       "file": "assets/v16_6_outputs/results_model_decision_evidence_03_signal_scope_and_clinical_context_v16_pme_step5_modalities.png"
     },
     {
-      "name": "V16 pme nested optuna context",
+      "name": "Pme Nested Optuna Context",
       "filename": "v16_pme_nested_optuna_context.png",
       "category": "results/model_decision_evidence/04_nested_optuna_validation_context",
       "relative_path": "results/model_decision_evidence/04_nested_optuna_validation_context/v16_pme_nested_optuna_context.png",
@@ -495,7 +479,7 @@
       "file": "assets/v16_6_outputs/results_model_decision_evidence_04_nested_optuna_validation_context_v16_pme_nested_optuna_context.png"
     },
     {
-      "name": "V16 pm ensemble calibration",
+      "name": "PM Ensemble Calibration",
       "filename": "v16_pm_ensemble_calibration.png",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_calibration.png",
@@ -503,7 +487,7 @@
       "file": "assets/v16_6_outputs/results_pm_ensemble_v16_pm_ensemble_calibration.png"
     },
     {
-      "name": "V16 pm ensemble confusion matrix",
+      "name": "PM Ensemble Confusion Matrix",
       "filename": "v16_pm_ensemble_confusion_matrix.png",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_confusion_matrix.png",
@@ -511,7 +495,7 @@
       "file": "assets/v16_6_outputs/results_pm_ensemble_v16_pm_ensemble_confusion_matrix.png"
     },
     {
-      "name": "V16 pm ensemble confusion matrix metrics",
+      "name": "PM Ensemble Confusion Matrix Metrics",
       "filename": "v16_pm_ensemble_confusion_matrix_metrics.png",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_confusion_matrix_metrics.png",
@@ -519,7 +503,7 @@
       "file": "assets/v16_6_outputs/results_pm_ensemble_v16_pm_ensemble_confusion_matrix_metrics.png"
     },
     {
-      "name": "V16 pm ensemble precision recall",
+      "name": "PM Ensemble Precision Recall",
       "filename": "v16_pm_ensemble_precision_recall.png",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_precision_recall.png",
@@ -527,7 +511,7 @@
       "file": "assets/v16_6_outputs/results_pm_ensemble_v16_pm_ensemble_precision_recall.png"
     },
     {
-      "name": "V16 pm ensemble prediction distribution",
+      "name": "PM Ensemble Prediction Distribution",
       "filename": "v16_pm_ensemble_prediction_distribution.png",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_prediction_distribution.png",
@@ -535,7 +519,7 @@
       "file": "assets/v16_6_outputs/results_pm_ensemble_v16_pm_ensemble_prediction_distribution.png"
     },
     {
-      "name": "V16 pm ensemble roc",
+      "name": "PM Ensemble ROC",
       "filename": "v16_pm_ensemble_roc.png",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_roc.png",
@@ -543,7 +527,7 @@
       "file": "assets/v16_6_outputs/results_pm_ensemble_v16_pm_ensemble_roc.png"
     },
     {
-      "name": "V16 threshold confusion bernoullinb tuned",
+      "name": "Threshold Confusion Bernoullinb Tuned",
       "filename": "v16_threshold_confusion_bernoullinb_tuned.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_confusion_bernoullinb_tuned.png",
@@ -551,7 +535,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_confusion_bernoullinb_tuned.png"
     },
     {
-      "name": "V16 threshold confusion extratrees tuned",
+      "name": "Threshold Confusion Extratrees Tuned",
       "filename": "v16_threshold_confusion_extratrees_tuned.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_confusion_extratrees_tuned.png",
@@ -559,7 +543,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_confusion_extratrees_tuned.png"
     },
     {
-      "name": "V16 threshold confusion gnb fixed",
+      "name": "Threshold Confusion GNB Fixed",
       "filename": "v16_threshold_confusion_gnb_fixed.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_confusion_gnb_fixed.png",
@@ -567,7 +551,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_confusion_gnb_fixed.png"
     },
     {
-      "name": "V16 threshold confusion power mean ensemble fixed k3",
+      "name": "Threshold Confusion Power Mean Ensemble Fixed K3",
       "filename": "v16_threshold_confusion_power_mean_ensemble_fixed_k3.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_confusion_power_mean_ensemble_fixed_k3.png",
@@ -575,7 +559,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_confusion_power_mean_ensemble_fixed_k3.png"
     },
     {
-      "name": "V16 threshold optimization confusion matrices",
+      "name": "Threshold Optimization Confusion Matrices",
       "filename": "v16_threshold_optimization_confusion_matrices.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_optimization_confusion_matrices.png",
@@ -583,7 +567,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_optimization_confusion_matrices.png"
     },
     {
-      "name": "V16 threshold optimization curves",
+      "name": "Threshold Optimization Curves",
       "filename": "v16_threshold_optimization_curves.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_optimization_curves.png",
@@ -591,7 +575,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_optimization_curves.png"
     },
     {
-      "name": "V16 threshold optimization selected metrics",
+      "name": "Threshold Optimization Selected Metrics",
       "filename": "v16_threshold_optimization_selected_metrics.png",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_optimization_selected_metrics.png",
@@ -599,7 +583,7 @@
       "file": "assets/v16_6_outputs/results_treshold_optimization_v16_threshold_optimization_selected_metrics.png"
     },
     {
-      "name": "V16 map point screening pm roc",
+      "name": "Map Point Screening PM ROC",
       "filename": "v16_map_point_screening_pm_roc.png",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_screening_pm_roc.png",
@@ -607,7 +591,7 @@
       "file": "assets/v16_6_outputs/results_verif_map_points_v16_map_point_screening_pm_roc.png"
     },
     {
-      "name": "V16 pwave current detector end before r hist",
+      "name": "Pwave Current Detector End Before R Hist",
       "filename": "v16_pwave_current_detector_end_before_r_hist.png",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_end_before_r_hist.png",
@@ -615,7 +599,7 @@
       "file": "assets/v16_6_outputs/results_verif_pwave_v16_pwave_current_detector_end_before_r_hist.png"
     },
     {
-      "name": "V16 pwave current detector qrs risk by lead",
+      "name": "Pwave Current Detector Qrs Risk By Lead",
       "filename": "v16_pwave_current_detector_qrs_risk_by_lead.png",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_qrs_risk_by_lead.png",
@@ -623,7 +607,7 @@
       "file": "assets/v16_6_outputs/results_verif_pwave_v16_pwave_current_detector_qrs_risk_by_lead.png"
     },
     {
-      "name": "V16 strict pwave screening pm roc",
+      "name": "Strict Pwave Screening PM ROC",
       "filename": "v16_strict_pwave_screening_pm_roc.png",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_strict_pwave_screening_pm_roc.png",
@@ -631,7 +615,7 @@
       "file": "assets/v16_6_outputs/results_verif_pwave_v16_strict_pwave_screening_pm_roc.png"
     },
     {
-      "name": "V16 2 ensemble comparison",
+      "name": "2 Ensemble Comparison",
       "filename": "v16_2_ensemble_comparison.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_ensemble_comparison.png",
@@ -639,7 +623,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_ensemble_comparison.png"
     },
     {
-      "name": "V16 2 ensemble roc",
+      "name": "2 Ensemble ROC",
       "filename": "v16_2_ensemble_roc.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_ensemble_roc.png",
@@ -647,7 +631,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_ensemble_roc.png"
     },
     {
-      "name": "V16 2 ensemble size effect",
+      "name": "2 Ensemble Size Effect",
       "filename": "v16_2_ensemble_size_effect.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_ensemble_size_effect.png",
@@ -655,7 +639,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_ensemble_size_effect.png"
     },
     {
-      "name": "V16 2 family averages",
+      "name": "2 Family Averages",
       "filename": "v16_2_family_averages.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_family_averages.png",
@@ -663,7 +647,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_family_averages.png"
     },
     {
-      "name": "V16 2 family ranking",
+      "name": "2 Family Ranking",
       "filename": "v16_2_family_ranking.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_family_ranking.png",
@@ -671,7 +655,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_family_ranking.png"
     },
     {
-      "name": "V16 2 individual ranking",
+      "name": "2 Individual Ranking",
       "filename": "v16_2_individual_ranking.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_individual_ranking.png",
@@ -679,7 +663,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_individual_ranking.png"
     },
     {
-      "name": "V16 2 prediction correlation",
+      "name": "2 Prediction Correlation",
       "filename": "v16_2_prediction_correlation.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_prediction_correlation.png",
@@ -687,7 +671,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_prediction_correlation.png"
     },
     {
-      "name": "V16 2 roc top5",
+      "name": "2 ROC Top5",
       "filename": "v16_2_roc_top5.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_roc_top5.png",
@@ -695,7 +679,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_roc_top5.png"
     },
     {
-      "name": "V16 2 summary table",
+      "name": "2 Summary Table",
       "filename": "v16_2_summary_table.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_summary_table.png",
@@ -703,7 +687,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_2_summary_table.png"
     },
     {
-      "name": "V16 fair fight winners",
+      "name": "Fair Fight Winners",
       "filename": "v16_fair_fight_winners.png",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_fair_fight_winners.png",
@@ -711,7 +695,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_00_all_model_screening_outputs_v16_fair_fight_winners.png"
     },
     {
-      "name": "V16 3 plausible5 k preference",
+      "name": "Plausible5 K Preference",
       "filename": "v16_3_plausible5_k_preference.png",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_k_preference.png",
@@ -719,7 +703,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_01_select_plausible5_outputs_v16_3_plausible5_k_preference.png"
     },
     {
-      "name": "V16 3 plausible5 ranking",
+      "name": "Plausible5 Ranking",
       "filename": "v16_3_plausible5_ranking.png",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_ranking.png",
@@ -727,7 +711,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_01_select_plausible5_outputs_v16_3_plausible5_ranking.png"
     },
     {
-      "name": "V16 3 plausible5 roc",
+      "name": "Plausible5 ROC",
       "filename": "v16_3_plausible5_roc.png",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_roc.png",
@@ -735,7 +719,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_01_select_plausible5_outputs_v16_3_plausible5_roc.png"
     },
     {
-      "name": "V16 3 plausible5 selector preference",
+      "name": "Plausible5 Selector Preference",
       "filename": "v16_3_plausible5_selector_preference.png",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_selector_preference.png",
@@ -743,7 +727,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_all_models_01_select_plausible5_outputs_v16_3_plausible5_selector_preference.png"
     },
     {
-      "name": "V16 3 anova k sweep best known curves",
+      "name": "Anova K Sweep Best Known Curves",
       "filename": "v16_3_anova_k_sweep_best_known_curves.png",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_curves.png",
@@ -751,7 +735,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_best_known_v16_3_anova_k_sweep_best_known_curves.png"
     },
     {
-      "name": "V16 3 anova k sweep best known heatmap",
+      "name": "Anova K Sweep Best Known Heatmap",
       "filename": "v16_3_anova_k_sweep_best_known_heatmap.png",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_heatmap.png",
@@ -759,7 +743,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_best_known_v16_3_anova_k_sweep_best_known_heatmap.png"
     },
     {
-      "name": "V16 3 anova k sweep best known roc",
+      "name": "Anova K Sweep Best Known ROC",
       "filename": "v16_3_anova_k_sweep_best_known_roc.png",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_roc.png",
@@ -767,7 +751,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_best_known_v16_3_anova_k_sweep_best_known_roc.png"
     },
     {
-      "name": "Fixed initial5 k sweep",
+      "name": "Fixed Initial5 K Sweep",
       "filename": "fixed_initial5_k_sweep.png",
       "category": "results_comp_modelos/chronological_model_selection",
       "relative_path": "results_comp_modelos/chronological_model_selection/fixed_initial5_k_sweep.png",
@@ -775,7 +759,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_chronological_model_selection_fixed_initial5_k_sweep.png"
     },
     {
-      "name": "Fixed initial5 roc",
+      "name": "Fixed Initial5 ROC",
       "filename": "fixed_initial5_roc.png",
       "category": "results_comp_modelos/chronological_model_selection",
       "relative_path": "results_comp_modelos/chronological_model_selection/fixed_initial5_roc.png",
@@ -783,7 +767,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_chronological_model_selection_fixed_initial5_roc.png"
     },
     {
-      "name": "Tuned six k sweep",
+      "name": "Tuned Six K Sweep",
       "filename": "tuned_six_k_sweep.png",
       "category": "results_comp_modelos/chronological_model_selection",
       "relative_path": "results_comp_modelos/chronological_model_selection/tuned_six_k_sweep.png",
@@ -791,7 +775,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_chronological_model_selection_tuned_six_k_sweep.png"
     },
     {
-      "name": "Tuned six roc",
+      "name": "Tuned Six ROC",
       "filename": "tuned_six_roc.png",
       "category": "results_comp_modelos/chronological_model_selection",
       "relative_path": "results_comp_modelos/chronological_model_selection/tuned_six_roc.png",
@@ -799,7 +783,55 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_chronological_model_selection_tuned_six_roc.png"
     },
     {
-      "name": "V16 3 final options bar roc",
+      "name": "Extratrees Condition Heatmap",
+      "filename": "v16_3_extratrees_condition_heatmap.png",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_condition_heatmap.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_extratrees_addon_v16_3_extratrees_condition_heatmap.png"
+    },
+    {
+      "name": "Extratrees K Curves",
+      "filename": "v16_3_extratrees_k_curves.png",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_k_curves.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_extratrees_addon_v16_3_extratrees_k_curves.png"
+    },
+    {
+      "name": "Three Model K Curves",
+      "filename": "v16_3_three_model_k_curves.png",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_k_curves.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_extratrees_addon_v16_3_three_model_k_curves.png"
+    },
+    {
+      "name": "Three Model Primary Bar ROC",
+      "filename": "v16_3_three_model_primary_bar_roc.png",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_primary_bar_roc.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_extratrees_addon_v16_3_three_model_primary_bar_roc.png"
+    },
+    {
+      "name": "Three Model With Blanking Bar ROC",
+      "filename": "v16_3_three_model_with_blanking_bar_roc.png",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_with_blanking_bar_roc.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_extratrees_addon_v16_3_three_model_with_blanking_bar_roc.png"
+    },
+    {
+      "name": "Three Model With Blanking K Curves",
+      "filename": "v16_3_three_model_with_blanking_k_curves.png",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_with_blanking_k_curves.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_extratrees_addon_v16_3_three_model_with_blanking_k_curves.png"
+    },
+    {
+      "name": "Final Options Bar ROC",
       "filename": "v16_3_final_options_bar_roc.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_bar_roc.png",
@@ -807,7 +839,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_bar_roc.png"
     },
     {
-      "name": "V16 3 final options calibration overlay",
+      "name": "Final Options Calibration Overlay",
       "filename": "v16_3_final_options_calibration_overlay.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_calibration_overlay.png",
@@ -815,7 +847,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_calibration_overlay.png"
     },
     {
-      "name": "V16 3 final options k curves",
+      "name": "Final Options K Curves",
       "filename": "v16_3_final_options_k_curves.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_k_curves.png",
@@ -823,7 +855,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_k_curves.png"
     },
     {
-      "name": "V16 3 final options precision recall overlay",
+      "name": "Final Options Precision Recall Overlay",
       "filename": "v16_3_final_options_precision_recall_overlay.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_precision_recall_overlay.png",
@@ -831,7 +863,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_precision_recall_overlay.png"
     },
     {
-      "name": "V16 3 final options table",
+      "name": "Final Options Table",
       "filename": "v16_3_final_options_table.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_table.png",
@@ -839,7 +871,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_table.png"
     },
     {
-      "name": "V16 3 final options with blanking comparison",
+      "name": "Final Options With Blanking Comparison",
       "filename": "v16_3_final_options_with_blanking_comparison.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_comparison.png",
@@ -847,7 +879,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_with_blanking_comparison.png"
     },
     {
-      "name": "V16 3 pme k3 nested median decision",
+      "name": "Pme K3 Nested Median Decision",
       "filename": "v16_3_pme_k3_nested_median_decision.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_pme_k3_nested_median_decision.png",
@@ -855,7 +887,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_pme_k3_nested_median_decision.png"
     },
     {
-      "name": "V16 bernoulli tuned confusion matrix metrics",
+      "name": "Bernoulli Tuned Confusion Matrix Metrics",
       "filename": "v16_bernoulli_tuned_confusion_matrix_metrics.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_bernoulli_tuned_confusion_matrix_metrics.png",
@@ -863,7 +895,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_bernoulli_tuned_confusion_matrix_metrics.png"
     },
     {
-      "name": "V16 best model loocv fold metrics",
+      "name": "Best Model LOOCV Fold Metrics",
       "filename": "v16_best_model_loocv_fold_metrics.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_metrics.png",
@@ -871,7 +903,15 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_best_model_loocv_fold_metrics.png"
     },
     {
-      "name": "V16 gnb fixed confusion matrix metrics",
+      "name": "Extratrees Tuned Confusion Matrix Metrics",
+      "filename": "v16_extratrees_tuned_confusion_matrix_metrics.png",
+      "category": "results_comp_modelos/final_options",
+      "relative_path": "results_comp_modelos/final_options/v16_extratrees_tuned_confusion_matrix_metrics.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_extratrees_tuned_confusion_matrix_metrics.png"
+    },
+    {
+      "name": "GNB Fixed Confusion Matrix Metrics",
       "filename": "v16_gnb_fixed_confusion_matrix_metrics.png",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_gnb_fixed_confusion_matrix_metrics.png",
@@ -879,7 +919,15 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_gnb_fixed_confusion_matrix_metrics.png"
     },
     {
-      "name": "V16 3 anova k sweep variable params curves",
+      "name": "PM Ensemble Confusion Matrix Metrics",
+      "filename": "v16_pm_ensemble_confusion_matrix_metrics.png",
+      "category": "results_comp_modelos/final_options",
+      "relative_path": "results_comp_modelos/final_options/v16_pm_ensemble_confusion_matrix_metrics.png",
+      "extension": ".png",
+      "file": "assets/v16_6_outputs/results_comp_modelos_final_options_v16_pm_ensemble_confusion_matrix_metrics.png"
+    },
+    {
+      "name": "Anova K Sweep Variable Params Curves",
       "filename": "v16_3_anova_k_sweep_variable_params_curves.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_curves.png",
@@ -887,7 +935,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_variable_params_v16_3_anova_k_sweep_variable_params_curves.png"
     },
     {
-      "name": "V16 3 anova k sweep variable params heatmap",
+      "name": "Anova K Sweep Variable Params Heatmap",
       "filename": "v16_3_anova_k_sweep_variable_params_heatmap.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_heatmap.png",
@@ -895,7 +943,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_variable_params_v16_3_anova_k_sweep_variable_params_heatmap.png"
     },
     {
-      "name": "V16 3 anova k sweep variable params roc",
+      "name": "Anova K Sweep Variable Params ROC",
       "filename": "v16_3_anova_k_sweep_variable_params_roc.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_roc.png",
@@ -903,7 +951,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_variable_params_v16_3_anova_k_sweep_variable_params_roc.png"
     },
     {
-      "name": "V16 pm ensemble fixed vs tuned roc pr",
+      "name": "PM Ensemble Fixed Vs Tuned ROC PR",
       "filename": "v16_pm_ensemble_fixed_vs_tuned_roc_pr.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_fixed_vs_tuned_roc_pr.png",
@@ -911,7 +959,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_variable_params_v16_pm_ensemble_fixed_vs_tuned_roc_pr.png"
     },
     {
-      "name": "V16 pm ensemble fixed vs tuned summary table",
+      "name": "PM Ensemble Fixed Vs Tuned Summary Table",
       "filename": "v16_pm_ensemble_fixed_vs_tuned_summary_table.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_fixed_vs_tuned_summary_table.png",
@@ -919,7 +967,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_variable_params_v16_pm_ensemble_fixed_vs_tuned_summary_table.png"
     },
     {
-      "name": "V16 pm ensemble nested k selection heatmap",
+      "name": "PM Ensemble Nested K Selection Heatmap",
       "filename": "v16_pm_ensemble_nested_k_selection_heatmap.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_nested_k_selection_heatmap.png",
@@ -927,7 +975,7 @@
       "file": "assets/v16_6_outputs/results_comp_modelos_variable_params_v16_pm_ensemble_nested_k_selection_heatmap.png"
     },
     {
-      "name": "V16 pm ensemble tuned k counts",
+      "name": "PM Ensemble Tuned K Counts",
       "filename": "v16_pm_ensemble_tuned_k_counts.png",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_tuned_k_counts.png",
@@ -937,1493 +985,1013 @@
   ],
   "files": [
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/README.md",
       "extension": ".md"
     },
     {
-      "filename": "ml_v16_feature_selection_pairs.py",
-      "category": "results/anova_features/code",
-      "relative_path": "results/anova_features/code/ml_v16_feature_selection_pairs.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "ml_v16_pairplot_features.py",
-      "category": "results/anova_features/code",
-      "relative_path": "results/anova_features/code/ml_v16_pairplot_features.py",
-      "extension": ".py"
-    },
-    {
+      "name": "Anova Full ECG EGM Fscore Posthoc",
       "filename": "v16_anova_full_ecg_egm_fscore_posthoc.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_full_ecg_egm_fscore_posthoc.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_anova_full_ecg_egm_fscore_posthoc.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_anova_full_ecg_egm_fscore_posthoc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova K18 Full ECG EGM Selection Rate",
       "filename": "v16_anova_k18_full_ecg_egm_selection_rate.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_k18_full_ecg_egm_selection_rate.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_anova_k18_full_ecg_egm_selection_rate.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_anova_k18_full_ecg_egm_selection_rate.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova K18 Pwave ECG Selection Rate",
       "filename": "v16_anova_k18_pwave_ecg_selection_rate.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_k18_pwave_ecg_selection_rate.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_anova_k18_pwave_ecg_selection_rate.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_anova_k18_pwave_ecg_selection_rate.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova Pwave ECG Fscore Posthoc",
       "filename": "v16_anova_pwave_ecg_fscore_posthoc.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_anova_pwave_ecg_fscore_posthoc.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_anova_pwave_ecg_fscore_posthoc.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_anova_pwave_ecg_fscore_posthoc.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_boxplots_top_anova_features.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_boxplots_top_anova_features.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Pairplot Top Anova Features",
       "filename": "v16_pairplot_top_anova_features.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_pairplot_top_anova_features.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pairplot_top_anova_features.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_pairplot_top_anova_features.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Pwave Anova Feature Posthoc Effects",
       "filename": "v16_pwave_anova_feature_posthoc_effects.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_pwave_anova_feature_posthoc_effects.csv",
       "extension": ".csv"
     },
     {
+      "name": "Volcano Labeled Features",
       "filename": "v16_volcano_labeled_features.csv",
       "category": "results/anova_features",
       "relative_path": "results/anova_features/v16_volcano_labeled_features.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_volcano_pwave_anova_features.png",
-      "category": "results/anova_features",
-      "relative_path": "results/anova_features/v16_volcano_pwave_anova_features.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/README.md",
       "extension": ".md"
     },
     {
+      "name": "Predictions Bernoulli Tuned",
       "filename": "predictions_v16_bernoulli_tuned.json",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/predictions_v16_bernoulli_tuned.json",
       "extension": ".json"
     },
     {
+      "name": "Results Bernoulli Tuned",
       "filename": "results_v16_bernoulli_tuned.csv",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/results_v16_bernoulli_tuned.csv",
       "extension": ".csv"
     },
     {
-      "filename": "roc_bernoulli_tuned_ecg_nolit_clinical_preop.png",
-      "category": "results/bernoulli_tuned/sensitivity_roc",
-      "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_ecg_nolit_clinical_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_bernoulli_tuned_pwave_litsensitivity_preop.png",
-      "category": "results/bernoulli_tuned/sensitivity_roc",
-      "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_pwave_litsensitivity_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_bernoulli_tuned_pwave_nolit_clinical_preop.png",
-      "category": "results/bernoulli_tuned/sensitivity_roc",
-      "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_pwave_nolit_clinical_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_bernoulli_tuned_pwave_nolit_clinical_withblanking.png",
-      "category": "results/bernoulli_tuned/sensitivity_roc",
-      "relative_path": "results/bernoulli_tuned/sensitivity_roc/roc_bernoulli_tuned_pwave_nolit_clinical_withblanking.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Bernoulli Tuned Blanking Comparison",
       "filename": "v16_bernoulli_tuned_blanking_comparison.csv",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_blanking_comparison.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_bernoulli_tuned_calibration.png",
-      "category": "results/bernoulli_tuned",
-      "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_calibration.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_bernoulli_tuned_confusion_matrix.png",
-      "category": "results/bernoulli_tuned",
-      "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_confusion_matrix.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_bernoulli_tuned_confusion_matrix_metrics.png",
-      "category": "results/bernoulli_tuned",
-      "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_bernoulli_tuned_precision_recall.png",
-      "category": "results/bernoulli_tuned",
-      "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_precision_recall.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_bernoulli_tuned_prediction_distribution.png",
-      "category": "results/bernoulli_tuned",
-      "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_prediction_distribution.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_bernoulli_tuned_roc.png",
-      "category": "results/bernoulli_tuned",
-      "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Bernoulli Tuned Threshold Sweep LOOCV",
       "filename": "v16_bernoulli_tuned_threshold_sweep_loocv.csv",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_threshold_sweep_loocv.csv",
       "extension": ".csv"
     },
     {
+      "name": "Bernoulli Tuned Threshold Sweep Repeated",
       "filename": "v16_bernoulli_tuned_threshold_sweep_repeated.csv",
       "category": "results/bernoulli_tuned",
       "relative_path": "results/bernoulli_tuned/v16_bernoulli_tuned_threshold_sweep_repeated.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme Extra MAT Audit",
       "filename": "README_extra_mat_audit.md",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/README_extra_mat_audit.md",
       "extension": ".md"
     },
     {
+      "name": "Classic Voltage Cv Candidate Features",
       "filename": "classic_voltage_cv_candidate_features.csv",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/classic_voltage_cv_candidate_features.csv",
       "extension": ".csv"
     },
     {
+      "name": "Classic Voltage Cv Experiment Summary",
       "filename": "classic_voltage_cv_experiment_summary.csv",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/classic_voltage_cv_experiment_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/extra_mat_audit/code",
       "relative_path": "results/extra_mat_audit/code/README.md",
       "extension": ".md"
     },
     {
-      "filename": "audit_pic_mat_payloads.py",
-      "category": "results/extra_mat_audit/code",
-      "relative_path": "results/extra_mat_audit/code/audit_pic_mat_payloads.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "build_extra_mat_audit_outputs.py",
-      "category": "results/extra_mat_audit/code",
-      "relative_path": "results/extra_mat_audit/code/build_extra_mat_audit_outputs.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "experiment_extra_mat_features.py",
-      "category": "results/extra_mat_audit/code",
-      "relative_path": "results/extra_mat_audit/code/experiment_extra_mat_features.py",
-      "extension": ".py"
-    },
-    {
+      "name": "MAT File Payload Inventory",
       "filename": "mat_file_payload_inventory.csv",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/mat_file_payload_inventory.csv",
       "extension": ".csv"
     },
     {
+      "name": "MAT File Payload Summary",
       "filename": "mat_file_payload_summary.json",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/mat_file_payload_summary.json",
       "extension": ".json"
     },
     {
-      "filename": "v16_extra_mat_auc_comparison.png",
-      "category": "results/extra_mat_audit",
-      "relative_path": "results/extra_mat_audit/v16_extra_mat_auc_comparison.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Extra MAT AUC Comparison Summary",
       "filename": "v16_extra_mat_auc_comparison_summary.csv",
       "category": "results/extra_mat_audit",
       "relative_path": "results/extra_mat_audit/v16_extra_mat_auc_comparison_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_extra_mat_inventory.png",
-      "category": "results/extra_mat_audit",
-      "relative_path": "results/extra_mat_audit/v16_extra_mat_inventory.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/README.md",
       "extension": ".md"
     },
     {
+      "name": "Predictions Extratrees Tuned",
       "filename": "predictions_v16_extratrees_tuned.json",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/predictions_v16_extratrees_tuned.json",
       "extension": ".json"
     },
     {
+      "name": "Results Extratrees Tuned",
       "filename": "results_v16_extratrees_tuned.csv",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/results_v16_extratrees_tuned.csv",
       "extension": ".csv"
     },
     {
-      "filename": "roc_extratrees_tuned_pwave_nolit_clinical_preop.png",
-      "category": "results/extratrees_tuned/sensitivity_roc",
-      "relative_path": "results/extratrees_tuned/sensitivity_roc/roc_extratrees_tuned_pwave_nolit_clinical_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_extratrees_tuned_pwave_nolit_clinical_withblanking.png",
-      "category": "results/extratrees_tuned/sensitivity_roc",
-      "relative_path": "results/extratrees_tuned/sensitivity_roc/roc_extratrees_tuned_pwave_nolit_clinical_withblanking.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Extratrees Tuned Blanking Comparison",
       "filename": "v16_extratrees_tuned_blanking_comparison.csv",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_blanking_comparison.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_extratrees_tuned_calibration.png",
-      "category": "results/extratrees_tuned",
-      "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_calibration.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_extratrees_tuned_confusion_matrix.png",
-      "category": "results/extratrees_tuned",
-      "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_confusion_matrix.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_extratrees_tuned_confusion_matrix_metrics.png",
-      "category": "results/extratrees_tuned",
-      "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_extratrees_tuned_precision_recall.png",
-      "category": "results/extratrees_tuned",
-      "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_precision_recall.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_extratrees_tuned_prediction_distribution.png",
-      "category": "results/extratrees_tuned",
-      "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_prediction_distribution.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_extratrees_tuned_roc.png",
-      "category": "results/extratrees_tuned",
-      "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Extratrees Tuned Threshold Sweep LOOCV",
       "filename": "v16_extratrees_tuned_threshold_sweep_loocv.csv",
       "category": "results/extratrees_tuned",
       "relative_path": "results/extratrees_tuned/v16_extratrees_tuned_threshold_sweep_loocv.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/README.md",
       "extension": ".md"
     },
     {
+      "name": "Predictions GNB Fixed",
       "filename": "predictions_v16_gnb_fixed.json",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/predictions_v16_gnb_fixed.json",
       "extension": ".json"
     },
     {
+      "name": "Results GNB Fixed",
       "filename": "results_v16_gnb_fixed.csv",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/results_v16_gnb_fixed.csv",
       "extension": ".csv"
     },
     {
-      "filename": "roc_gnb_fixed_ecg_nolit_clinical_preop.png",
-      "category": "results/gnb_fixed/sensitivity_roc",
-      "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_ecg_nolit_clinical_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_gnb_fixed_pwave_litsensitivity_preop.png",
-      "category": "results/gnb_fixed/sensitivity_roc",
-      "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_pwave_litsensitivity_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_gnb_fixed_pwave_nolit_clinical_preop.png",
-      "category": "results/gnb_fixed/sensitivity_roc",
-      "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_pwave_nolit_clinical_preop.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "roc_gnb_fixed_pwave_nolit_clinical_withblanking.png",
-      "category": "results/gnb_fixed/sensitivity_roc",
-      "relative_path": "results/gnb_fixed/sensitivity_roc/roc_gnb_fixed_pwave_nolit_clinical_withblanking.png",
-      "extension": ".png"
-    },
-    {
+      "name": "GNB Fixed Blanking Comparison",
       "filename": "v16_gnb_fixed_blanking_comparison.csv",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_blanking_comparison.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_gnb_fixed_calibration.png",
-      "category": "results/gnb_fixed",
-      "relative_path": "results/gnb_fixed/v16_gnb_fixed_calibration.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_gnb_fixed_confusion_matrix.png",
-      "category": "results/gnb_fixed",
-      "relative_path": "results/gnb_fixed/v16_gnb_fixed_confusion_matrix.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_gnb_fixed_confusion_matrix_metrics.png",
-      "category": "results/gnb_fixed",
-      "relative_path": "results/gnb_fixed/v16_gnb_fixed_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_gnb_fixed_precision_recall.png",
-      "category": "results/gnb_fixed",
-      "relative_path": "results/gnb_fixed/v16_gnb_fixed_precision_recall.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_gnb_fixed_prediction_distribution.png",
-      "category": "results/gnb_fixed",
-      "relative_path": "results/gnb_fixed/v16_gnb_fixed_prediction_distribution.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_gnb_fixed_roc.png",
-      "category": "results/gnb_fixed",
-      "relative_path": "results/gnb_fixed/v16_gnb_fixed_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "GNB Fixed Threshold Sweep LOOCV",
       "filename": "v16_gnb_fixed_threshold_sweep_loocv.csv",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_threshold_sweep_loocv.csv",
       "extension": ".csv"
     },
     {
+      "name": "GNB Fixed Threshold Sweep Repeated",
       "filename": "v16_gnb_fixed_threshold_sweep_repeated.csv",
       "category": "results/gnb_fixed",
       "relative_path": "results/gnb_fixed/v16_gnb_fixed_threshold_sweep_repeated.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/missingness",
       "relative_path": "results/missingness/README.md",
       "extension": ".md"
     },
     {
+      "name": "Missingness AUC By K",
       "filename": "missingness_auc_by_k.csv",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_auc_by_k.csv",
       "extension": ".csv"
     },
     {
-      "filename": "missingness_bar_roc.png",
-      "category": "results/missingness",
-      "relative_path": "results/missingness/missingness_bar_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Missingness Bernoulli Choices",
       "filename": "missingness_bernoulli_choices.csv",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_bernoulli_choices.csv",
       "extension": ".csv"
     },
     {
+      "name": "Missingness Bernoulli Param Counts K18",
       "filename": "missingness_bernoulli_param_counts_k18.csv",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_bernoulli_param_counts_k18.csv",
       "extension": ".csv"
     },
     {
-      "filename": "missingness_k_curves.png",
-      "category": "results/missingness",
-      "relative_path": "results/missingness/missingness_k_curves.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Missingness Predictions Long",
       "filename": "missingness_predictions_long.csv",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_predictions_long.csv",
       "extension": ".csv"
     },
     {
+      "name": "Missingness Summary",
       "filename": "missingness_summary.json",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_summary.json",
       "extension": ".json"
     },
     {
+      "name": "Missingness Summary Best K",
       "filename": "missingness_summary_best_k.csv",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_summary_best_k.csv",
       "extension": ".csv"
     },
     {
+      "name": "Missingness Summary K18",
       "filename": "missingness_summary_k18.csv",
       "category": "results/missingness",
       "relative_path": "results/missingness/missingness_summary_k18.csv",
       "extension": ".csv"
     },
     {
-      "filename": "missingness_summary_table.png",
-      "category": "results/missingness",
-      "relative_path": "results/missingness/missingness_summary_table.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/model_decision_evidence/01_single_vs_multisegment",
       "relative_path": "results/model_decision_evidence/01_single_vs_multisegment/README.md",
       "extension": ".md"
     },
     {
+      "name": "Current Final Model Reference",
       "filename": "current_final_model_reference.csv",
       "category": "results/model_decision_evidence/01_single_vs_multisegment",
       "relative_path": "results/model_decision_evidence/01_single_vs_multisegment/current_final_model_reference.csv",
       "extension": ".csv"
     },
     {
+      "name": "Pme Step5 Multiseg",
       "filename": "v16_pme_step5_multiseg.csv",
       "category": "results/model_decision_evidence/01_single_vs_multisegment",
       "relative_path": "results/model_decision_evidence/01_single_vs_multisegment/v16_pme_step5_multiseg.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pme_step5_multiseg.png",
-      "category": "results/model_decision_evidence/01_single_vs_multisegment",
-      "relative_path": "results/model_decision_evidence/01_single_vs_multisegment/v16_pme_step5_multiseg.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/model_decision_evidence/02_selector_choice_anova",
       "relative_path": "results/model_decision_evidence/02_selector_choice_anova/README.md",
       "extension": ".md"
     },
     {
+      "name": "Anova Output Locations",
       "filename": "anova_output_locations.csv",
       "category": "results/model_decision_evidence/02_selector_choice_anova",
       "relative_path": "results/model_decision_evidence/02_selector_choice_anova/anova_output_locations.csv",
       "extension": ".csv"
     },
     {
+      "name": "Current Final Model Reference",
       "filename": "current_final_model_reference.csv",
       "category": "results/model_decision_evidence/02_selector_choice_anova",
       "relative_path": "results/model_decision_evidence/02_selector_choice_anova/current_final_model_reference.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/README.md",
       "extension": ".md"
     },
     {
+      "name": "Clinical Context Output Locations",
       "filename": "clinical_context_output_locations.csv",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/clinical_context_output_locations.csv",
       "extension": ".csv"
     },
     {
+      "name": "Current Final Model Reference",
       "filename": "current_final_model_reference.csv",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/current_final_model_reference.csv",
       "extension": ".csv"
     },
     {
+      "name": "Pme Step3 Leads",
       "filename": "v16_pme_step3_leads.csv",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/v16_pme_step3_leads.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pme_step3_leads.png",
-      "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
-      "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/v16_pme_step3_leads.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Pme Step5 Modalities",
       "filename": "v16_pme_step5_modalities.csv",
       "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
       "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/v16_pme_step5_modalities.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pme_step5_modalities.png",
-      "category": "results/model_decision_evidence/03_signal_scope_and_clinical_context",
-      "relative_path": "results/model_decision_evidence/03_signal_scope_and_clinical_context/v16_pme_step5_modalities.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/model_decision_evidence/04_nested_optuna_validation_context",
       "relative_path": "results/model_decision_evidence/04_nested_optuna_validation_context/README.md",
       "extension": ".md"
     },
     {
+      "name": "Current Final Model Reference",
       "filename": "current_final_model_reference.csv",
       "category": "results/model_decision_evidence/04_nested_optuna_validation_context",
       "relative_path": "results/model_decision_evidence/04_nested_optuna_validation_context/current_final_model_reference.csv",
       "extension": ".csv"
     },
     {
+      "name": "Nested Context Output Locations",
       "filename": "nested_context_output_locations.csv",
       "category": "results/model_decision_evidence/04_nested_optuna_validation_context",
       "relative_path": "results/model_decision_evidence/04_nested_optuna_validation_context/nested_context_output_locations.csv",
       "extension": ".csv"
     },
     {
+      "name": "Pme Nested Optuna Context",
       "filename": "v16_pme_nested_optuna_context.csv",
       "category": "results/model_decision_evidence/04_nested_optuna_validation_context",
       "relative_path": "results/model_decision_evidence/04_nested_optuna_validation_context/v16_pme_nested_optuna_context.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pme_nested_optuna_context.png",
-      "category": "results/model_decision_evidence/04_nested_optuna_validation_context",
-      "relative_path": "results/model_decision_evidence/04_nested_optuna_validation_context/v16_pme_nested_optuna_context.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/model_decision_evidence",
       "relative_path": "results/model_decision_evidence/README.md",
       "extension": ".md"
     },
     {
+      "name": "Current Model Decision Evidence Manifest",
       "filename": "current_model_decision_evidence_manifest.csv",
       "category": "results/model_decision_evidence",
       "relative_path": "results/model_decision_evidence/current_model_decision_evidence_manifest.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/README.md",
       "extension": ".md"
     },
     {
+      "name": "Predictions PM Ensemble",
       "filename": "predictions_v16_pm_ensemble.json",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/predictions_v16_pm_ensemble.json",
       "extension": ".json"
     },
     {
+      "name": "Results PM Ensemble",
       "filename": "results_v16_pm_ensemble.csv",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/results_v16_pm_ensemble.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_calibration.png",
-      "category": "results/pm_ensemble",
-      "relative_path": "results/pm_ensemble/v16_pm_ensemble_calibration.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_pm_ensemble_confusion_matrix.png",
-      "category": "results/pm_ensemble",
-      "relative_path": "results/pm_ensemble/v16_pm_ensemble_confusion_matrix.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_pm_ensemble_confusion_matrix_metrics.png",
-      "category": "results/pm_ensemble",
-      "relative_path": "results/pm_ensemble/v16_pm_ensemble_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Power Mean Sweep",
       "filename": "v16_pm_ensemble_power_mean_sweep.csv",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_power_mean_sweep.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_precision_recall.png",
-      "category": "results/pm_ensemble",
-      "relative_path": "results/pm_ensemble/v16_pm_ensemble_precision_recall.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_pm_ensemble_prediction_distribution.png",
-      "category": "results/pm_ensemble",
-      "relative_path": "results/pm_ensemble/v16_pm_ensemble_prediction_distribution.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Predictions",
       "filename": "v16_pm_ensemble_predictions.csv",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_predictions.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_roc.png",
-      "category": "results/pm_ensemble",
-      "relative_path": "results/pm_ensemble/v16_pm_ensemble_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Threshold Sweep LOOCV",
       "filename": "v16_pm_ensemble_threshold_sweep_loocv.csv",
       "category": "results/pm_ensemble",
       "relative_path": "results/pm_ensemble/v16_pm_ensemble_threshold_sweep_loocv.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_threshold_confusion_bernoullinb_tuned.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_confusion_bernoullinb_tuned.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_threshold_confusion_extratrees_tuned.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_confusion_extratrees_tuned.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_threshold_confusion_gnb_fixed.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_confusion_gnb_fixed.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_threshold_confusion_power_mean_ensemble_fixed_k3.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_confusion_power_mean_ensemble_fixed_k3.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Threshold Optimization Readme",
       "filename": "v16_threshold_optimization_README.md",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_optimization_README.md",
       "extension": ".md"
     },
     {
-      "filename": "v16_threshold_optimization_confusion_matrices.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_optimization_confusion_matrices.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_threshold_optimization_curves.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_optimization_curves.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Threshold Optimization Full Sweep",
       "filename": "v16_threshold_optimization_full_sweep.csv",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_optimization_full_sweep.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_threshold_optimization_selected_metrics.png",
-      "category": "results/treshold_optimization",
-      "relative_path": "results/treshold_optimization/v16_threshold_optimization_selected_metrics.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Threshold Optimization Selected Thresholds",
       "filename": "v16_threshold_optimization_selected_thresholds.csv",
       "category": "results/treshold_optimization",
       "relative_path": "results/treshold_optimization/v16_threshold_optimization_selected_thresholds.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme Map Point Screening",
       "filename": "README_map_point_screening.md",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/README_map_point_screening.md",
       "extension": ".md"
     },
     {
-      "filename": "ml_v16_map_point_screen_auc.cpython-314.pyc",
-      "category": "results/verif_map_points/code/__pycache__",
-      "relative_path": "results/verif_map_points/code/__pycache__/ml_v16_map_point_screen_auc.cpython-314.pyc",
-      "extension": ".pyc"
-    },
-    {
-      "filename": "ml_v16_map_point_screen_auc.py",
-      "category": "results/verif_map_points/code",
-      "relative_path": "results/verif_map_points/code/ml_v16_map_point_screen_auc.py",
-      "extension": ".py"
-    },
-    {
+      "name": "Map Point Best Std Point Pwave Features",
       "filename": "v16_map_point_best_std_point_pwave_features.csv",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_best_std_point_pwave_features.csv",
       "extension": ".csv"
     },
     {
+      "name": "Map Point Extraction Errors",
       "filename": "v16_map_point_extraction_errors.csv",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_extraction_errors.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_map_point_screening_pm_roc.png",
-      "category": "results/verif_map_points",
-      "relative_path": "results/verif_map_points/v16_map_point_screening_pm_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Map Point Screening Predictions",
       "filename": "v16_map_point_screening_predictions.csv",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_screening_predictions.csv",
       "extension": ".csv"
     },
     {
+      "name": "Map Point Screening Result",
       "filename": "v16_map_point_screening_result.json",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_screening_result.json",
       "extension": ".json"
     },
     {
+      "name": "Map Point Screening Summary",
       "filename": "v16_map_point_screening_summary.csv",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_screening_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_map_point_variant_caches_subset36.pkl",
-      "category": "results/verif_map_points",
-      "relative_path": "results/verif_map_points/v16_map_point_variant_caches_subset36.pkl",
-      "extension": ".pkl"
-    },
-    {
+      "name": "Map Point Variation Audit",
       "filename": "v16_map_point_variation_audit.csv",
       "category": "results/verif_map_points",
       "relative_path": "results/verif_map_points/v16_map_point_variation_audit.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme Strict Pwave Screening",
       "filename": "README_strict_pwave_screening.md",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/README_strict_pwave_screening.md",
       "extension": ".md"
     },
     {
+      "name": "Readme Verif Pwave",
       "filename": "README_verif_pwave.md",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/README_verif_pwave.md",
       "extension": ".md"
     },
     {
-      "filename": "ml_v16_strict_pwave_screen_auc.py",
-      "category": "results/verif_pwave/code",
-      "relative_path": "results/verif_pwave/code/ml_v16_strict_pwave_screen_auc.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "ml_v16_verif_pwave_detector.py",
-      "category": "results/verif_pwave/code",
-      "relative_path": "results/verif_pwave/code/ml_v16_verif_pwave_detector.py",
-      "extension": ".py"
-    },
-    {
+      "name": "Pwave Current Detector Beat Windows",
       "filename": "v16_pwave_current_detector_beat_windows.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_beat_windows.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pwave_current_detector_end_before_r_hist.png",
-      "category": "results/verif_pwave",
-      "relative_path": "results/verif_pwave/v16_pwave_current_detector_end_before_r_hist.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Pwave Current Detector Errors",
       "filename": "v16_pwave_current_detector_errors.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_errors.csv",
       "extension": ".csv"
     },
     {
+      "name": "Pwave Current Detector Overall",
       "filename": "v16_pwave_current_detector_overall.json",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_overall.json",
       "extension": ".json"
     },
     {
-      "filename": "v16_pwave_current_detector_qrs_risk_by_lead.png",
-      "category": "results/verif_pwave",
-      "relative_path": "results/verif_pwave/v16_pwave_current_detector_qrs_risk_by_lead.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Pwave Current Detector Summary By Lead",
       "filename": "v16_pwave_current_detector_summary_by_lead.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_summary_by_lead.csv",
       "extension": ".csv"
     },
     {
+      "name": "Pwave Current Detector Summary By Patient",
       "filename": "v16_pwave_current_detector_summary_by_patient.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_pwave_current_detector_summary_by_patient.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_strict_pwave_screening_cache.pkl",
-      "category": "results/verif_pwave",
-      "relative_path": "results/verif_pwave/v16_strict_pwave_screening_cache.pkl",
-      "extension": ".pkl"
-    },
-    {
+      "name": "Strict Pwave Screening Extraction Errors",
       "filename": "v16_strict_pwave_screening_extraction_errors.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_strict_pwave_screening_extraction_errors.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_strict_pwave_screening_pm_roc.png",
-      "category": "results/verif_pwave",
-      "relative_path": "results/verif_pwave/v16_strict_pwave_screening_pm_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Strict Pwave Screening Predictions",
       "filename": "v16_strict_pwave_screening_predictions.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_strict_pwave_screening_predictions.csv",
       "extension": ".csv"
     },
     {
+      "name": "Strict Pwave Screening Result",
       "filename": "v16_strict_pwave_screening_result.json",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_strict_pwave_screening_result.json",
       "extension": ".json"
     },
     {
+      "name": "Strict Pwave Screening Summary",
       "filename": "v16_strict_pwave_screening_summary.csv",
       "category": "results/verif_pwave",
       "relative_path": "results/verif_pwave/v16_strict_pwave_screening_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results_comp_modelos",
       "relative_path": "results_comp_modelos/README.md",
       "extension": ".md"
     },
     {
-      "filename": "ml_v16_2_plots.py",
-      "category": "results_comp_modelos/all models/00_all_model_screening/code",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/code/ml_v16_2_plots.py",
-      "extension": ".py"
+      "name": "Advanced Full Predictions",
+      "filename": "advanced_full_predictions.csv",
+      "category": "results_comp_modelos/advanced_full",
+      "relative_path": "results_comp_modelos/advanced_full/advanced_full_predictions.csv",
+      "extension": ".csv"
     },
     {
-      "filename": "ml_v16_2_soft_ensemble.py",
-      "category": "results_comp_modelos/all models/00_all_model_screening/code",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/code/ml_v16_2_soft_ensemble.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "ml_v16_3_anova_k_sweep_models.py",
-      "category": "results_comp_modelos/all models/00_all_model_screening/code",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/code/ml_v16_3_anova_k_sweep_models.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "ml_v16_3_fair_fight.py",
-      "category": "results_comp_modelos/all models/00_all_model_screening/code",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/code/ml_v16_3_fair_fight.py",
-      "extension": ".py"
-    },
-    {
-      "filename": "v16_2_ensemble_comparison.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_ensemble_comparison.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_ensemble_roc.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_ensemble_roc.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_ensemble_size_effect.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_ensemble_size_effect.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_family_averages.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_family_averages.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_family_ranking.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_family_ranking.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_individual_ranking.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_individual_ranking.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_prediction_correlation.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_prediction_correlation.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_roc_top5.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_roc_top5.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_2_summary_table.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_2_summary_table.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Fair Fight Summary",
       "filename": "v16_fair_fight_summary.csv",
       "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
       "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_fair_fight_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_fair_fight_winners.png",
-      "category": "results_comp_modelos/all models/00_all_model_screening/outputs",
-      "relative_path": "results_comp_modelos/all models/00_all_model_screening/outputs/v16_fair_fight_winners.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "ml_v16_3_fair_fight_plausible5.py",
-      "category": "results_comp_modelos/all models/01_select_plausible5/code",
-      "relative_path": "results_comp_modelos/all models/01_select_plausible5/code/ml_v16_3_fair_fight_plausible5.py",
-      "extension": ".py"
-    },
-    {
+      "name": "Plausible5 Fold Choices",
       "filename": "v16_3_plausible5_fold_choices.csv",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_fold_choices.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_plausible5_k_preference.png",
-      "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
-      "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_k_preference.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Plausible5 Predictions",
       "filename": "v16_3_plausible5_predictions.csv",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_predictions.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_plausible5_ranking.png",
-      "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
-      "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_ranking.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Plausible5 Results",
       "filename": "v16_3_plausible5_results.csv",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_results.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_plausible5_roc.png",
-      "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
-      "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_roc.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_3_plausible5_selector_preference.png",
-      "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
-      "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_selector_preference.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Plausible5 Summary",
       "filename": "v16_3_plausible5_summary.json",
       "category": "results_comp_modelos/all models/01_select_plausible5/outputs",
       "relative_path": "results_comp_modelos/all models/01_select_plausible5/outputs/v16_3_plausible5_summary.json",
       "extension": ".json"
     },
     {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results_comp_modelos/all models",
       "relative_path": "results_comp_modelos/all models/README.md",
       "extension": ".md"
     },
     {
+      "name": "Process Manifest",
       "filename": "process_manifest.csv",
       "category": "results_comp_modelos/all models",
       "relative_path": "results_comp_modelos/all models/process_manifest.csv",
       "extension": ".csv"
     },
     {
+      "name": "Selection 20 To 5 Summary",
       "filename": "selection_20_to_5_summary.csv",
       "category": "results_comp_modelos/all models",
       "relative_path": "results_comp_modelos/all models/selection_20_to_5_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "Anova K Sweep Best Known AUC",
       "filename": "v16_3_anova_k_sweep_best_known_auc.csv",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_auc.csv",
       "extension": ".csv"
     },
     {
+      "name": "Anova K Sweep Best Known By Model",
       "filename": "v16_3_anova_k_sweep_best_known_by_model.csv",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_by_model.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_anova_k_sweep_best_known_curves.png",
-      "category": "results_comp_modelos/best_known",
-      "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_curves.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_3_anova_k_sweep_best_known_heatmap.png",
-      "category": "results_comp_modelos/best_known",
-      "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_heatmap.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova K Sweep Best Known Predictions Long",
       "filename": "v16_3_anova_k_sweep_best_known_predictions_long.csv",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_predictions_long.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_anova_k_sweep_best_known_roc.png",
-      "category": "results_comp_modelos/best_known",
-      "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova K Sweep Best Known Summary",
       "filename": "v16_3_anova_k_sweep_best_known_summary.json",
       "category": "results_comp_modelos/best_known",
       "relative_path": "results_comp_modelos/best_known/v16_3_anova_k_sweep_best_known_summary.json",
       "extension": ".json"
     },
     {
-      "filename": "fixed_initial5_k_sweep.png",
-      "category": "results_comp_modelos/chronological_model_selection",
-      "relative_path": "results_comp_modelos/chronological_model_selection/fixed_initial5_k_sweep.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "fixed_initial5_roc.png",
-      "category": "results_comp_modelos/chronological_model_selection",
-      "relative_path": "results_comp_modelos/chronological_model_selection/fixed_initial5_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Fixed Initial5 Summary",
       "filename": "fixed_initial5_summary.csv",
       "category": "results_comp_modelos/chronological_model_selection",
       "relative_path": "results_comp_modelos/chronological_model_selection/fixed_initial5_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "tuned_six_k_sweep.png",
-      "category": "results_comp_modelos/chronological_model_selection",
-      "relative_path": "results_comp_modelos/chronological_model_selection/tuned_six_k_sweep.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "tuned_six_roc.png",
-      "category": "results_comp_modelos/chronological_model_selection",
-      "relative_path": "results_comp_modelos/chronological_model_selection/tuned_six_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Tuned Six Summary",
       "filename": "tuned_six_summary.csv",
       "category": "results_comp_modelos/chronological_model_selection",
       "relative_path": "results_comp_modelos/chronological_model_selection/tuned_six_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_final_options_bar_roc.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_final_options_bar_roc.png",
-      "extension": ".png"
+      "name": "Readme",
+      "filename": "README.md",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/README.md",
+      "extension": ".md"
     },
     {
-      "filename": "v16_3_final_options_calibration_overlay.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_final_options_calibration_overlay.png",
-      "extension": ".png"
+      "name": "Extratrees AUC By K",
+      "filename": "v16_3_extratrees_auc_by_k.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_auc_by_k.csv",
+      "extension": ".csv"
     },
     {
+      "name": "Extratrees Best By Condition",
+      "filename": "v16_3_extratrees_best_by_condition.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_best_by_condition.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Extratrees Predictions Long",
+      "filename": "v16_3_extratrees_predictions_long.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_predictions_long.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Extratrees Predictions Partial",
+      "filename": "v16_3_extratrees_predictions_partial.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_predictions_partial.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Extratrees Tuned Choices",
+      "filename": "v16_3_extratrees_tuned_choices.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_tuned_choices.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Extratrees Tuned Choices Partial",
+      "filename": "v16_3_extratrees_tuned_choices_partial.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_tuned_choices_partial.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Extratrees Tuned Param Counts",
+      "filename": "v16_3_extratrees_tuned_param_counts.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_extratrees_tuned_param_counts.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Three Model Primary Predictions Long",
+      "filename": "v16_3_three_model_primary_predictions_long.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_primary_predictions_long.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Three Model Primary Summary",
+      "filename": "v16_3_three_model_primary_summary.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_primary_summary.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Three Model With Blanking Predictions Long",
+      "filename": "v16_3_three_model_with_blanking_predictions_long.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_with_blanking_predictions_long.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Three Model With Blanking Summary",
+      "filename": "v16_3_three_model_with_blanking_summary.csv",
+      "category": "results_comp_modelos/extratrees_addon",
+      "relative_path": "results_comp_modelos/extratrees_addon/v16_3_three_model_with_blanking_summary.csv",
+      "extension": ".csv"
+    },
+    {
+      "name": "Final Options Diagnostic Overlay Predictions",
       "filename": "v16_3_final_options_diagnostic_overlay_predictions.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_diagnostic_overlay_predictions.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options Diagnostic Overlay Summary",
       "filename": "v16_3_final_options_diagnostic_overlay_summary.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_diagnostic_overlay_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_final_options_k_curves.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_final_options_k_curves.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_3_final_options_precision_recall_overlay.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_final_options_precision_recall_overlay.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Final Options Summary",
       "filename": "v16_3_final_options_summary.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options Summary",
       "filename": "v16_3_final_options_summary.json",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_summary.json",
       "extension": ".json"
     },
     {
-      "filename": "v16_3_final_options_table.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_final_options_table.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Final Options With Blanking AUC",
       "filename": "v16_3_final_options_with_blanking_auc.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_auc.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options With Blanking Bernoulli Choices",
       "filename": "v16_3_final_options_with_blanking_bernoulli_choices.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_bernoulli_choices.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options With Blanking Bernoulli Param Counts K18",
       "filename": "v16_3_final_options_with_blanking_bernoulli_param_counts_k18.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_bernoulli_param_counts_k18.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_final_options_with_blanking_comparison.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_comparison.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Final Options With Blanking Extratrees Choices",
       "filename": "v16_3_final_options_with_blanking_extratrees_choices.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_extratrees_choices.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options With Blanking Extratrees Param Counts K12",
       "filename": "v16_3_final_options_with_blanking_extratrees_param_counts_k12.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_extratrees_param_counts_k12.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options With Blanking Predictions Long",
       "filename": "v16_3_final_options_with_blanking_predictions_long.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_predictions_long.csv",
       "extension": ".csv"
     },
     {
+      "name": "Final Options With Blanking Summary",
       "filename": "v16_3_final_options_with_blanking_summary.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_final_options_with_blanking_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "Pme K3 Decision Curve",
       "filename": "v16_3_pme_k3_decision_curve.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_3_pme_k3_decision_curve.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_pme_k3_nested_median_decision.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_3_pme_k3_nested_median_decision.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_bernoulli_tuned_confusion_matrix_metrics.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_bernoulli_tuned_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_best_model_loocv_fold_metrics.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_metrics.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Best Model LOOCV Fold Metrics Readme",
       "filename": "v16_best_model_loocv_fold_metrics_README.md",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_metrics_README.md",
       "extension": ".md"
     },
     {
+      "name": "Best Model LOOCV Fold Metrics Bootstrap Ci",
       "filename": "v16_best_model_loocv_fold_metrics_bootstrap_ci.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_metrics_bootstrap_ci.csv",
       "extension": ".csv"
     },
     {
+      "name": "Best Model LOOCV Fold Metrics Summary",
       "filename": "v16_best_model_loocv_fold_metrics_summary.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_metrics_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "Best Model LOOCV Fold Metrics Summary",
       "filename": "v16_best_model_loocv_fold_metrics_summary.json",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_metrics_summary.json",
       "extension": ".json"
     },
     {
+      "name": "Best Model LOOCV Fold Outcomes",
       "filename": "v16_best_model_loocv_fold_outcomes.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_best_model_loocv_fold_outcomes.csv",
       "extension": ".csv"
     },
     {
+      "name": "Confusion Matrix Metrics Summary",
       "filename": "v16_confusion_matrix_metrics_summary.csv",
       "category": "results_comp_modelos/final_options",
       "relative_path": "results_comp_modelos/final_options/v16_confusion_matrix_metrics_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_extratrees_tuned_confusion_matrix_metrics.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_extratrees_tuned_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_gnb_fixed_confusion_matrix_metrics.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_gnb_fixed_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_pm_ensemble_confusion_matrix_metrics.png",
-      "category": "results_comp_modelos/final_options",
-      "relative_path": "results_comp_modelos/final_options/v16_pm_ensemble_confusion_matrix_metrics.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Readme",
       "filename": "README.md",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/README.md",
       "extension": ".md"
     },
     {
+      "name": "Readme PM Fixed Vs Tuned",
       "filename": "README_pm_fixed_vs_tuned.md",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/README_pm_fixed_vs_tuned.md",
       "extension": ".md"
     },
     {
+      "name": "Anova K Sweep Variable Params AUC",
       "filename": "v16_3_anova_k_sweep_variable_params_auc.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_auc.csv",
       "extension": ".csv"
     },
     {
+      "name": "Anova K Sweep Variable Params By Model",
       "filename": "v16_3_anova_k_sweep_variable_params_by_model.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_by_model.csv",
       "extension": ".csv"
     },
     {
+      "name": "Anova K Sweep Variable Params Choices",
       "filename": "v16_3_anova_k_sweep_variable_params_choices.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_choices.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_anova_k_sweep_variable_params_curves.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_curves.png",
-      "extension": ".png"
-    },
-    {
-      "filename": "v16_3_anova_k_sweep_variable_params_heatmap.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_heatmap.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova K Sweep Variable Params Predictions Long",
       "filename": "v16_3_anova_k_sweep_variable_params_predictions_long.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_predictions_long.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_3_anova_k_sweep_variable_params_roc.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_roc.png",
-      "extension": ".png"
-    },
-    {
+      "name": "Anova K Sweep Variable Params Summary",
       "filename": "v16_3_anova_k_sweep_variable_params_summary.json",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_3_anova_k_sweep_variable_params_summary.json",
       "extension": ".json"
     },
     {
+      "name": "PM Ensemble Fixed Vs Tuned Predictions",
       "filename": "v16_pm_ensemble_fixed_vs_tuned_predictions.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_fixed_vs_tuned_predictions.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_fixed_vs_tuned_roc_pr.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_fixed_vs_tuned_roc_pr.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Fixed Vs Tuned Summary",
       "filename": "v16_pm_ensemble_fixed_vs_tuned_summary.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_fixed_vs_tuned_summary.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_fixed_vs_tuned_summary_table.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_fixed_vs_tuned_summary_table.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Nested K Decision Summary",
       "filename": "v16_pm_ensemble_nested_k_decision_summary.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_nested_k_decision_summary.csv",
       "extension": ".csv"
     },
     {
+      "name": "PM Ensemble Nested K Selection Frequency",
       "filename": "v16_pm_ensemble_nested_k_selection_frequency.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_nested_k_selection_frequency.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_nested_k_selection_heatmap.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_nested_k_selection_heatmap.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Tuned K Counts",
       "filename": "v16_pm_ensemble_tuned_k_counts.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_tuned_k_counts.csv",
       "extension": ".csv"
     },
     {
-      "filename": "v16_pm_ensemble_tuned_k_counts.png",
-      "category": "results_comp_modelos/variable_params",
-      "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_tuned_k_counts.png",
-      "extension": ".png"
-    },
-    {
+      "name": "PM Ensemble Tuned Predictions",
       "filename": "v16_pm_ensemble_tuned_predictions.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_tuned_predictions.csv",
       "extension": ".csv"
     },
     {
+      "name": "PM Ensemble Tuned Summary",
       "filename": "v16_pm_ensemble_tuned_summary.csv",
       "category": "results_comp_modelos/variable_params",
       "relative_path": "results_comp_modelos/variable_params/v16_pm_ensemble_tuned_summary.csv",
       "extension": ".csv"
     }
   ],
-  "image_count_raw": 101
+  "image_count_raw": 107
 }
