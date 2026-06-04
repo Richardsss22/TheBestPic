@@ -433,12 +433,15 @@
         }
 
         .reference-link {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 1.25rem;
             background: rgba(3, 7, 18, 0.34);
-            padding: 1.25rem;
+            padding: 1.35rem;
             transition: all 0.3s ease;
+            min-height: 100%;
         }
 
         .reference-link:hover {
@@ -448,7 +451,14 @@
         }
 
         .reference-source {
-            margin-bottom: 0.5rem;
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            gap: 0.4rem;
+            border: 1px solid rgba(96, 165, 250, 0.22);
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.08);
+            padding: 0.32rem 0.58rem;
             color: #60a5fa;
             font-family: 'Outfit', sans-serif;
             font-size: 0.68rem;
@@ -459,8 +469,22 @@
 
         .reference-title {
             color: #ffffff;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            line-height: 1.62;
+        }
+
+        .reference-title em {
+            color: #d8dee9;
+            font-style: italic;
+        }
+
+        .reference-doi {
+            margin-top: auto;
+            color: #93a4bd;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
             line-height: 1.55;
+            word-break: break-word;
         }
 
         @keyframes lightboxIn {
@@ -1367,42 +1391,56 @@
                             Links externos para sustentar guidelines, ECG/P-wave, modelos clássicos e rastreabilidade do método.
                         </p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <a class="reference-link" href="https://academic.oup.com/eurheartj/article/45/36/3314/7738779" target="_blank" rel="noopener">
-                            <div class="reference-source">ESC Guidelines · 2024</div>
-                            <div class="reference-title">2024 ESC Guidelines for the management of atrial fibrillation.</div>
+                            <div class="reference-source">Guideline · ESC</div>
+                            <div class="reference-title">I.C. Van Gelder, M. Rienstra, A. Bunting, et al., 2024 ESC Guidelines for the management of atrial fibrillation, <em>Eur. Heart J.</em> 45 (36) (2024) 3314-3414.</div>
+                            <div class="reference-doi">doi: 10.1093/eurheartj/ehae176</div>
                         </a>
                         <a class="reference-link" href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001193" target="_blank" rel="noopener">
-                            <div class="reference-source">ACC/AHA/ACCP/HRS · 2023</div>
-                            <div class="reference-title">Guideline for the diagnosis and management of atrial fibrillation.</div>
+                            <div class="reference-source">Guideline · AHA</div>
+                            <div class="reference-title">J.A. Joglar, M.K. Chung, A.L. Armbruster, et al., 2023 ACC/AHA/ACCP/HRS Guideline for the diagnosis and management of atrial fibrillation, <em>Circulation</em> 149 (1) (2024) e1-e156.</div>
+                            <div class="reference-doi">doi: 10.1161/CIR.0000000000001193</div>
+                        </a>
+                        <a class="reference-link" href="https://doi.org/10.1016/j.cjca.2023.04.014" target="_blank" rel="noopener">
+                            <div class="reference-source">P-wave · Substrate</div>
+                            <div class="reference-title">Z.R. Zhang, D. Ragot, S.Z. Massin, A. Suszko, A.C.T. Ha, S.M. Singh, V.S. Chauhan, P-wave duration/amplitude ratio quantifies atrial low-voltage area and predicts atrial arrhythmia recurrence after pulmonary vein isolation, <em>Can. J. Cardiol.</em> 39 (10) (2023) 1421-1431.</div>
+                            <div class="reference-doi">doi: 10.1016/j.cjca.2023.04.014</div>
                         </a>
                         <a class="reference-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9935015/" target="_blank" rel="noopener">
-                            <div class="reference-source">P-wave · Recurrence</div>
-                            <div class="reference-title">P-wave duration and AF recurrence after catheter ablation: systematic review and meta-analysis.</div>
+                            <div class="reference-source">P-wave · Review</div>
+                            <div class="reference-title">Systematic review and meta-analysis on P-wave duration and atrial fibrillation recurrence after catheter ablation, <em>open-access evidence synthesis</em>.</div>
+                            <div class="reference-doi">URL: pmc.ncbi.nlm.nih.gov/articles/PMC9935015/</div>
                         </a>
                         <a class="reference-link" href="https://pubmed.ncbi.nlm.nih.gov/27402624/" target="_blank" rel="noopener">
                             <div class="reference-source">Atrial substrate</div>
-                            <div class="reference-title">EHRA/HRS/APHRS/SOLAECE expert consensus on atrial cardiomyopathies.</div>
+                            <div class="reference-title">A. Goette, J.M. Kalman, L. Aguinaga, et al., EHRA/HRS/APHRS/SOLAECE expert consensus on atrial cardiomyopathies: definition, characterization, and clinical implication, <em>Europace</em> 18 (10) (2016) 1455-1490.</div>
+                            <div class="reference-doi">doi: 10.1093/europace/euw161</div>
                         </a>
                         <a class="reference-link" href="https://www.nature.com/articles/s41467-020-15432-4" target="_blank" rel="noopener">
-                            <div class="reference-source">Automatic ECG · Nature</div>
-                            <div class="reference-title">Automatic diagnosis of the 12-lead ECG using a deep neural network.</div>
+                            <div class="reference-source">Automatic ECG</div>
+                            <div class="reference-title">A.H. Ribeiro, M.H. Ribeiro, G.M.M. Paixao, et al., Automatic diagnosis of the 12-lead ECG using a deep neural network, <em>Nat. Commun.</em> 11 (2020) 1760.</div>
+                            <div class="reference-doi">doi: 10.1038/s41467-020-15432-4</div>
                         </a>
                         <a class="reference-link" href="https://github.com/antonior92/automatic-ecg-diagnosis" target="_blank" rel="noopener">
                             <div class="reference-source">Código ECG</div>
-                            <div class="reference-title">antonior92/automatic-ecg-diagnosis: repositório usado como referência técnica.</div>
+                            <div class="reference-title">A.H. Ribeiro, M.H. Ribeiro, G.M.M. Paixao, et al., automatic-ecg-diagnosis: public code repository accompanying the automatic ECG diagnosis work.</div>
+                            <div class="reference-doi">URL: github.com/antonior92/automatic-ecg-diagnosis</div>
                         </a>
                         <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html" target="_blank" rel="noopener">
-                            <div class="reference-source">scikit-learn</div>
-                            <div class="reference-title">ExtraTreesClassifier: documentação oficial do modelo de árvores usado.</div>
+                            <div class="reference-source">Software</div>
+                            <div class="reference-title">F. Pedregosa, G. Varoquaux, A. Gramfort, et al., Scikit-learn: machine learning in Python, <em>J. Mach. Learn. Res.</em> 12 (2011) 2825-2830. ExtraTreesClassifier documentation.</div>
+                            <div class="reference-doi">URL: scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html</div>
                         </a>
                         <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html" target="_blank" rel="noopener">
-                            <div class="reference-source">scikit-learn</div>
-                            <div class="reference-title">BernoulliNB: documentação oficial do modelo probabilístico base.</div>
+                            <div class="reference-source">Software</div>
+                            <div class="reference-title">F. Pedregosa, G. Varoquaux, A. Gramfort, et al., Scikit-learn: machine learning in Python, <em>J. Mach. Learn. Res.</em> 12 (2011) 2825-2830. BernoulliNB documentation.</div>
+                            <div class="reference-doi">URL: scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html</div>
                         </a>
                         <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html" target="_blank" rel="noopener">
-                            <div class="reference-source">Métricas</div>
-                            <div class="reference-title">roc_auc_score: referência oficial para a métrica principal de ranking.</div>
+                            <div class="reference-source">Métrica</div>
+                            <div class="reference-title">Scikit-learn developers, roc_auc_score documentation: area under the receiver operating characteristic curve as a threshold-independent ranking metric.</div>
+                            <div class="reference-doi">URL: scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html</div>
                         </a>
                     </div>
                 </div>
