@@ -544,6 +544,279 @@
                 width: 100%;
             }
         }
+
+        @media (max-width: 640px) {
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            .site-nav {
+                padding: 1.15rem 1.5rem;
+                background: rgba(3, 7, 18, 0.82);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+            }
+
+            .site-nav.nav-scrolled {
+                padding-top: 0.95rem;
+                padding-bottom: 0.95rem;
+            }
+
+            .site-nav span {
+                font-size: 0.92rem;
+                letter-spacing: 0.17em;
+            }
+
+            #hero {
+                min-height: auto;
+                padding: 7.2rem 1.45rem 3.6rem;
+                justify-content: flex-start;
+            }
+
+            #hero .max-w-5xl {
+                max-width: 100%;
+            }
+
+            #hero h1 {
+                font-size: clamp(3rem, 13.4vw, 4.15rem);
+                line-height: 0.98;
+                margin-bottom: 0;
+                max-width: 100%;
+            }
+
+            #hero h1 .font-serif {
+                font-size: clamp(2.35rem, 9.8vw, 3.25rem);
+                line-height: 1.08;
+                max-width: 88%;
+            }
+
+            #hero p {
+                margin-top: 2.15rem;
+                max-width: 19rem;
+                padding-left: 1.1rem;
+                font-size: 1rem;
+                line-height: 1.55;
+                background: linear-gradient(90deg, rgba(3, 7, 18, 0.48), rgba(3, 7, 18, 0));
+            }
+
+            #hero .heart-background {
+                width: 72vw;
+                right: -31vw;
+                top: 50%;
+                opacity: 0.32;
+                filter: saturate(1.05) contrast(1.15) brightness(0.92);
+            }
+
+            #hero .absolute.right-8 {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin-top: 1.8rem;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.75rem;
+                text-align: left;
+            }
+
+            #hero .absolute.right-8 > div {
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 1.05rem;
+                background: rgba(3, 7, 18, 0.48);
+                padding: 0.85rem;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            #hero .absolute.right-8 .text-4xl {
+                font-size: 2rem;
+                line-height: 1.05;
+            }
+
+            #hero .absolute.right-8 .text-lg {
+                display: block;
+                margin-top: 0.15rem;
+                font-size: 0.82rem;
+            }
+
+            #hero .mt-16 {
+                margin-top: 1.55rem;
+            }
+
+            #hero a.group {
+                gap: 0.8rem;
+                font-size: 0.72rem;
+                letter-spacing: 0.18em;
+            }
+
+            #hero a.group span {
+                padding: 0.95rem;
+            }
+
+            section[id] {
+                padding-left: 1.35rem;
+                padding-right: 1.35rem;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            section[id] h2 {
+                font-size: clamp(2.45rem, 11vw, 3.25rem);
+                line-height: 1.03;
+                margin-bottom: 2rem;
+            }
+
+            .glass-card {
+                border-radius: 1.15rem !important;
+            }
+
+            #sintese .glass-card,
+            #modelos article.glass-card,
+            #modelos .glass-card,
+            #validacao .glass-card,
+            #referencias .glass-card {
+                padding: 1.15rem !important;
+            }
+
+            #sintese .glass-card {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                column-gap: 1rem;
+                row-gap: 0.25rem;
+                align-items: start;
+            }
+
+            #sintese .glass-card > .w-12 {
+                width: 2.75rem;
+                height: 2.75rem;
+                margin-bottom: 0;
+            }
+
+            #sintese .glass-card h3,
+            #sintese .glass-card p,
+            #sintese .glass-card .flex-1 {
+                grid-column: 2;
+            }
+
+            #sintese .glass-card.md\:col-span-2 {
+                display: block;
+            }
+
+            #sintese .glass-card h3,
+            #modelos .glass-card h3 {
+                font-size: 1.32rem;
+                line-height: 1.1;
+                margin-bottom: 0.65rem;
+            }
+
+            #sintese .glass-card p,
+            #modelos .glass-card p,
+            #validacao .glass-card p,
+            #referencias .glass-card p {
+                font-size: 0.94rem;
+                line-height: 1.55;
+            }
+
+            .metric-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                border-radius: 0.85rem;
+            }
+
+            .metric-cell {
+                padding: 0.72rem 0.55rem;
+            }
+
+            .metric-cell .text-2xl {
+                font-size: 1.15rem;
+                line-height: 1.15;
+            }
+
+            .formula-equation {
+                min-height: 5.6rem;
+                font-size: clamp(1.28rem, 6vw, 1.62rem);
+                gap: 0.24rem;
+                overflow-x: auto;
+                border-radius: 1rem;
+            }
+
+            .fraction {
+                min-width: 6.6em;
+            }
+
+            .model-metric-table th,
+            .model-metric-table td {
+                padding: 0.9rem 0.85rem;
+            }
+
+            .evidence-image {
+                max-height: 260px;
+                padding: 0.5rem;
+                border-radius: 0.8rem;
+            }
+
+            .evidence-card {
+                gap: 0.8rem;
+            }
+
+            .evidence-card figcaption {
+                font-size: 0.95rem;
+                line-height: 1.55;
+            }
+
+            #arquivo .glass-card {
+                padding: 1.15rem !important;
+            }
+
+            .archive-tab {
+                min-width: auto;
+                flex: 1 1 auto;
+                padding: 0.8rem 0.85rem !important;
+                font-size: 0.64rem;
+                letter-spacing: 0.1em;
+            }
+
+            .archive-stat-card {
+                padding: 0.95rem;
+            }
+
+            .archive-select-shell select {
+                padding: 0.95rem 3rem 0.95rem 1.1rem;
+                font-size: 1rem;
+            }
+
+            #archive-show-all {
+                width: 100%;
+                min-height: 3.6rem;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                font-size: 0.72rem;
+                letter-spacing: 0.12em;
+            }
+
+            #archive-gallery {
+                gap: 1rem;
+            }
+
+            .output-thumb {
+                height: 12rem;
+            }
+
+            .lightbox {
+                padding: 1rem;
+            }
+
+            .lightbox-panel {
+                border-radius: 1rem;
+                padding: 0.65rem;
+            }
+
+            .lightbox-close {
+                top: 0.45rem;
+                right: 0.45rem;
+            }
+        }
     </style>
 </head>
 
