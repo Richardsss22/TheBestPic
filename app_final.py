@@ -3457,6 +3457,12 @@ def generate_portable_app_zip() -> bytes:
                 zf.writestr("app_final.py", f.read())
             with open("requirements.txt", "r", encoding="utf-8") as f:
                 zf.writestr("requirements.txt", f.read())
+            if os.path.exists("ml_v16_train.py"):
+                with open("ml_v16_train.py", "r", encoding="utf-8") as f:
+                    zf.writestr("ml_v16_train.py", f.read())
+            if os.path.exists("ml_v16_extract.py"):
+                with open("ml_v16_extract.py", "r", encoding="utf-8") as f:
+                    zf.writestr("ml_v16_extract.py", f.read())
             for root, _, files in os.walk("app_artifacts"):
                 for file in files:
                     file_path = os.path.join(root, file)
