@@ -3483,7 +3483,7 @@ def main() -> None:
             st.markdown("### Signal / feature input")
             mode = st.radio(
                 "Input mode",
-                ["Local folder path", "Upload ZIP / MAT / feature table"],
+                ["Upload ZIP / MAT / feature table", "Local folder path"],
                 horizontal=True,
             )
 
