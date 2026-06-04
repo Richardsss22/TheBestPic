@@ -3463,6 +3463,9 @@ def generate_portable_app_zip() -> bytes:
             if os.path.exists("ml_v16_extract.py"):
                 with open("ml_v16_extract.py", "r", encoding="utf-8") as f:
                     zf.writestr("ml_v16_extract.py", f.read())
+            if os.path.exists("fake_patient_123.mat"):
+                with open("fake_patient_123.mat", "rb") as f:
+                    zf.writestr("fake_patient_123.mat", f.read())
             for root, _, files in os.walk("app_artifacts"):
                 for file in files:
                     file_path = os.path.join(root, file)
