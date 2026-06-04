@@ -3438,6 +3438,33 @@ def render_clinical_orientation(prediction: dict) -> None:
     )
 
 
+def generate_portable_app_zip() -> bytes:
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
+        # Add Windows script
+        zf.writestr("INICIAR_APP.bat", "@echo off\necho Iniciando AF Risk Predictor...\npython --version >nul 2>&1\nif errorlevel 1 (\n    echo Python nao encontrado! Instale a partir de python.org\n    pause\n    exit /b\n)\nif not exist \"venv\" (\n    echo Criando ambiente virtual...\n    python -m venv venv\n)\necho Instalando dependencias (na 1a vez demora mais)...\ncall venv\\Scripts\\activate\npip install -r requirements.txt >nul\nstreamlit run app_final.py\npause\n")
+        # Add Mac script
+        mac_script = "#!/bin/bash\ncd \"$(dirname \"$0\")\"\necho \"Iniciando AF Risk Predictor...\"\nif ! command -v python3 &> /dev/null; then echo \"Python3 nao encontrado.\"; exit 1; fi\nif [ ! -d \"venv\" ]; then python3 -m venv venv; fi\nsource venv/bin/activate\npip install -r requirements.txt >/dev/null\nstreamlit run app_final.py\n"
+        zf.writestr("INICIAR_APP.command", mac_script)
+        # Add Mac execution permissions metadata
+        info = zipfile.ZipInfo("INICIAR_APP.command")
+        info.external_attr = 0o755 << 16
+        zf.writestr(info, mac_script)
+        
+        # Add source files
+        try:
+            with open("app_final.py", "r", encoding="utf-8") as f:
+                zf.writestr("app_final.py", f.read())
+            with open("requirements.txt", "r", encoding="utf-8") as f:
+                zf.writestr("requirements.txt", f.read())
+            for root, _, files in os.walk("app_artifacts"):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    zf.write(file_path, arcname=file_path)
+        except Exception:
+            pass
+    return zip_buffer.getvalue()
+
 def main() -> None:
     inject_css()
     artifact = load_artifact()
@@ -3462,6 +3489,17 @@ def main() -> None:
         dark_mode = st.toggle("Night mode", value=False)
         if dark_mode:
             inject_dark_mode_css()
+        
+        st.markdown("<br><hr>", unsafe_allow_html=True)
+        st.markdown("### 💻 Versão Desktop")
+        st.markdown("<span style='font-size: 0.85rem; color: #6b7280;'>Podes descarregar a app para correr no teu PC e usar pastas locais. Extrai o ZIP e clica em **INICIAR_APP**.</span>", unsafe_allow_html=True)
+        st.download_button(
+            label="💾 Download Portable App",
+            data=generate_portable_app_zip(),
+            file_name="AF_Risk_Predictor_Desktop.zip",
+            mime="application/zip",
+            use_container_width=True
+        )
 
     with work_col:
         st.markdown(
