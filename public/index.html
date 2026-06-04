@@ -865,7 +865,7 @@
 
             <!-- Heart anatomical reference source: Complete Anatomy. -->
             <div class="heart-background" aria-hidden="true" data-source="Complete Anatomy">
-                <img src="assets/heart-ambient-from-mov.webp" alt="">
+                <img src="assets/heart-ambient-from-mov.webp" data-safari-src="assets/heart-ambient-safari-transparent.apng" alt="">
             </div>
             
             <div class="max-w-5xl reveal relative z-10">
@@ -1461,6 +1461,13 @@
                     }
                 });
             };
+
+            const heartImage = document.querySelector('.heart-background img[data-safari-src]');
+            const userAgent = navigator.userAgent || '';
+            const isSafari = /Safari/i.test(userAgent) && !/(Chrome|Chromium|CriOS|FxiOS|Edg|OPR|Android)/i.test(userAgent);
+            if (heartImage && isSafari) {
+                heartImage.src = heartImage.dataset.safariSrc;
+            }
 
             archiveTabs.forEach((tab) => {
                 tab.addEventListener('click', () => {
