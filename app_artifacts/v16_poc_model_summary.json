@@ -1,12 +1,26 @@
 {
-  "artifact_path": "/Users/ricardo/Downloads/ML v16 3/app_artifacts/v16_poc_model_artifact.joblib",
-  "created_at": "2026-05-23T16:26:18",
+  "artifact_path": "C:\\Users\\rm350\\OneDrive\\Ambiente de Trabalho\\codigos_PIC\\ML v16\\app_artifacts\\v16_poc_model_artifact.joblib",
+  "created_at": "2026-05-24T16:00:41",
   "n_training_patients": 151,
   "n_recurrence": 52,
   "n_no_recurrence": 99,
   "candidate_signal_features": 380,
   "primary_model": "power_mean_ensemble",
   "models": {
+    "power_mean_ensemble": {
+      "label": "Power Mean Ensemble fixed k=3",
+      "selected_features": [],
+      "n_selected_features": 0,
+      "clinical_encoding": "ensemble_of_legacy_base_models",
+      "params": {
+        "power_k": 3.0,
+        "base_models": [
+          "extratrees",
+          "bernoulli_tuned"
+        ]
+      },
+      "scaler": "not_applicable"
+    },
     "gnb_fixed": {
       "label": "GNB fixed",
       "selected_features": [
@@ -34,8 +48,7 @@
       "params": {
         "var_smoothing": 0.1
       },
-      "scaler": "standard",
-      "ensemble_members": null
+      "scaler": "standard"
     },
     "bernoulli_tuned": {
       "label": "BernoulliNB tuned",
@@ -65,64 +78,38 @@
         "alpha": 5.0,
         "binarize": 0.75
       },
-      "scaler": "minmax",
-      "ensemble_members": null
+      "scaler": "minmax"
     },
     "extratrees": {
-      "label": "ExtraTrees",
+      "label": "ExtraTrees tuned",
       "selected_features": [
-        "pw_V1_slope_offset_cv",
-        "pw_I_area_pos_cv",
-        "pw_I_pr_interval_ms_std",
-        "pw_II_morphology_peaks_mean",
-        "pw_V1_area_neg_mean",
-        "xl_area_total_lead_std",
-        "xl_area_neg_lead_mean",
-        "pw_aVF_morphology_peaks_mean",
-        "pw_V1_area_neg_std",
-        "pw_V1_area_total_mean",
-        "pw_V1_nvg_degree_entropy_mean",
-        "pw_V1_rms_std",
-        "pw_I_morphology_peaks_std",
-        "pw_I_symmetry_std",
-        "xl_area_neg_lead_std",
-        "pw_I_slope_onset_std",
+        "pw_I_symmetry_mean",
         "pw_I_slope_onset_cv",
-        "pw_I_symmetry_mean"
+        "pw_I_slope_onset_std",
+        "xl_area_neg_lead_std",
+        "pw_I_symmetry_std",
+        "pw_I_morphology_peaks_std",
+        "pw_V1_rms_std",
+        "pw_V1_nvg_degree_entropy_mean",
+        "pw_V1_area_total_mean",
+        "pw_V1_area_neg_std",
+        "pw_aVF_morphology_peaks_mean",
+        "xl_area_neg_lead_mean"
       ],
-      "n_selected_features": 18,
+      "n_selected_features": 12,
       "clinical_encoding": "legacy_value_plus_missing_indicator",
       "params": {
-        "n_estimators": 300,
-        "max_depth": 3,
-        "min_samples_leaf": 8,
-        "class_weight": "balanced",
-        "random_state": 42
+        "max_depth": 2,
+        "n_estimators": 200
       },
-      "scaler": "standard",
-      "ensemble_members": null
-    },
-    "power_mean_ensemble": {
-      "label": "Power Mean Ensemble k=2.5",
-      "selected_features": [],
-      "n_selected_features": 0,
-      "clinical_encoding": "mixed_member_specific",
-      "params": {
-        "aggregation": "power_mean_probability",
-        "k_power": 2.5,
-        "threshold": 0.396
-      },
-      "scaler": "member_specific",
-      "ensemble_members": [
-        "extratrees",
-        "bernoulli_tuned"
-      ]
+      "scaler": "standard"
     }
   },
   "notes": [
-    "Primary inference is the final Power Mean ensemble: ExtraTrees + BernoulliNB, k=2.5.",
+    "Primary inference is pre-operative only: P-wave ECG + type_af/redo.",
     "blanking_period is intentionally excluded from the PoC deployment artifact.",
     "BernoulliNB hyperparameters are selected by inner CV on the full training cohort; no new-patient data are used for fitting.",
-    "ExtraTrees is fitted on the locked deployment cohort for prospective inference display."
+    "ExtraTrees uses ANOVA k=12 and selects n_estimators/max_depth by inner CV on the full training cohort; no new-patient data are used for fitting.",
+    "The displayed final V16 option combines ExtraTrees tuned and BernoulliNB tuned with a fixed Power Mean exponent k=3 selected from nested inner-CV stability analysis using AUC - Brier score."
   ]
 }
