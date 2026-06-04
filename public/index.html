@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versões PIC - Relatório Clínico</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fontes Premium: Outfit para o bold moderno, Playfair para o itálico requintado, Inter para leitura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        dark: {
+                            base: '#030712', // Quase preto
+                            surface: '#0B1120',
+                            elevated: '#111827'
+                        },
+                        accent: {
+                            DEFAULT: '#2563EB', // Azul vibrante tipo "Futuros"
+                            glow: '#3B82F6',
+                            gold: '#FBBF24' // Toque de requinte tipo "IGT"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030712;
+            color: #F9FAFB;
+            overflow-x: hidden;
+        }
+
+        /* O famoso efeito "Grain/Noise" que dá o ar premium e fotográfico */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Luzes desfocadas no fundo (Glow Orbs) */
+        .ambient-light-1 {
+            position: fixed;
+            top: -20vh; left: -10vw;
+            width: 70vw; height: 70vw;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(3,7,18,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+            filter: blur(80px);
+        }
+
+        .ambient-light-2 {
+            position: fixed;
+            bottom: -30vh; right: -10vw;
+            width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, rgba(3,7,18,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+            filter: blur(80px);
+        }
+
+        /* Animações de entrada suaves */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efeito glassmorphism muito subtil para os cartões */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(17, 24, 39, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .formula-equation::-webkit-scrollbar {
+            display: none;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .metric-cell {
+            background: rgba(3, 7, 18, 0.72);
+            padding: 1rem;
+        }
+
+        .evidence-image {
+            width: 100%;
+            height: auto;
+            max-height: 360px;
+            object-fit: contain;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 0.75rem;
+        }
+
+        .evidence-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .evidence-card figcaption {
+            margin-top: 0;
+            padding: 0 0.35rem 0.25rem;
+            line-height: 1.7;
+        }
+
+        .formula-equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.42rem;
+            min-height: 6.5rem;
+            padding: 0 1rem;
+            border-radius: 1.25rem;
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.16), rgba(3, 7, 18, 0.68) 58%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 55px rgba(0, 0, 0, 0.24);
+            color: #e5e7eb;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.34rem, 1.76vw, 2.14rem);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .formula-equation sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.45em;
+            letter-spacing: 0.04em;
+        }
+
+        .formula-equation sup {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.45em;
+            color: #93c5fd;
+        }
+
+        .power-exponent {
+            display: inline-grid;
+            grid-template-rows: auto auto;
+            align-items: center;
+            text-align: center;
+            line-height: 1;
+            min-width: 1.05em;
+            transform: translate(-0.4em, -1.5em);
+            color: #93c5fd;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.48em;
+            font-weight: 500;
+        }
+
+        .power-exponent span:first-child {
+            border-bottom: 1px solid rgba(147, 197, 253, 0.78);
+            padding-bottom: 0.08em;
+        }
+
+        .power-exponent span:last-child {
+            padding-top: 0.08em;
+        }
+
+        .fraction {
+            display: inline-grid;
+            grid-template-rows: auto auto;
+            align-items: center;
+            text-align: center;
+            line-height: 1.08;
+            min-width: 7.6em;
+        }
+
+        .fraction span:first-child {
+            padding: 0 0.65em 0.18em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+        }
+
+        .fraction span:last-child {
+            padding-top: 0.18em;
+            font-size: 0.8em;
+            color: #bfdbfe;
+        }
+
+        .model-metric-table-wrap {
+            overflow: hidden;
+        }
+
+        .model-metric-table {
+            table-layout: fixed;
+            min-width: 0;
+        }
+
+        .model-metric-table th,
+        .model-metric-table td {
+            padding: 1.05rem 1.1rem;
+            vertical-align: middle;
+        }
+
+        .model-metric-table th:first-child,
+        .model-metric-table td:first-child {
+            width: 30%;
+        }
+
+        .archive-tab.active {
+            background: #ffffff;
+            color: #030712;
+            border-color: rgba(255, 255, 255, 0.92);
+        }
+
+        .archive-panel {
+            display: none;
+        }
+
+        .archive-panel.active {
+            display: block;
+        }
+
+        .archive-tab {
+            min-width: 10.5rem;
+            text-align: center;
+        }
+
+        .output-thumb {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 1rem;
+            padding: 0.65rem;
+            height: 14rem;
+            object-fit: contain;
+            width: 100%;
+            cursor: zoom-in;
+        }
+
+        .zoomable-image {
+            cursor: zoom-in;
+        }
+
+        .category-pill {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 999px;
+            padding: 0.55rem 0.85rem;
+            color: #cbd5e1;
+            font-size: 0.72rem;
+        }
+
+        #archive-gallery figure {
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+        }
+
+        #archive-gallery figure:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.35);
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .archive-control-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+            gap: 1rem;
+            align-items: center;
+            padding-right: clamp(0.25rem, 1.2vw, 1.4rem);
+        }
+
+        #archive-show-all {
+            justify-self: end;
+            width: min(100%, 17.5rem);
+        }
+
+        .archive-select-shell {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .archive-select-shell select {
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            color: #f8fafc;
+            padding: 1rem 3.25rem 1rem 1.25rem;
+            outline: none;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 16px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .archive-select-shell::after {
+            content: "";
+            position: absolute;
+            right: 1.85rem;
+            top: 50%;
+            width: 0.58rem;
+            height: 0.58rem;
+            border-right: 2px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+            transform: translateY(-65%) rotate(45deg);
+            pointer-events: none;
+        }
+
+        .journey-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 0.95rem 1.35rem;
+            background: rgba(255, 255, 255, 0.045);
+            color: #e5e7eb;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .journey-button:hover {
+            border-color: rgba(59, 130, 246, 0.45);
+            background: rgba(37, 99, 235, 0.18);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .archive-stat-card {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(3, 7, 18, 0.34);
+            border-radius: 1.25rem;
+            padding: 1.15rem 1.25rem;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            display: none;
+            place-items: center;
+            padding: 2rem;
+            background: rgba(3, 7, 18, 0.84);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .lightbox.active {
+            display: grid;
+        }
+
+        .lightbox-panel {
+            position: relative;
+            width: min(94vw, 1400px);
+            max-height: 90vh;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1.5rem;
+            background: rgba(15, 23, 42, 0.72);
+            box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55);
+            padding: 1rem;
+            animation: lightboxIn 240ms ease-out;
+        }
+
+        .lightbox img {
+            width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.96);
+        }
+
+        .lightbox-caption {
+            margin-top: 0.75rem;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #030712;
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .reference-link {
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            background: rgba(3, 7, 18, 0.34);
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .reference-link:hover {
+            border-color: rgba(59, 130, 246, 0.42);
+            background: rgba(37, 99, 235, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .reference-source {
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .reference-title {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        @keyframes lightboxIn {
+            from { opacity: 0; transform: scale(0.96) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Tipografia customizada para os números */
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .site-nav {
+            background: rgba(3, 7, 18, 0);
+            border-bottom: 1px solid rgba(255, 255, 255, 0);
+            transition: padding 2000ms ease, background 2000ms ease, border-color 2000ms ease, backdrop-filter 2000ms ease, box-shadow 2000ms ease;
+        }
+
+        .site-nav.nav-scrolled {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            background: rgba(3, 7, 18, 0.72);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        .heart-background {
+            position: absolute;
+            right: clamp(2rem, 7vw, 28rem);
+            top: 52%;
+            width: min(49vw, 1075px);
+            transform: translateY(-50%) scaleX(1) rotate(-70deg);
+            transform-origin: 58% 48%;
+            opacity: 0.9;
+            pointer-events: none;
+            z-index: 0;
+            filter: saturate(1.08) contrast(1.22) brightness(1.08) drop-shadow(0 0 26px rgba(59, 130, 246, 0.16));
+            mix-blend-mode: screen;
+            max-width: none;
+        }
+
+        .heart-background img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: transparent;
+        }
+
+        @media (max-width: 900px) {
+            .heart-background {
+                width: 92vw;
+                right: -30vw;
+                top: 45%;
+                opacity: 0.12;
+            }
+
+            .formula-equation {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding: 0 1rem;
+            }
+
+            .model-metric-table-wrap {
+                overflow-x: auto;
+            }
+
+            .model-metric-table {
+                min-width: 760px;
+            }
+
+            .archive-control-row {
+                grid-template-columns: 1fr;
+                padding-right: 0;
+            }
+
+            #archive-show-all {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-accent selection:text-white relative">
+    
+    <!-- Elementos Cinemáticos de Fundo -->
+    <div class="noise-overlay"></div>
+    <div class="ambient-light-1"></div>
+    <div class="ambient-light-2"></div>
+
+    <nav id="navbar" class="site-nav fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+            <span class="font-display font-bold text-sm tracking-widest uppercase text-white">Projeto PIC</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-[11px] font-display tracking-[0.2em] uppercase text-gray-400">
+            <a href="#hero" class="hover:text-white transition-colors">Início</a>
+            <a href="#sintese" class="hover:text-white transition-colors">A Síntese</a>
+            <a href="#modelos" class="hover:text-white transition-colors">Modelos</a>
+            <a href="#validacao" class="hover:text-white transition-colors">Validação</a>
+            <a href="#tabela" class="hover:text-white transition-colors">Histórico de Versões</a>
+            <a href="#arquivo" class="hover:text-white transition-colors">Arquivo</a>
+            <a href="#referencias" class="hover:text-white transition-colors">Referências</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="relative min-h-screen flex flex-col justify-center px-8 md:px-20 lg:px-32 z-10 pt-20 overflow-hidden">
+
+            <div class="heart-background" aria-hidden="true">
+                <img src="assets/heart-ambient-from-mov.webp" alt="">
+            </div>
+            
+            <div class="max-w-5xl reveal relative z-10">
+                <!-- Tipografia Mista: Itálico + Bold -->
+                <h1 class="text-5xl md:text-7xl lg:text-[6.5rem] leading-[1.1] md:leading-[0.95] tracking-tight mb-8">
+                    <span class="block font-serif italic text-gray-400 mb-2 md:mb-0 text-4xl md:text-6xl lg:text-[5rem] font-light">como prever a recorrência</span>
+                    <span class="block font-display font-black text-white">COM PRECISÃO</span>
+                    <span class="block font-display font-black text-accent drop-shadow-lg">CLÍNICA.</span>
+                </h1>
+
+                <p class="mt-12 text-lg md:text-xl text-gray-400 max-w-2xl font-light leading-relaxed border-l-[3px] border-accent/50 pl-6">
+                    Acompanhamento do desenvolvimento do modelo preditivo para Fibrilhação Auricular. Foco na eliminação rigorosa de viés e na descoberta do verdadeiro sinal ECG-Only.
+                </p>
+
+                <div class="mt-16 flex flex-col sm:flex-row gap-6 sm:items-center">
+                    <a href="#sintese" class="group flex items-center gap-4 text-sm font-display tracking-widest uppercase text-white hover:text-accent transition-colors w-max">
+                        <span class="border border-white/20 group-hover:border-accent p-4 rounded-full transition-colors">
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </span>
+                        Explorar a síntese
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dados Vitais (Flutuantes à direita) -->
+            <div class="absolute right-8 md:right-20 lg:right-32 bottom-12 md:bottom-32 flex flex-col gap-6 text-right reveal z-10" style="transition-delay: 300ms;">
+                <div>
+                    <div class="text-[10px] font-display uppercase tracking-widest text-gray-500 mb-1">Tamanho da Amostra</div>
+                    <div class="text-4xl font-display font-bold text-white">151 <span class="text-lg font-light text-gray-500">pacientes</span></div>
+                </div>
+                <div>
+                    <div class="text-[10px] font-display uppercase tracking-widest text-gray-500 mb-1">Zona Realista (AUC)</div>
+                    <div class="text-4xl font-display font-bold text-accent">0.764</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sintese" class="py-32 px-8 md:px-20 lg:px-32 z-10 relative">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 reveal">
+                    A Verdade nos <span class="font-serif italic text-accent font-normal">Dados</span>.
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal" style="transition-delay: 200ms;">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card p-10 rounded-2xl">
+                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-6">
+                            <i data-lucide="target" class="w-5 h-5 text-accent"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-4">O Objetivo Principal</h3>
+                        <p class="text-gray-400 font-light leading-relaxed">
+                            Prever recorrência de Fibrilhação Auricular com variáveis pré-operatórias: assinaturas da onda P no ECG de superfície, type_af e redo.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card p-10 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl group-hover:bg-red-500/20 transition-all"></div>
+                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-6 relative z-10">
+                            <i data-lucide="triangle-alert" class="w-5 h-5 text-red-400"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-4 relative z-10">O Problema Identificado</h3>
+                        <p class="text-gray-400 font-light leading-relaxed relative z-10">
+                            Blanking period e escolhas pós-hoc podiam inflacionar resultados. A versão principal exclui blanking e separa claramente validação final de análises exploratórias.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card p-10 rounded-2xl md:col-span-2 flex flex-col md:flex-row gap-8 items-start md:items-center border-l-4 border-l-accent">
+                        <div class="flex-1">
+                            <h3 class="font-display text-xl font-bold text-white mb-4">A Conclusão Científica</h3>
+                            <p class="text-gray-400 font-light leading-relaxed text-lg">
+                                O modelo final combina ExtraTrees e BernoulliNB por Power Mean. <strong class="text-white font-normal">A versão defensável atinge AUC 0.764 e Brier 0.1887</strong>, com validação LOOCV/nested threshold sem usar dados do paciente de teste.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-auto p-6 bg-black/50 rounded-xl border border-white/5 text-center shrink-0">
+                            <div class="text-[10px] font-display uppercase tracking-widest text-gray-500 mb-2">AUC Consolidado</div>
+                            <div class="text-5xl font-display font-bold text-gradient">0.764</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="modelos" class="py-32 px-8 md:px-20 lg:px-32 z-10 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-14 reveal">
+                    <div class="font-serif italic text-xl text-gray-500 mb-2">modelo final</div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold">ExtraTrees + BernoulliNB + Power Mean.</h2>
+                    <p class="mt-5 max-w-3xl text-gray-400 font-light leading-relaxed">
+                        O score final combina as probabilidades dos dois modelos base. A avaliação principal é pré-operatória e não usa blanking period.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal" style="transition-delay: 150ms;">
+                    <article class="glass-card p-8 rounded-2xl">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Modelo base</div>
+                                <h3 class="mt-2 font-display text-2xl font-bold text-white">ExtraTrees</h3>
+                            </div>
+                            <i data-lucide="trees" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <div class="metric-grid">
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold">0.738</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Brier</div><div class="font-display text-2xl font-bold">0.201</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">73.1%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">65.7%</div></div>
+                        </div>
+                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Threshold operacional 0.44. Mais sensível, apanha mais recorrências, mas aceita mais falsos positivos.</p>
+                    </article>
+
+                    <article class="glass-card p-8 rounded-2xl">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Modelo base</div>
+                                <h3 class="mt-2 font-display text-2xl font-bold text-white">BernoulliNB</h3>
+                            </div>
+                            <i data-lucide="binary" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <div class="metric-grid">
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold">0.726</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Brier</div><div class="font-display text-2xl font-bold">0.210</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">48.1%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">83.8%</div></div>
+                        </div>
+                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Threshold 0.50. Mais conservador, bom controlo de falsos positivos, mas sozinho perde recorrências.</p>
+                    </article>
+
+                    <article class="glass-card p-8 rounded-2xl border-accent/40 bg-accent/5">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <div class="text-[10px] font-display uppercase tracking-widest text-accent">Modelo principal</div>
+                                <h3 class="mt-2 font-display text-2xl font-bold text-white">PM Ensemble</h3>
+                            </div>
+                            <i data-lucide="git-merge" class="w-8 h-8 text-accent"></i>
+                        </div>
+                        <div class="metric-grid">
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">AUC</div><div class="font-display text-2xl font-bold text-accent">0.764</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Brier</div><div class="font-display text-2xl font-bold text-accent">0.1887</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Sens</div><div class="font-display text-2xl font-bold">67.3%</div></div>
+                            <div class="metric-cell"><div class="text-[10px] text-gray-500 uppercase tracking-widest">Spec</div><div class="font-display text-2xl font-bold">75.8%</div></div>
+                        </div>
+                        <p class="mt-6 text-sm text-gray-400 leading-relaxed">Power Mean k=2.5, threshold fold-specific Forma A. Mediana operacional usada na app: 0.396.</p>
+                    </article>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 lg:grid-cols-5 gap-6 reveal" style="transition-delay: 250ms;">
+                    <div class="lg:col-span-2 glass-card p-8 rounded-2xl overflow-hidden">
+                        <h3 class="font-display text-xl font-bold text-white mb-4">Fusão usada</h3>
+                        <div class="formula-equation" aria-label="Power Mean equation">
+                            <span>p<sub>PM</sub></span>
+                            <span>=</span>
+                            <span>(</span>
+                            <span class="fraction">
+                                <span>p<sub>ET</sub><sup>k</sup> + p<sub>BNB</sub><sup>k</sup></span>
+                                <span>2</span>
+                            </span>
+                            <span>)</span>
+                            <span class="power-exponent"><span>1</span><span>k</span></span>
+                        </div>
+                        <p class="mt-5 text-gray-400 text-sm leading-relaxed">
+                            A família Power Mean aproxima-se da média geométrica para valores baixos de k e do maximum para valores altos. O k=2.5 foi usado como solução principal conservadora; o sweep mostra que k=3 atinge AUC 0.7653, ganho marginal.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-3 glass-card rounded-2xl overflow-hidden self-start">
+                        <div class="model-metric-table-wrap">
+                            <table class="model-metric-table w-full text-left">
+                                <thead class="bg-white/5 border-b border-white/10">
+                                    <tr>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">Modelo</th>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">AUC</th>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">AP</th>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">Brier</th>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">Sens</th>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">Spec</th>
+                                        <th class="text-[10px] uppercase tracking-widest text-gray-500">F1</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm text-gray-300">
+                                    <tr class="border-b border-white/5"><td class="font-medium text-white">ExtraTrees (thr 0.44)</td><td>0.7377</td><td>0.5080</td><td>0.2008</td><td>73.1%</td><td>65.7%</td><td>61.3%</td></tr>
+                                    <tr class="border-b border-white/5"><td class="font-medium text-white">BernoulliNB (thr 0.50)</td><td>0.7261</td><td>0.6018</td><td>0.2102</td><td>48.1%</td><td>83.8%</td><td>53.8%</td></tr>
+                                    <tr class="bg-accent/10"><td class="font-bold text-white">PM Ensemble k=2.5</td><td class="font-bold text-accent">0.7640</td><td>0.5840</td><td class="font-bold text-accent">0.1887</td><td>67.3%</td><td>75.8%</td><td>63.1%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="validacao" class="py-32 px-8 md:px-20 lg:px-32 z-10 relative bg-black/20 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-14 reveal">
+                    <div class="font-serif italic text-xl text-gray-500 mb-2">evidência visual</div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold">Validação, comparação e controlos.</h2>
+                    <p class="mt-5 max-w-3xl text-gray-400 font-light leading-relaxed">
+                        Figuras geradas a partir dos outputs finais: comparação de modelos, curvas ROC/PR, sweep do k, matriz de confusão, missingness e análise de blanking como sensibilidade.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal" style="transition-delay: 150ms;">
+                    <figure class="glass-card evidence-card p-6 rounded-2xl">
+                        <img class="evidence-image zoomable-image" src="assets/01_final_model_comparison.png" alt="Comparação final dos modelos">
+                        <figcaption class="text-sm text-gray-400">Comparação final: o ensemble melhora AUC e Brier face aos modelos base.</figcaption>
+                    </figure>
+                    <figure class="glass-card evidence-card p-6 rounded-2xl">
+                        <img class="evidence-image zoomable-image" src="assets/02_roc_pr_overlay_final_models.png" alt="Curvas ROC e precision-recall">
+                        <figcaption class="text-sm text-gray-400">ROC/PR overlay: discriminação e recuperação de recorrência entre ET, BernoulliNB e PM.</figcaption>
+                    </figure>
+                    <figure class="glass-card evidence-card p-6 rounded-2xl">
+                        <img class="evidence-image zoomable-image" src="assets/03_power_mean_k_sweep.png" alt="Power Mean k sweep">
+                        <figcaption class="text-sm text-gray-400">Sweep do k: k=2.5 é a opção principal; k=3 dá AUC 0.7653 no sweep global.</figcaption>
+                    </figure>
+                    <figure class="glass-card evidence-card p-6 rounded-2xl">
+                        <img class="evidence-image zoomable-image" src="assets/04_confusion_matrix_metrics_forma_a.png" alt="Matriz de confusão final">
+                        <figcaption class="text-sm text-gray-400">Matriz final Forma A: 75 TN, 24 FP, 17 FN e 35 TP.</figcaption>
+                    </figure>
+                    <figure class="glass-card evidence-card p-6 rounded-2xl">
+                        <img class="evidence-image zoomable-image" src="assets/07_missingness_encoding_comparison.png" alt="Comparação de missingness">
+                        <figcaption class="text-sm text-gray-400">Missingness: a codificação value + explicit missing flags foi a mais forte e ficou no modelo.</figcaption>
+                    </figure>
+                    <figure class="glass-card evidence-card p-6 rounded-2xl">
+                        <img class="evidence-image zoomable-image" src="assets/12_blanking_vs_preop_model_metrics.png" alt="Comparação com blanking period">
+                        <figcaption class="text-sm text-gray-400">Blanking melhora alguns números, mas é mantido fora do modelo principal por rigor temporal.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 reveal" style="transition-delay: 250ms;">
+                    <div class="glass-card p-7 rounded-2xl">
+                        <h3 class="font-display text-lg font-bold text-white mb-3">Sem blanking no principal</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">A variável blanking_period é reportada apenas como sensibilidade. O modelo final é pré-operatório.</p>
+                    </div>
+                    <div class="glass-card p-7 rounded-2xl">
+                        <h3 class="font-display text-lg font-bold text-white mb-3">Sem leakage no threshold</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">As métricas Forma A usam thresholds definidos no inner fold, antes de avaliar o paciente deixado de fora.</p>
+                    </div>
+                    <div class="glass-card p-7 rounded-2xl">
+                        <h3 class="font-display text-lg font-bold text-white mb-3">Research PoC</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Demonstração de investigação. Não validado para decisão clínica autónoma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tabela" class="py-32 px-8 md:px-20 lg:px-32 z-10 relative bg-black/20 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                    <div>
+                        <div class="font-serif italic text-xl text-gray-500 mb-2">timeline metodológica</div>
+                        <h2 class="font-display text-4xl md:text-5xl font-bold">Histórico das Versões</h2>
+                    </div>
+                    <a href="modelos-anteriores.html" class="journey-button mt-8 md:mt-0">
+                        Modelos anteriores
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden reveal" style="transition-delay: 200ms;">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[800px]">
+                            <thead>
+                                <tr class="border-b border-white/10 bg-white/5">
+                                    <th class="px-8 py-6 text-[10px] font-display font-bold text-gray-400 uppercase tracking-widest w-[15%]">Versão</th>
+                                    <th class="px-8 py-6 text-[10px] font-display font-bold text-gray-400 uppercase tracking-widest w-[20%]">Configuração</th>
+                                    <th class="px-8 py-6 text-[10px] font-display font-bold text-gray-400 uppercase tracking-widest w-[40%]">Raciocínio & Intervenção</th>
+                                    <th class="px-8 py-6 text-[10px] font-display font-bold text-gray-400 uppercase tracking-widest w-[10%]">AUC</th>
+                                    <th class="px-8 py-6 text-[10px] font-display font-bold text-gray-400 uppercase tracking-widest w-[15%]">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm font-light text-gray-300">
+                                <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">V16 baseline</div><div class="text-xs text-gray-500 mt-1">151 pacientes</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">P-wave ECG + clinical pre-op</span><br><span class="text-xs text-gray-500">380 features candidatas</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Base limpa com ECG de superfície, type_af e redo. Blanking period separado para não contaminar o cenário pré-operatório.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-white font-medium">0.726</td>
+                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[10px] font-display tracking-widest uppercase">Bernoulli</div></td>
+                                </tr>
+
+                                <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">ExtraTrees</div><div class="text-xs text-gray-500 mt-1">thr 0.44</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">Árvores extra-randomizadas</span><br><span class="text-xs text-gray-500">Sem blanking</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Modelo base mais sensível. AUC 0.7377, sensibilidade 73.1%, especificidade 65.7%, F1 61.3%.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-white font-medium">0.738</td>
+                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-display tracking-widest uppercase">Base model</div></td>
+                                </tr>
+
+                                <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">Power Mean</div><div class="text-xs text-accent mt-1">k=2.5 Forma A</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">ET + BernoulliNB</span><br><span class="text-xs text-gray-500">Inner-fold thresholds</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Modelo principal defendível: AUC 0.7640, Brier 0.1887, sensibilidade 67.3%, especificidade 75.8%, F1 63.1%.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-accent font-medium">0.764</td>
+                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-display tracking-widest uppercase"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>Final</div></td>
+                                </tr>
+
+                                <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">k sweep</div><div class="text-xs text-gray-500 mt-1">sensibilidade</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">PM k=3</span><br><span class="text-xs text-gray-500">Youden threshold 0.417</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Análise de varrimento: k=3 sobe ligeiramente para AUC 0.7653, AP 0.5856 e Brier 0.1891. Diferença pequena, reportada com transparência.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-accent font-medium">0.765</td>
+                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[10px] font-display tracking-widest uppercase">Exploratório</div></td>
+                                </tr>
+
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="px-8 py-8 align-top"><div class="font-display font-bold text-white text-base">Controlos</div><div class="text-xs text-gray-500 mt-1">missingness / blanking</div></td>
+                                    <td class="px-8 py-8 align-top"><span class="text-white font-medium">Ablations</span><br><span class="text-xs text-gray-500">Sem usar no principal</span></td>
+                                    <td class="px-8 py-8 align-top leading-relaxed text-gray-400">Missingness 0/1 + flags explícitas ficou melhor que ordinal 0/1/2. Blanking melhora AUC em análise secundária, mas fica fora do modelo principal por rigor temporal.</td>
+                                    <td class="px-8 py-8 align-top font-display text-lg text-gray-300 font-medium">audit</td>
+                                    <td class="px-8 py-8 align-top"><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-display tracking-widest uppercase">Honestidade</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Call to action elegante -->
+                <div class="mt-24 text-center reveal">
+                    <p class="font-serif italic text-2xl text-gray-400 mb-6">A ciência avança com transparência.</p>
+                    <a href="assets/decisao_final.pdf" download class="inline-flex px-8 py-4 bg-white text-black font-display font-bold uppercase tracking-widest text-xs hover:bg-accent hover:text-white transition-all duration-300 rounded-sm">
+                        Descarregar Relatório Completo
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="arquivo" class="py-32 px-8 md:px-20 lg:px-32 z-10 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 reveal">
+                    <div class="font-serif italic text-xl text-gray-500 mb-2">repositório visual completo</div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold">Arquivo</h2>
+                    <p class="mt-5 max-w-3xl text-gray-400 font-light leading-relaxed">
+                        Uma área separada para preservar a página principal intacta e, ao mesmo tempo, deixar acessíveis as versões, figuras e outputs de suporte.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-4 md:p-6 reveal" style="transition-delay: 150ms;">
+                    <div class="flex flex-wrap gap-3 mb-8 border-b border-white/10 pb-5">
+                        <button class="archive-tab active px-5 py-3 rounded-full border border-white/10 text-xs font-display uppercase tracking-widest text-gray-300 transition-all" data-archive-tab="versions">Versões</button>
+                        <button class="archive-tab px-5 py-3 rounded-full border border-white/10 text-xs font-display uppercase tracking-widest text-gray-300 transition-all" data-archive-tab="outputs">Todos os outputs</button>
+                    </div>
+
+                    <div id="archive-versions" class="archive-panel active">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                            <article class="rounded-2xl border border-white/10 bg-black/25 p-6">
+                                <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-3">Linha principal</div>
+                                <h3 class="font-display text-2xl font-bold text-white mb-3">Modelo final defendível</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">ECG-only pré-operatório, sem blanking period, com ExtraTrees + BernoulliNB e fusão Power Mean.</p>
+                            </article>
+                            <article class="rounded-2xl border border-white/10 bg-black/25 p-6">
+                                <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-3">Controlo metodológico</div>
+                                <h3 class="font-display text-2xl font-bold text-white mb-3">Missingness e thresholds</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">Comparações entre flags explícitas, codificação ordinal, thresholds fixos e thresholds fold-specific.</p>
+                            </article>
+                            <article class="rounded-2xl border border-white/10 bg-black/25 p-6">
+                                <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-3">Sensibilidade</div>
+                                <h3 class="font-display text-2xl font-bold text-white mb-3">Blanking e análises secundárias</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">Resultados reportados para transparência, mantendo o modelo final alinhado com o cenário pré-operatório.</p>
+                            </article>
+                        </div>
+
+                        <div class="mt-6 rounded-2xl border border-accent/20 bg-accent/10 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+                            <div>
+                                <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-2">Página complementar</div>
+                                <h3 class="font-display text-2xl font-bold text-white">Narrativa completa dos modelos anteriores</h3>
+                                <p class="mt-2 text-sm text-gray-400 leading-relaxed">Uma página separada para explicar a evolução, experiências rejeitadas, controlos e decisões metodológicas.</p>
+                            </div>
+                            <a href="modelos-anteriores.html" class="journey-button shrink-0">
+                                Abrir percurso
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+
+                        <div class="mt-8 rounded-2xl border border-white/10 overflow-hidden">
+                            <table class="w-full text-left min-w-[760px]">
+                                <thead class="bg-white/5">
+                                    <tr>
+                                        <th class="px-6 py-4 text-[10px] uppercase tracking-widest text-gray-500">Bloco</th>
+                                        <th class="px-6 py-4 text-[10px] uppercase tracking-widest text-gray-500">Conteúdo</th>
+                                        <th class="px-6 py-4 text-[10px] uppercase tracking-widest text-gray-500">Uso na defesa</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm text-gray-300">
+                                    <tr class="border-t border-white/5"><td class="px-6 py-4 font-medium text-white">results</td><td class="px-6 py-4">Modelos, curvas, ablations e validação</td><td class="px-6 py-4 text-gray-400">Evidência principal e suplementar</td></tr>
+                                    <tr class="border-t border-white/5"><td class="px-6 py-4 font-medium text-white">documentos/img_relatorio</td><td class="px-6 py-4">Figuras numeradas para relatório</td><td class="px-6 py-4 text-gray-400">Slides e anexos</td></tr>
+                                    <tr class="border-t border-white/5"><td class="px-6 py-4 font-medium text-white">archive_superseded</td><td class="px-6 py-4">Versões antigas preservadas</td><td class="px-6 py-4 text-gray-400">Rastreabilidade metodológica</td></tr>
+                                    <tr class="border-t border-white/5"><td class="px-6 py-4 font-medium text-white">results_comp_modelos</td><td class="px-6 py-4">Comparações de modelos e parâmetros</td><td class="px-6 py-4 text-gray-400">Justificação da escolha final</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="archive-outputs" class="archive-panel">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 items-stretch">
+                            <div class="lg:col-span-5 rounded-2xl border border-white/10 bg-black/25 p-7">
+                                <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-3">Galeria organizada</div>
+                                <h3 class="font-display text-3xl font-bold text-white leading-tight">Outputs de suporte</h3>
+                                <p id="archive-output-count" class="mt-4 text-sm text-gray-400 leading-relaxed">A carregar outputs deduplicados...</p>
+                            </div>
+                            <div class="lg:col-span-7 rounded-2xl border border-white/10 bg-black/25 p-7 flex flex-col justify-between gap-6">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="archive-stat-card">
+                                        <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Imagens</div>
+                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-image-total">194</div>
+                                    </div>
+                                    <div class="archive-stat-card">
+                                        <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Ficheiros</div>
+                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-file-total">610</div>
+                                    </div>
+                                </div>
+                                <div class="archive-control-row">
+                                    <div class="archive-select-shell">
+                                        <select id="archive-category-filter">
+                                            <option value="all">Todas as pastas</option>
+                                        </select>
+                                    </div>
+                                    <button id="archive-show-all" class="px-6 py-4 rounded-full bg-white text-black text-xs font-display uppercase tracking-widest font-bold hover:bg-accent hover:text-white transition-all whitespace-nowrap">Mostrar todos</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="archive-gallery" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="referencias" class="py-32 px-8 md:px-20 lg:px-32 z-10 relative bg-black/20 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-14 reveal">
+                    <div class="font-serif italic text-xl text-gray-500 mb-2">para QR no poster</div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold">Referências</h2>
+                    <p class="mt-5 max-w-3xl text-gray-400 font-light leading-relaxed">
+                        Secção curta e estável para apontar o QR do poster: reúne o modelo final, os outputs principais, o relatório e a rastreabilidade metodológica.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 reveal" style="transition-delay: 150ms;">
+                    <a href="#modelos" class="glass-card p-7 rounded-2xl group">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="text-[10px] font-display uppercase tracking-widest text-accent">Modelo</div>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Power Mean Ensemble</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">ExtraTrees + BernoulliNB, k=2.5, threshold operacional 0.396.</p>
+                    </a>
+
+                    <a href="#validacao" class="glass-card p-7 rounded-2xl group">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="text-[10px] font-display uppercase tracking-widest text-accent">Validação</div>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Figuras principais</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">ROC/PR, comparação final, matriz de confusão, missingness e blanking sensitivity.</p>
+                    </a>
+
+                    <a href="#arquivo" class="glass-card p-7 rounded-2xl group">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="text-[10px] font-display uppercase tracking-widest text-accent">Outputs</div>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Arquivo visual</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Galeria deduplicada dos outputs úteis, organizada por pasta de resultados.</p>
+                    </a>
+
+                    <a href="assets/decisao_final.pdf" download class="glass-card p-7 rounded-2xl group">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="text-[10px] font-display uppercase tracking-widest text-accent">PDF</div>
+                            <i data-lucide="download" class="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Relatório completo</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Documento de apoio com decisão final e material metodológico.</p>
+                    </a>
+
+                    <a href="https://github.com/Richardsss22/TheBestPic" class="glass-card p-7 rounded-2xl group">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="text-[10px] font-display uppercase tracking-widest text-accent">Código</div>
+                            <i data-lucide="github" class="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Repositório GitHub</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Histórico e versão web do projeto para colaboração e recuperação de alterações.</p>
+                    </a>
+
+                    <div class="glass-card p-7 rounded-2xl">
+                        <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-5">Link recomendado</div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">QR do poster</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Usa o URL público com a âncora <span class="text-white font-medium">#referencias</span> para abrir diretamente esta secção.</p>
+                        <div class="mt-5 rounded-xl bg-black/35 border border-white/10 px-3.5 py-4 font-mono text-[0.68rem] text-gray-300 whitespace-nowrap overflow-hidden">https://thebestpic.web.app/#referencias</div>
+                    </div>
+                </div>
+
+                <div class="mt-10 glass-card p-7 rounded-2xl reveal" style="transition-delay: 240ms;">
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7">
+                        <div>
+                            <div class="text-[10px] font-display uppercase tracking-widest text-accent mb-3">Bibliografia base</div>
+                            <h3 class="font-display text-2xl font-bold text-white">Artigos e fontes metodológicas</h3>
+                        </div>
+                        <p class="max-w-xl text-sm text-gray-400 leading-relaxed">
+                            Links externos para sustentar guidelines, ECG/P-wave, modelos clássicos e rastreabilidade do método.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                        <a class="reference-link" href="https://academic.oup.com/eurheartj/article/45/36/3314/7738779" target="_blank" rel="noopener">
+                            <div class="reference-source">ESC Guidelines · 2024</div>
+                            <div class="reference-title">2024 ESC Guidelines for the management of atrial fibrillation.</div>
+                        </a>
+                        <a class="reference-link" href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000001193" target="_blank" rel="noopener">
+                            <div class="reference-source">ACC/AHA/ACCP/HRS · 2023</div>
+                            <div class="reference-title">Guideline for the diagnosis and management of atrial fibrillation.</div>
+                        </a>
+                        <a class="reference-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9935015/" target="_blank" rel="noopener">
+                            <div class="reference-source">P-wave · Recurrence</div>
+                            <div class="reference-title">P-wave duration and AF recurrence after catheter ablation: systematic review and meta-analysis.</div>
+                        </a>
+                        <a class="reference-link" href="https://pubmed.ncbi.nlm.nih.gov/27402624/" target="_blank" rel="noopener">
+                            <div class="reference-source">Atrial substrate</div>
+                            <div class="reference-title">EHRA/HRS/APHRS/SOLAECE expert consensus on atrial cardiomyopathies.</div>
+                        </a>
+                        <a class="reference-link" href="https://www.nature.com/articles/s41467-020-15432-4" target="_blank" rel="noopener">
+                            <div class="reference-source">Automatic ECG · Nature</div>
+                            <div class="reference-title">Automatic diagnosis of the 12-lead ECG using a deep neural network.</div>
+                        </a>
+                        <a class="reference-link" href="https://github.com/antonior92/automatic-ecg-diagnosis" target="_blank" rel="noopener">
+                            <div class="reference-source">Código ECG</div>
+                            <div class="reference-title">antonior92/automatic-ecg-diagnosis: repositório usado como referência técnica.</div>
+                        </a>
+                        <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html" target="_blank" rel="noopener">
+                            <div class="reference-source">scikit-learn</div>
+                            <div class="reference-title">ExtraTreesClassifier: documentação oficial do modelo de árvores usado.</div>
+                        </a>
+                        <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html" target="_blank" rel="noopener">
+                            <div class="reference-source">scikit-learn</div>
+                            <div class="reference-title">BernoulliNB: documentação oficial do modelo probabilístico base.</div>
+                        </a>
+                        <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html" target="_blank" rel="noopener">
+                            <div class="reference-source">Métricas</div>
+                            <div class="reference-title">roc_auc_score: referência oficial para a métrica principal de ranking.</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="image-lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+            <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Fechar imagem">×</button>
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <footer class="py-12 border-t border-white/5 text-center z-10 relative bg-[#030712]">
+        <div class="flex items-center justify-center gap-2 text-[10px] font-display uppercase tracking-widest text-gray-600">
+            <i data-lucide="activity" class="w-3 h-3"></i>
+            <span>Instituto Superior Técnico · Projeto PIC · 2026</span>
+        </div>
+        <div class="mt-4 text-[11px] font-display uppercase tracking-[0.18em] text-gray-500">
+            Guilherme Soares · Ricardo Macedo · Rita Reis · Rodrigo Marques
+        </div>
+    </footer>
+
+    <script>
+        // Script para a animação "Reveal" ao fazer scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+
+            const navbar = document.getElementById('navbar');
+            const reveals = document.querySelectorAll('.reveal');
+            const archiveTabs = document.querySelectorAll('[data-archive-tab]');
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const archivePanels = {
+                versions: document.getElementById('archive-versions'),
+                outputs: document.getElementById('archive-outputs')
+            };
+
+            const updateNavbar = () => {
+                navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+            };
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            archiveTabs.forEach((tab) => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.archiveTab;
+                    archiveTabs.forEach((item) => item.classList.toggle('active', item === tab));
+                    Object.entries(archivePanels).forEach(([key, panel]) => {
+                        panel.classList.toggle('active', key === target);
+                    });
+                });
+            });
+
+            const openLightbox = (src, alt, caption) => {
+                if (!lightbox || !lightboxImage) return;
+                lightboxImage.src = src;
+                lightboxImage.alt = alt || 'Imagem ampliada';
+                lightboxCaption.textContent = caption || alt || '';
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeLightbox = () => {
+                if (!lightbox || !lightboxImage) return;
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                lightboxImage.src = '';
+            };
+
+            document.addEventListener('click', (event) => {
+                const image = event.target.closest('.zoomable-image, .output-thumb');
+                if (image) {
+                    const figure = image.closest('figure');
+                    const caption = figure?.querySelector('figcaption')?.innerText?.trim();
+                    openLightbox(image.currentSrc || image.src, image.alt, caption);
+                    return;
+                }
+
+                if (event.target === lightbox || event.target === lightboxClose) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') closeLightbox();
+            });
+
+            const renderArchive = async () => {
+                const gallery = document.getElementById('archive-gallery');
+                const count = document.getElementById('archive-output-count');
+                const filter = document.getElementById('archive-category-filter');
+                const showAllButton = document.getElementById('archive-show-all');
+                const imageTotal = document.getElementById('archive-image-total');
+                const fileTotal = document.getElementById('archive-file-total');
+
+                if (!gallery || !filter || !showAllButton) return;
+
+                try {
+                    const response = await fetch('assets/v16_6_outputs/manifest.json');
+                    const manifest = await response.json();
+                    const friendlyCategory = (name) => {
+                        if (name === 'documentos/img_relatorio') return 'Figuras do relatório';
+                        if (name.startsWith('results/model_decision_evidence')) return 'Evidência da decisão do modelo';
+                        if (name.startsWith('results/pm_ensemble')) return 'Power Mean Ensemble';
+                        if (name.startsWith('results_comp_modelos')) return 'Comparação de modelos';
+                        if (name.startsWith('results/anova_features')) return 'Seleção de features';
+                        if (name.startsWith('results/missingness')) return 'Missingness';
+                        if (name.startsWith('results/extratrees_tuned')) return 'ExtraTrees';
+                        if (name.startsWith('results/bernoulli_tuned')) return 'BernoulliNB';
+                        if (name.startsWith('archive_superseded')) return 'Versões exploratórias';
+                        return name.split('/').slice(-2).join(' / ').replaceAll('_', ' ');
+                    };
+                    const priority = (item) => {
+                        const c = item.category || '';
+                        if (c === 'documentos/img_relatorio') return 0;
+                        if (c.startsWith('results/model_decision_evidence')) return 1;
+                        if (c.startsWith('results/pm_ensemble')) return 2;
+                        if (c.startsWith('results_comp_modelos')) return 3;
+                        if (c.startsWith('results/')) return 4;
+                        if (c.startsWith('archive_superseded')) return 8;
+                        return 6;
+                    };
+                    const images = (manifest.images || []).sort((a, b) => priority(a) - priority(b) || a.category.localeCompare(b.category) || a.filename.localeCompare(b.filename));
+                    let currentLimit = 24;
+
+                    imageTotal.textContent = manifest.image_count || images.length;
+                    fileTotal.textContent = manifest.file_count || images.length;
+                    count.textContent = `${manifest.image_count || images.length} imagens deduplicadas e ${manifest.file_count || images.length} ficheiros organizados por pasta de resultados. Duplicados exatos foram removidos da galeria principal.`;
+
+                    const categoryPriority = (name) => priority({ category: name, filename: '' });
+                    const categories = Object.entries(manifest.categories || {})
+                        .sort((a, b) => categoryPriority(a[0]) - categoryPriority(b[0]) || b[1].images - a[1].images || a[0].localeCompare(b[0]));
+
+                    categories
+                        .filter(([, value]) => value.images > 0)
+                        .forEach(([name, value]) => {
+                            const option = document.createElement('option');
+                            option.value = name;
+                            option.textContent = `${friendlyCategory(name)} (${value.images})`;
+                            filter.appendChild(option);
+                        });
+
+                    const render = () => {
+                        const selected = filter.value;
+                        const filtered = selected === 'all' ? images : images.filter((item) => item.category === selected);
+                        const visible = filtered.slice(0, currentLimit);
+                        gallery.innerHTML = visible.map((item) => `
+                            <figure class="rounded-2xl border border-white/10 bg-black/25 p-4">
+                                <img class="output-thumb zoomable-image" loading="lazy" src="${item.file}" alt="${item.name}">
+                                <figcaption class="mt-4">
+                                    <div class="text-sm font-medium text-white line-clamp-2">${item.name}</div>
+                                    <div class="mt-1 text-[10px] uppercase tracking-widest text-accent/80 line-clamp-2">${friendlyCategory(item.category)}</div>
+                                </figcaption>
+                            </figure>
+                        `).join('');
+                        showAllButton.textContent = visible.length < filtered.length ? `Mostrar todos (${filtered.length})` : `A mostrar ${filtered.length}`;
+                        showAllButton.disabled = visible.length >= filtered.length;
+                        showAllButton.classList.toggle('opacity-50', showAllButton.disabled);
+                    };
+
+                    filter.addEventListener('change', () => {
+                        currentLimit = 24;
+                        render();
+                    });
+
+                    showAllButton.addEventListener('click', () => {
+                        const selected = filter.value;
+                        currentLimit = selected === 'all' ? images.length : images.filter((item) => item.category === selected).length;
+                        render();
+                    });
+
+                    render();
+                } catch (error) {
+                    count.textContent = 'Não foi possível carregar os outputs.';
+                    gallery.innerHTML = '<div class="rounded-2xl border border-red-500/20 bg-red-500/10 p-6 text-sm text-red-200">Outputs indisponíveis nesta execução local.</div>';
+                }
+            };
+
+            // Verificar no load inicial
+            updateNavbar();
+            revealOnScroll();
+            renderArchive();
+            // Verificar ao fazer scroll
+            window.addEventListener('scroll', updateNavbar);
+            window.addEventListener('scroll', revealOnScroll);
+        });
+    </script>
+</body>
+</html>

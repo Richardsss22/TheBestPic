@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos anteriores - Projeto PIC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;500;700;800;900&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: { accent: { DEFAULT: '#2563EB', glow: '#3B82F6' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: #030712;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .ambient-light {
+            position: fixed;
+            inset: -20vh auto auto -18vw;
+            width: 70vw;
+            height: 70vw;
+            border-radius: 999px;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(90px);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.18), rgba(3, 7, 18, 0) 68%);
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.42);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .site-nav {
+            background: rgba(3, 7, 18, 0.72);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .journey-table {
+            min-width: 960px;
+        }
+
+        .phase-dot {
+            width: 0.62rem;
+            height: 0.62rem;
+            border-radius: 999px;
+            background: #3b82f6;
+            box-shadow: 0 0 0 0.45rem rgba(59, 130, 246, 0.12);
+        }
+
+        .evidence-image {
+            width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 0.75rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            padding: 0.45rem 0.75rem;
+            color: #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .button-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #030712;
+            padding: 1rem 1.45rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .button-primary:hover {
+            background: #2563eb;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+    <div class="noise-overlay"></div>
+    <div class="ambient-light"></div>
+
+    <nav class="site-nav fixed top-0 w-full z-40 px-8 py-5 flex justify-between items-center">
+        <a href="index.html#hero" class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-accent rounded-full"></div>
+            <span class="font-display font-bold text-sm tracking-widest uppercase text-white">Projeto PIC</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-[11px] font-display tracking-[0.2em] uppercase text-gray-400">
+            <a href="index.html#modelos" class="hover:text-white transition-colors">Modelo final</a>
+            <a href="index.html#arquivo" class="hover:text-white transition-colors">Arquivo</a>
+            <a href="index.html#referencias" class="hover:text-white transition-colors">Referências</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="pt-40 pb-24 px-8 md:px-20 lg:px-32">
+            <div class="max-w-7xl mx-auto">
+                <div class="max-w-4xl">
+                    <div class="font-serif italic text-2xl text-gray-500 mb-4">a viagem metodológica</div>
+                    <h1 class="font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.92]">
+                        Modelos anteriores, decisões e controlos.
+                    </h1>
+                    <p class="mt-8 text-xl text-gray-400 font-light leading-relaxed max-w-3xl">
+                        Esta página é o diário técnico das versões anteriores: desde os primeiros pipelines, pelas auditorias de leakage e pelas experiências até à v38. A página principal fica focada na síntese atual; aqui fica a história completa da tentativa, erro e decisão.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a href="index.html#modelos" class="button-primary">
+                            Voltar ao modelo final
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="index.html#arquivo" class="button-primary bg-transparent text-white border border-white/15 hover:border-accent">
+                            Abrir arquivo visual
+                            <i data-lucide="images" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-8 md:px-20 lg:px-32 border-y border-white/5 bg-black/20">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-5">
+                <article class="glass-card rounded-2xl p-6">
+                    <div class="pill mb-5">V1-V8</div>
+                    <div class="font-display text-4xl font-black text-white">Explorar</div>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">Extração inicial, feature tables, primeiras combinações ECG/clinical e aprendizagem do dataset.</p>
+                </article>
+                <article class="glass-card rounded-2xl p-6">
+                    <div class="pill mb-5">V9-V16</div>
+                    <div class="font-display text-4xl font-black text-white">Limpar</div>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">Separação pré-operatória, P-wave ECG, missingness, BernoulliNB e ExtraTrees como modelos base.</p>
+                </article>
+                <article class="glass-card rounded-2xl p-6">
+                    <div class="pill mb-5">V17-V22</div>
+                    <div class="font-display text-4xl font-black text-white">Auditar</div>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">Nested CV, thresholds fold-local, testes anti-cherry-picking e separação de variáveis temporalmente sensíveis.</p>
+                </article>
+                <article class="glass-card rounded-2xl p-6">
+                    <div class="pill mb-5">V23-V38</div>
+                    <div class="font-display text-4xl font-black text-accent">Consolidar</div>
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">Bancos de variantes, ensembles, comparação com blanking como sensibilidade e escolha do percurso defendível.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="py-24 px-8 md:px-20 lg:px-32">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12">
+                    <div class="font-serif italic text-xl text-gray-500 mb-2">o que mudou</div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold">Linha temporal das versões</h2>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="journey-table w-full text-left">
+                            <thead class="bg-white/5 border-b border-white/10">
+                                <tr>
+                                    <th class="px-7 py-5 text-[10px] uppercase tracking-widest text-gray-500">Versões</th>
+                                    <th class="px-7 py-5 text-[10px] uppercase tracking-widest text-gray-500">Objetivo</th>
+                                    <th class="px-7 py-5 text-[10px] uppercase tracking-widest text-gray-500">O que se testou</th>
+                                    <th class="px-7 py-5 text-[10px] uppercase tracking-widest text-gray-500">Aprendizagem</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-300">
+                                <tr class="border-b border-white/5">
+                                    <td class="px-7 py-6 font-medium text-white">V1-V5</td>
+                                    <td class="px-7 py-6">Fazer o pipeline respirar</td>
+                                    <td class="px-7 py-6">Leitura de `.mat`, primeiras features ECG, tabelas clínicas e modelos baseline.</td>
+                                    <td class="px-7 py-6 text-gray-400">O problema precisava de rastreabilidade por paciente antes de qualquer otimização.</td>
+                                </tr>
+                                <tr class="border-b border-white/5">
+                                    <td class="px-7 py-6 font-medium text-white">V6-V10</td>
+                                    <td class="px-7 py-6">Aumentar sinal sem perder controlo</td>
+                                    <td class="px-7 py-6">Feature selection, ECG P-wave, métricas LOOCV e comparação de modelos simples.</td>
+                                    <td class="px-7 py-6 text-gray-400">Modelos estáveis e pequenos eram mais úteis que pipelines demasiado ambiciosos.</td>
+                                </tr>
+                                <tr class="border-b border-white/5">
+                                    <td class="px-7 py-6 font-medium text-white">V11-V16</td>
+                                    <td class="px-7 py-6">Fixar um baseline competitivo</td>
+                                    <td class="px-7 py-6">BernoulliNB tuned, GNB, ExtraTrees, missing flags e comparação de thresholds.</td>
+                                    <td class="px-7 py-6 text-gray-400">A v16 mostrou que havia sinal ECG-only real, mas também expôs riscos de decisão pós-hoc.</td>
+                                </tr>
+                                <tr class="border-b border-white/5">
+                                    <td class="px-7 py-6 font-medium text-white">V17-V21</td>
+                                    <td class="px-7 py-6">Auditoria anti-leakage</td>
+                                    <td class="px-7 py-6">Nested CV, thresholds fold-specific, comparação fixed vs nested e Optuna nested.</td>
+                                    <td class="px-7 py-6 text-gray-400">A avaliação honesta podia baixar alguns números, mas aumentava a credibilidade do projeto.</td>
+                                </tr>
+                                <tr class="border-b border-white/5">
+                                    <td class="px-7 py-6 font-medium text-white">V22-V30</td>
+                                    <td class="px-7 py-6">Testar limites do dataset</td>
+                                    <td class="px-7 py-6">Full ECG+EGM, variantes com todos os `.mat`, blanking sensitivity e fusões alternativas.</td>
+                                    <td class="px-7 py-6 text-gray-400">Mais features não significavam melhor generalização; o modelo pré-operatório limpo era mais defensável.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-7 py-6 font-medium text-white">V31-V38</td>
+                                    <td class="px-7 py-6">Consolidar a decisão</td>
+                                    <td class="px-7 py-6">Bancos de variantes, k sweep, ensembles ponderados, métricas operacionais e app research PoC.</td>
+                                    <td class="px-7 py-6 text-gray-400">A versão candidata precisava ser boa, explicável e defendível, não apenas a que maximizava um número.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-8 md:px-20 lg:px-32 bg-black/20 border-y border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12">
+                    <div class="font-serif italic text-xl text-gray-500 mb-2">provas visuais</div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold">Figuras que contam a viagem</h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <figure class="glass-card rounded-2xl p-6">
+                        <img class="evidence-image" src="assets/01_final_model_comparison.png" alt="Comparação final dos modelos">
+                        <figcaption class="mt-5 text-sm text-gray-400 leading-relaxed">Comparação final entre ExtraTrees, BernoulliNB e Power Mean Ensemble.</figcaption>
+                    </figure>
+                    <figure class="glass-card rounded-2xl p-6">
+                        <img class="evidence-image" src="assets/03_power_mean_k_sweep.png" alt="Sweep do k">
+                        <figcaption class="mt-5 text-sm text-gray-400 leading-relaxed">Sweep do parâmetro k, útil para explicar a escolha conservadora do modelo principal.</figcaption>
+                    </figure>
+                    <figure class="glass-card rounded-2xl p-6">
+                        <img class="evidence-image" src="assets/07_missingness_encoding_comparison.png" alt="Comparação de codificação de missingness">
+                        <figcaption class="mt-5 text-sm text-gray-400 leading-relaxed">Comparação de codificações de missingness e impacto nos resultados.</figcaption>
+                    </figure>
+                    <figure class="glass-card rounded-2xl p-6">
+                        <img class="evidence-image" src="assets/12_blanking_vs_preop_model_metrics.png" alt="Blanking period">
+                        <figcaption class="mt-5 text-sm text-gray-400 leading-relaxed">Análise secundária com blanking period, reportada mas não usada no modelo final.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 text-center bg-[#030712]">
+        <div class="flex items-center justify-center gap-2 text-[10px] font-display uppercase tracking-widest text-gray-600">
+            <i data-lucide="activity" class="w-3 h-3"></i>
+            <span>Instituto Superior Técnico · Projeto PIC · 2026</span>
+        </div>
+        <div class="mt-4 text-[11px] font-display uppercase tracking-[0.18em] text-gray-500">
+            Guilherme Soares · Ricardo Macedo · Rita Reis · Rodrigo Marques
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
