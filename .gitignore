@@ -23,3 +23,6 @@ temp/
 firebase-debug.log
 serviceAccountKey.json
 *-firebase-adminsdk-*.json
+*.csv
+*.xlsx
+*.txt
