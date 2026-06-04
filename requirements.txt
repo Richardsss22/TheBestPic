@@ -9,3 +9,5 @@ ts2vg
 joblib
 openpyxl
 plotly
+matplotlib
+fpdf2

@@ -1089,34 +1089,38 @@
                     <div class="font-serif italic text-xl text-gray-500 mb-2">evidência visual</div>
                     <h2 class="font-display text-4xl md:text-5xl font-bold">Validação, comparação e controlos.</h2>
                     <p class="mt-5 max-w-3xl text-gray-400 font-light leading-relaxed">
-                        Figuras geradas a partir dos outputs finais: comparação de modelos, curvas ROC/PR, sweep do k, matriz de confusão, missingness e análise de blanking como sensibilidade.
+                        Figuras geradas a partir dos outputs finais da pasta ML v16 6: calibração, comparação de modelos, curvas ROC/PR, decisão do k, matriz final, sensibilidade a blanking e métricas fold-level.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal" style="transition-delay: 150ms;">
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/01_final_model_comparison.png" alt="Comparação final dos modelos">
-                        <figcaption class="text-sm text-gray-400">Comparação final: o ensemble melhora AUC e Brier face aos modelos base.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_calibration_overlay.png" alt="Calibration overlay dos modelos finais">
+                        <figcaption class="text-sm text-gray-400">Calibration overlay: comparação entre risco previsto médio e recorrência observada nos modelos finais pré-operatórios.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/02_roc_pr_overlay_final_models.png" alt="Curvas ROC e precision-recall">
-                        <figcaption class="text-sm text-gray-400">ROC/PR overlay: discriminação e recuperação de recorrência entre ET, BernoulliNB e PM.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_bar_roc.png" alt="Comparação final e ROC overlay">
+                        <figcaption class="text-sm text-gray-400">Comparação final: o Power Mean Ensemble k=3 lidera o AUC LOOCV e é mostrado contra ET, BernoulliNB e GNB.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/03_power_mean_k_sweep.png" alt="Power Mean k sweep">
-                        <figcaption class="text-sm text-gray-400">Sweep do k: k=3 é o ponto final em ML v16 6, com AUC LOOCV 0.7677.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_k_curves.png" alt="Curvas de decisão para k e seleção nested">
+                        <figcaption class="text-sm text-gray-400">Caminho de decisão do k: sweep dos modelos base e frequência de seleção nested para justificar k=3.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/04_confusion_matrix_metrics_forma_a.png" alt="Matriz de confusão final">
-                        <figcaption class="text-sm text-gray-400">Matriz final PM k=3 no threshold 0.417: 76 TN, 23 FP, 18 FN e 34 TP.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_precision_recall_overlay.png" alt="Precision-recall overlay dos modelos finais">
+                        <figcaption class="text-sm text-gray-400">Precision-recall overlay: comparação da recuperação de recorrência entre o ensemble e os modelos base.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/07_missingness_encoding_comparison.png" alt="Comparação de missingness">
-                        <figcaption class="text-sm text-gray-400">Missingness: a codificação value + explicit missing flags foi a mais forte e ficou no modelo.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_with_blanking_comparison.png" alt="Comparação com e sem blanking period">
+                        <figcaption class="text-sm text-gray-400">Blanking sensitivity: mostra o ganho exploratório com blanking, mantido fora do modelo principal por rigor temporal.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/12_blanking_vs_preop_model_metrics.png" alt="Comparação com blanking period">
-                        <figcaption class="text-sm text-gray-400">Blanking melhora alguns números, mas é mantido fora do modelo principal por rigor temporal.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_pme_k3_nested_median_decision.png" alt="Decisão final Power Mean Ensemble k=3">
+                        <figcaption class="text-sm text-gray-400">Decisão PM k=3: fixed-k diagnostics com mediana nested k=3 e AUC LOOCV final reportado.</figcaption>
+                    </figure>
+                    <figure class="glass-card evidence-card p-6 rounded-2xl lg:col-span-2">
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_best_model_loocv_fold_metrics.png" alt="Métricas LOOCV fold-level do modelo final">
+                        <figcaption class="text-sm text-gray-400">Métricas fold-level/pooled: comparação operacional entre threshold 0.50 e max-all composite no modelo final.</figcaption>
                     </figure>
                 </div>
 
