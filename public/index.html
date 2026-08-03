@@ -487,6 +487,77 @@
             word-break: break-word;
         }
 
+        .sci-term {
+            position: relative;
+            display: inline;
+            color: inherit;
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: rgba(96, 165, 250, 0.46);
+            text-underline-offset: 0.22em;
+            cursor: help;
+        }
+
+        .sci-term::after,
+        .sci-term::before {
+            display: none;
+        }
+
+        .scientific-tooltip-card {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 2000;
+            width: max-content;
+            max-width: min(20rem, calc(100vw - 2rem));
+            min-width: min(13rem, calc(100vw - 2rem));
+            padding: 0.75rem 0.9rem;
+            border: 1px solid rgba(147, 197, 253, 0.24);
+            border-radius: 0.95rem;
+            background: rgba(8, 13, 26, 0.92);
+            color: #e5e7eb;
+            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 400;
+            line-height: 1.55;
+            letter-spacing: 0;
+            text-transform: none;
+            white-space: normal;
+            text-align: left;
+            pointer-events: none;
+            visibility: hidden;
+            opacity: 0;
+            transform: translate3d(var(--tooltip-x, 0), var(--tooltip-y, 0), 0) scale(0.98);
+            transform-origin: top center;
+            transition: opacity 180ms ease, transform 180ms ease;
+        }
+
+        .scientific-tooltip-card.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translate3d(var(--tooltip-x, 0), var(--tooltip-y, 0), 0) scale(1);
+        }
+
+        .sci-term:focus-visible {
+            outline: 1px solid rgba(147, 197, 253, 0.45);
+            outline-offset: 0.18rem;
+            border-radius: 0.2rem;
+        }
+
+        @media (hover: none), (pointer: coarse), (max-width: 900px) {
+            .sci-term {
+                cursor: inherit;
+                text-decoration-color: rgba(96, 165, 250, 0.22);
+            }
+
+            .scientific-tooltip-card {
+                display: none !important;
+            }
+        }
+
         @keyframes lightboxIn {
             from { opacity: 0; transform: scale(0.96) translateY(10px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
@@ -515,6 +586,49 @@
             box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
         }
 
+        .app-page-link {
+            position: fixed;
+            top: 5.8rem;
+            right: 2rem;
+            z-index: 45;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.72rem;
+            padding: 0.68rem 0.78rem 0.68rem 1.05rem;
+            border-radius: 999px;
+            border: 1px solid rgba(96, 165, 250, 0.5);
+            background:
+                linear-gradient(135deg, rgba(37, 99, 235, 0.24), rgba(15, 23, 42, 0.66)),
+                rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22), 0 0 28px rgba(37, 99, 235, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.13);
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+        }
+
+        .app-page-link:hover {
+            transform: translateX(3px);
+            border-color: rgba(191, 219, 254, 0.82);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.26), 0 0 34px rgba(37, 99, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .app-page-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.95);
+            box-shadow: 0 0 18px rgba(37, 99, 235, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        }
+
         .heart-background {
             position: absolute;
             right: clamp(2rem, 7vw, 28rem);
@@ -539,6 +653,37 @@
             background: transparent;
             transform: translateZ(0);
             backface-visibility: hidden;
+        }
+
+        .cite-project {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            padding: 1rem 1.35rem;
+            border-radius: 999px;
+            border: 1px solid rgba(147, 197, 253, 0.28);
+            background: rgba(15, 23, 42, 0.62);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        }
+
+        .cite-project:hover {
+            transform: translateY(-2px);
+            border-color: rgba(191, 219, 254, 0.62);
+            background: rgba(37, 99, 235, 0.18);
+        }
+
+        .copy-status {
+            min-height: 1.4rem;
+            color: rgba(147, 197, 253, 0.82);
+            font-size: 0.78rem;
+            margin-top: 0.9rem;
         }
 
         @media (max-width: 900px) {
@@ -596,6 +741,20 @@
             .site-nav span {
                 font-size: 0.92rem;
                 letter-spacing: 0.17em;
+            }
+
+            .app-page-link {
+                top: 5.15rem;
+                right: 1.25rem;
+                gap: 0.5rem;
+                padding: 0.56rem 0.62rem 0.56rem 0.82rem;
+                font-size: 0.62rem;
+                letter-spacing: 0.12em;
+            }
+
+            .app-page-arrow {
+                width: 1.65rem;
+                height: 1.65rem;
             }
 
             #hero {
@@ -884,6 +1043,13 @@
         </div>
     </nav>
 
+    <a class="app-page-link" href="https://thebestpic.streamlit.app" target="_blank" rel="noopener noreferrer" aria-label="Abrir app preditiva">
+        <span>Abrir app preditiva</span>
+        <span class="app-page-arrow">
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </span>
+    </a>
+
     <main>
         <section id="hero" class="relative min-h-screen flex flex-col justify-center px-8 md:px-20 lg:px-32 z-10 pt-20 overflow-hidden">
 
@@ -1099,8 +1265,8 @@
                         <figcaption class="text-sm text-gray-400">Calibration overlay: comparação entre risco previsto médio e recorrência observada nos modelos finais pré-operatórios.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
-                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_bar_roc.png" alt="Comparação final e ROC overlay">
-                        <figcaption class="text-sm text-gray-400">Comparação final: o Power Mean Ensemble k=3 lidera o AUC LOOCV e é mostrado contra ET, BernoulliNB e GNB.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_best_model_loocv_fold_metrics.png" alt="Métricas LOOCV fold-level do modelo final">
+                        <figcaption class="text-sm text-gray-400">Métricas fold-level/pooled: comparação operacional entre threshold 0.50 e max-all composite no modelo final.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl">
                         <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_k_curves.png" alt="Curvas de decisão para k e seleção nested">
@@ -1119,8 +1285,8 @@
                         <figcaption class="text-sm text-gray-400">Decisão PM k=3: fixed-k diagnostics com mediana nested k=3 e AUC LOOCV final reportado.</figcaption>
                     </figure>
                     <figure class="glass-card evidence-card p-6 rounded-2xl lg:col-span-2">
-                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_best_model_loocv_fold_metrics.png" alt="Métricas LOOCV fold-level do modelo final">
-                        <figcaption class="text-sm text-gray-400">Métricas fold-level/pooled: comparação operacional entre threshold 0.50 e max-all composite no modelo final.</figcaption>
+                        <img class="evidence-image zoomable-image" src="assets/v16_6_outputs/results_comp_modelos_final_options_v16_3_final_options_bar_roc.png" alt="Comparação final e ROC overlay">
+                        <figcaption class="text-sm text-gray-400">Comparação final: o Power Mean Ensemble k=3 lidera o AUC LOOCV e é mostrado contra ET, BernoulliNB e GNB.</figcaption>
                     </figure>
                 </div>
 
@@ -1215,9 +1381,16 @@
                 <!-- Call to action elegante -->
                 <div class="mt-24 text-center reveal">
                     <p class="font-serif italic text-2xl text-gray-400 mb-6">A ciência avança com transparência.</p>
-                    <a href="assets/decisao_final.pdf" download class="inline-flex px-8 py-4 bg-white text-black font-display font-bold uppercase tracking-widest text-xs hover:bg-accent hover:text-white transition-all duration-300 rounded-sm">
-                        Descarregar Relatório Completo
-                    </a>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="assets/decisao_final.pdf" download class="inline-flex min-h-[51px] items-center justify-center px-8 py-4 rounded-full bg-white text-black font-display font-bold uppercase tracking-widest text-xs hover:bg-accent hover:text-white transition-all duration-300">
+                            Descarregar Relatório Completo
+                        </a>
+                        <button id="copyCitationBtn" type="button" class="cite-project">
+                            <i data-lucide="quote" class="w-4 h-4"></i>
+                            Citar este projeto
+                        </button>
+                    </div>
+                    <div id="citationStatus" class="copy-status" aria-live="polite"></div>
                 </div>
 
             </div>
@@ -1298,11 +1471,11 @@
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="archive-stat-card">
                                         <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Imagens</div>
-                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-image-total">107</div>
+                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-image-total">15</div>
                                     </div>
                                     <div class="archive-stat-card">
                                         <div class="text-[10px] font-display uppercase tracking-widest text-gray-500">Ficheiros</div>
-                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-file-total">251</div>
+                                        <div class="mt-2 text-3xl font-display font-bold text-white" id="archive-file-total">15</div>
                                     </div>
                                 </div>
                                 <div class="archive-control-row">
@@ -1417,12 +1590,87 @@
                         <div class="reference-link">
                             <div class="reference-source">Conference abstract · ECG</div>
                             <div class="reference-title">H. Gruwez, M. Barthels, S. Dhont, E. Meekers, F. Wouters, N. Pierlet, D. Nuyens, M. Rivero-Ayerza, H. Van Herendael, L. Pison, P. Haemers, P. Vandervoort, Predicting atrial fibrillation recurrence after catheter ablation using an artificial intelligence-enabled electrocardiogram algorithm, <em>Europace</em> 26 (Suppl. 1) (2024) i670.</div>
-                            <div class="reference-doi">Conference abstract</div>
+                            <div class="reference-doi">doi: 10.1093/europace/euae102.167</div>
                         </div>
                         <a class="reference-link" href="https://doi.org/10.1016/j.cjca.2023.04.014" target="_blank" rel="noopener">
                             <div class="reference-source">P-wave · Substrate</div>
                             <div class="reference-title">Z.R. Zhang, D. Ragot, S.Z. Massin, A. Suszko, A.C.T. Ha, S.M. Singh, V.S. Chauhan, P-wave duration/amplitude ratio quantifies atrial low-voltage area and predicts atrial arrhythmia recurrence after pulmonary vein isolation, <em>Can. J. Cardiol.</em> 39 (10) (2023) 1421-1431.</div>
                             <div class="reference-doi">doi: 10.1016/j.cjca.2023.04.014</div>
+                        </a>
+                        <a class="reference-link" href="https://doi.org/10.1161/CIR.0000000000001193" target="_blank" rel="noopener">
+                            <div class="reference-source">Guideline · AF</div>
+                            <div class="reference-title">J.A. Joglar, M.K. Chung, A.L. Armbruster, E.J. Benjamin, J.Y. Chyou, E.M. Cronin, A. Deswal, L.L. Eckhardt, Z.D. Goldberger, R. Gopinathannair, et al., 2023 ACC/AHA/ACCP/HRS guideline for the diagnosis and management of atrial fibrillation, <em>Circulation</em> 149 (1) (2024) e1-e156.</div>
+                            <div class="reference-doi">doi: 10.1161/CIR.0000000000001193</div>
+                        </a>
+                        <a class="reference-link" href="https://doi.org/10.1093/eurheartj/ehae176" target="_blank" rel="noopener">
+                            <div class="reference-source">Guideline · ESC</div>
+                            <div class="reference-title">I.C. Van Gelder, M. Rienstra, K.V. Bunting, R. Casado-Arroyo, V. Caso, H.J.G.M. Crijns, T.J.R. De Potter, J. Dwight, L. Guasti, T. Hanke, et al., 2024 ESC guidelines for the management of atrial fibrillation, <em>Eur. Heart J.</em> 45 (36) (2024) 3314-3414.</div>
+                            <div class="reference-doi">doi: 10.1093/eurheartj/ehae176</div>
+                        </a>
+                        <a class="reference-link" href="https://doi.org/10.1093/europace/euac210" target="_blank" rel="noopener">
+                            <div class="reference-source">P-wave · Meta-analysis</div>
+                            <div class="reference-title">S. Intzes, K. Zagoridis, M. Symeonidou, E. Spanoudakis, A. Arya, B. Dinov, N. Dagres, G. Hindricks, A. Bollmann, E. Kanoupakis, E. Koutalas, S. Nedios, P-wave duration and atrial fibrillation recurrence after catheter ablation: a systematic review and meta-analysis, <em>Europace</em> 25 (2) (2023) 450-459.</div>
+                            <div class="reference-doi">doi: 10.1093/europace/euac210</div>
+                        </a>
+                        <a class="reference-link" href="https://doi.org/10.1093/europace/euw161" target="_blank" rel="noopener">
+                            <div class="reference-source">Atrial cardiomyopathy</div>
+                            <div class="reference-title">A. Goette, J.M. Kalman, L. Aguinaga, J. Akar, J.A. Cabrera, S.A. Chen, S.S. Chugh, D. Corradi, A. D'Avila, D. Dobrev, et al., EHRA/HRS/APHRS/SOLAECE expert consensus on atrial cardiomyopathies: definition, characterization, and clinical implication, <em>Europace</em> 18 (10) (2016) 1455-1490.</div>
+                            <div class="reference-doi">doi: 10.1093/europace/euw161</div>
+                        </a>
+                        <a class="reference-link" href="https://doi.org/10.1038/s41467-020-15432-4" target="_blank" rel="noopener">
+                            <div class="reference-source">Deep ECG · Code base</div>
+                            <div class="reference-title">A.H. Ribeiro, M.H. Ribeiro, G.M.M. Paixao, D.M. Oliveira, P.R. Gomes, J.A. Canazart, M.P.S. Ferreira, C.R. Andersson, P.W. Macfarlane, W. Meira Jr., T.B. Schon, A.L.P. Ribeiro, Automatic diagnosis of the 12-lead ECG using a deep neural network, <em>Nat. Commun.</em> 11 (2020) 1760.</div>
+                            <div class="reference-doi">doi: 10.1038/s41467-020-15432-4</div>
+                        </a>
+                        <a class="reference-link" href="https://github.com/antonior92/automatic-ecg-diagnosis" target="_blank" rel="noopener">
+                            <div class="reference-source">GitHub · ECG diagnosis</div>
+                            <div class="reference-title">A. Ribeiro / antonior92, automatic-ECG-diagnosis: scripts and modules for training and testing neural networks for automatic ECG classification, companion code to "Automatic diagnosis of the 12-lead ECG using a deep neural network".</div>
+                            <div class="reference-doi">github.com/antonior92/automatic-ecg-diagnosis</div>
+                        </a>
+                        <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html" target="_blank" rel="noopener">
+                            <div class="reference-source">Method · ExtraTrees</div>
+                            <div class="reference-title">scikit-learn developers, ExtraTreesClassifier documentation, extremely randomized trees classifier, <em>scikit-learn</em>.</div>
+                            <div class="reference-doi">sklearn.ensemble.ExtraTreesClassifier</div>
+                        </a>
+                        <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html" target="_blank" rel="noopener">
+                            <div class="reference-source">Method · BernoulliNB</div>
+                            <div class="reference-title">scikit-learn developers, BernoulliNB documentation, naive Bayes classifier for multivariate Bernoulli models, <em>scikit-learn</em>.</div>
+                            <div class="reference-doi">sklearn.naive_bayes.BernoulliNB</div>
+                        </a>
+                        <a class="reference-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html" target="_blank" rel="noopener">
+                            <div class="reference-source">Metric · ROC AUC</div>
+                            <div class="reference-title">scikit-learn developers, roc_auc_score documentation, area under the receiver operating characteristic curve, <em>scikit-learn</em>.</div>
+                            <div class="reference-doi">sklearn.metrics.roc_auc_score</div>
+                        </a>
+                        <div class="reference-link">
+                            <div class="reference-source">Thesis · EGM analysis</div>
+                            <div class="reference-title">L.M. Felix, <em>Atrial fibrillation management through advanced EGM analysis and machine learning</em>, Dissertacao de Mestrado, Instituto Superior Tecnico, 2025.</div>
+                            <div class="reference-doi">Master thesis</div>
+                        </div>
+                        <div class="reference-link">
+                            <div class="reference-source">Clinical review · Fibrosis</div>
+                            <div class="reference-title">P.S. Cunha, et al., The atrium in atrial fibrillation: a clinical review on how to manage atrial fibrotic substrates, <em>Front. Cardiovasc. Med.</em> 9 (2022).</div>
+                            <div class="reference-doi">Frontiers in Cardiovascular Medicine</div>
+                        </div>
+                        <div class="reference-link">
+                            <div class="reference-source">Mapping · Electrical activity</div>
+                            <div class="reference-title">N.M.S. de Groot, et al., Critical appraisal of technologies to assess electrical activity during atrial fibrillation, <em>Europace</em> 24 (2) (2022) 313-330.</div>
+                            <div class="reference-doi">Europace 24(2), 313-330</div>
+                        </div>
+                        <a class="reference-link" href="https://pubmed.ncbi.nlm.nih.gov/15172410/" target="_blank" rel="noopener">
+                            <div class="reference-source">Ablation substrate · CFAE</div>
+                            <div class="reference-title">K. Nademanee, J. McKenzie, E. Kosar, M. Schwab, B. Sunsaneewitayakul, T. Vasavakul, C. Khunnawat, T. Ngarmukos, A new approach for catheter ablation of atrial fibrillation: mapping of the electrophysiologic substrate, <em>J. Am. Coll. Cardiol.</em> 43 (11) (2004) 2044-2053.</div>
+                            <div class="reference-doi">PMID: 15172410</div>
+                        </a>
+                        <div class="reference-link">
+                            <div class="reference-source">Thesis · High-density mapping</div>
+                            <div class="reference-title">M.A.C. Nunes, <em>High-density mapping analysis of electrical spatiotemporal behaviour in atrial fibrillation</em>, Dissertacao de Mestrado, FCUL, 2022.</div>
+                            <div class="reference-doi">Master thesis</div>
+                        </div>
+                        <a class="reference-link" href="https://doi.org/10.1111/j.1540-8167.2007.00832.x" target="_blank" rel="noopener">
+                            <div class="reference-source">EGM · Dominant frequency</div>
+                            <div class="reference-title">J. Ng, J.J. Goldberger, Understanding and interpreting dominant frequency analysis of AF electrograms, <em>J. Cardiovasc. Electrophysiol.</em> 18 (6) (2007) 680-685.</div>
+                            <div class="reference-doi">doi: 10.1111/j.1540-8167.2007.00832.x</div>
                         </a>
                     </div>
                 </div>
@@ -1489,6 +1737,145 @@
                 heartImage.src = heartImage.dataset.safariSrc;
             }
 
+            const tooltipTerms = [
+                ['fold-specific', 'Parâmetro escolhido dentro de cada fold de validação, sem usar o doente deixado de fora.'],
+                ['Power Mean', 'Fusão matemática que combina probabilidades; k controla se a fusão se aproxima da média ou do máximo.'],
+                ['blanking period', 'Período após o procedimento que pode influenciar o rótulo de recorrência; foi excluído do modelo principal por rigor temporal.'],
+                ['ExtraTrees', 'Modelo de árvores extra-randomizadas; capta relações não lineares entre features.'],
+                ['BernoulliNB', 'Naive Bayes para features binárias; útil após binarização das variáveis selecionadas.'],
+                ['GaussianNB', 'Naive Bayes gaussiano; assume distribuições aproximadamente normais por classe.'],
+                ['GNB', 'Gaussian Naive Bayes, usado como baseline probabilístico simples.'],
+                ['LOOCV', 'Leave-One-Out Cross-Validation: cada doente é testado uma vez enquanto os restantes treinam o modelo.'],
+                ['Nested', 'Validação com escolha de parâmetros dentro do treino de cada fold, reduzindo escolha pós-hoc.'],
+                ['ANOVA', 'Método de seleção univariada que escolhe features com maior separação estatística entre classes.'],
+                ['SMOTE', 'Técnica de oversampling sintético; aqui é tratada com cuidado para evitar enviesamento em amostras pequenas.'],
+                ['missingness', 'Informação sobre valores em falta; pode ser codificada como flags explícitas ou estados categóricos.'],
+                ['leakage', 'Fuga de informação do teste para o treino; invalida a estimativa de desempenho.'],
+                ['overfitting', 'Quando o modelo aprende ruído da amostra em vez de sinal generalizável.'],
+                ['threshold', 'Corte usado para transformar uma probabilidade em classe; não altera AUC, mas muda sensibilidade e especificidade.'],
+                ['max-all', 'Estratégia operacional que procura um equilíbrio forte entre métricas de classificação.'],
+                ['ROC', 'Curva que mostra sensibilidade contra taxa de falsos positivos ao variar o threshold.'],
+                ['PR', 'Precision-Recall: curva útil quando a classe positiva é menos frequente.'],
+                ['AUC', 'Área sob a curva ROC; mede discriminação independentemente do threshold.'],
+                ['AP', 'Average Precision; resume a curva precision-recall.'],
+                ['Brier', 'Erro quadrático médio das probabilidades; quanto menor, melhor a calibração probabilística.'],
+                ['F1', 'Média harmónica entre precision e recall; resume equilíbrio entre falsos positivos e falsos negativos.'],
+                ['PPV', 'Positive Predictive Value: proporção dos previstos positivos que são verdadeiros positivos.'],
+                ['NPV', 'Negative Predictive Value: proporção dos previstos negativos que são verdadeiros negativos.'],
+                ['ECG-only', 'Modelo baseado apenas em informação pré-operatória ECG e variáveis clínicas permitidas.'],
+                ['ECG', 'Eletrocardiograma: sinal elétrico de superfície usado para extrair assinaturas da onda P.']
+            ];
+
+            const tooltipLookup = new Map(tooltipTerms.map(([term, text]) => [term.toLowerCase(), text]));
+            const tooltipPattern = new RegExp(`\\b(${tooltipTerms
+                .map(([term]) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+'))
+                .join('|')})\\b`, 'gi');
+            const tooltipSkipSelector = 'script, style, svg, a, button, select, option, textarea, input, .sci-term, .formula-equation, .reference-link, .reference-title, .reference-source, .reference-doi, .lightbox';
+            const scientificTooltipMedia = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 901px)');
+            const isScientificTooltipEnabled = () => scientificTooltipMedia.matches;
+
+            const applyScientificTooltips = (root = document.body) => {
+                const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                    acceptNode(node) {
+                        tooltipPattern.lastIndex = 0;
+                        if (!node.nodeValue || !tooltipPattern.test(node.nodeValue)) {
+                            tooltipPattern.lastIndex = 0;
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                        tooltipPattern.lastIndex = 0;
+                        if (node.parentElement?.closest(tooltipSkipSelector)) return NodeFilter.FILTER_REJECT;
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                });
+                const nodes = [];
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+
+                nodes.forEach((node) => {
+                    const text = node.nodeValue;
+                    const fragment = document.createDocumentFragment();
+                    let lastIndex = 0;
+                    text.replace(tooltipPattern, (match, _term, index) => {
+                        if (index > lastIndex) fragment.appendChild(document.createTextNode(text.slice(lastIndex, index)));
+                        const span = document.createElement('span');
+                        const key = match.toLowerCase().replace(/\s+/g, ' ');
+                        span.className = 'sci-term';
+                        span.tabIndex = 0;
+                        span.dataset.tooltip = tooltipLookup.get(key) || tooltipLookup.get(match.toLowerCase()) || '';
+                        span.textContent = match;
+                        fragment.appendChild(span);
+                        lastIndex = index + match.length;
+                        return match;
+                    });
+                    if (lastIndex < text.length) fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+                    node.parentNode.replaceChild(fragment, node);
+                });
+                tooltipPattern.lastIndex = 0;
+            };
+
+            const scientificTooltipCard = document.createElement('div');
+            scientificTooltipCard.className = 'scientific-tooltip-card';
+            scientificTooltipCard.setAttribute('role', 'tooltip');
+            document.body.appendChild(scientificTooltipCard);
+
+            const hideScientificTooltip = () => {
+                scientificTooltipCard.classList.remove('active');
+            };
+
+            const positionScientificTooltip = (term) => {
+                if (!isScientificTooltipEnabled()) {
+                    hideScientificTooltip();
+                    return;
+                }
+
+                const tooltipText = term.dataset.tooltip;
+                if (!tooltipText) return;
+
+                scientificTooltipCard.textContent = tooltipText;
+                scientificTooltipCard.classList.add('active');
+
+                const termRect = term.getBoundingClientRect();
+                const tooltipRect = scientificTooltipCard.getBoundingClientRect();
+                const margin = 12;
+                let left = termRect.left + (termRect.width / 2) - (tooltipRect.width / 2);
+                let top = termRect.top - tooltipRect.height - margin;
+
+                if (top < margin) {
+                    top = termRect.bottom + margin;
+                }
+
+                left = Math.max(margin, Math.min(left, window.innerWidth - tooltipRect.width - margin));
+                top = Math.max(margin, Math.min(top, window.innerHeight - tooltipRect.height - margin));
+
+                scientificTooltipCard.style.setProperty('--tooltip-x', `${left}px`);
+                scientificTooltipCard.style.setProperty('--tooltip-y', `${top}px`);
+            };
+
+            document.addEventListener('mouseover', (event) => {
+                if (!isScientificTooltipEnabled()) return;
+                const term = event.target.closest?.('.sci-term');
+                if (term) positionScientificTooltip(term);
+            });
+
+            document.addEventListener('mouseout', (event) => {
+                if (!isScientificTooltipEnabled()) return;
+                const term = event.target.closest?.('.sci-term');
+                if (term && !term.contains(event.relatedTarget)) hideScientificTooltip();
+            });
+
+            document.addEventListener('focusin', (event) => {
+                if (!isScientificTooltipEnabled()) return;
+                const term = event.target.closest?.('.sci-term');
+                if (term) positionScientificTooltip(term);
+            });
+
+            document.addEventListener('focusout', (event) => {
+                if (event.target.closest?.('.sci-term')) hideScientificTooltip();
+            });
+
+            window.addEventListener('scroll', hideScientificTooltip, { passive: true });
+            window.addEventListener('resize', hideScientificTooltip);
+            scientificTooltipMedia.addEventListener?.('change', hideScientificTooltip);
+
             archiveTabs.forEach((tab) => {
                 tab.addEventListener('click', () => {
                     const target = tab.dataset.archiveTab;
@@ -1533,6 +1920,46 @@
 
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape') closeLightbox();
+            });
+
+            const citationBibtex = `@misc{thebestpic2026,
+  title = {AF Recurrence Risk Predictor: ECG-only pre-operative Power Mean Ensemble for atrial fibrillation recurrence},
+  author = {Guilherme Soares and Ricardo Macedo and Rita Reis and Rodrigo Marques},
+  year = {2026},
+  institution = {Instituto Superior Tecnico},
+  note = {Research proof-of-concept, LOOCV validation, Power Mean Ensemble k=3}
+}`;
+
+            const copyText = async (text) => {
+                if (navigator.clipboard?.writeText) {
+                    await navigator.clipboard.writeText(text);
+                    return;
+                }
+
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            };
+
+            const copyCitationBtn = document.getElementById('copyCitationBtn');
+            const citationStatus = document.getElementById('citationStatus');
+            copyCitationBtn?.addEventListener('click', async () => {
+                try {
+                    await copyText(citationBibtex);
+                    if (citationStatus) citationStatus.textContent = 'BibTeX copiado para a area de transferencia.';
+                } catch (error) {
+                    if (citationStatus) citationStatus.textContent = 'Copia automatica indisponivel neste browser.';
+                }
+
+                window.setTimeout(() => {
+                    if (citationStatus) citationStatus.textContent = '';
+                }, 3200);
             });
 
             const renderArchive = async () => {
@@ -1614,6 +2041,7 @@
                                 </figcaption>
                             </figure>
                         `).join('');
+                        applyScientificTooltips(gallery);
                         showAllButton.textContent = visible.length < filtered.length ? `Mostrar todos (${filtered.length})` : `A mostrar ${filtered.length}`;
                         showAllButton.disabled = visible.length >= filtered.length;
                         showAllButton.classList.toggle('opacity-50', showAllButton.disabled);
@@ -1640,6 +2068,7 @@
             // Verificar no load inicial
             updateNavbar();
             revealOnScroll();
+            applyScientificTooltips();
             renderArchive();
             // Verificar ao fazer scroll
             window.addEventListener('scroll', updateNavbar);
